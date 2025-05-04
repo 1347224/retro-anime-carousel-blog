@@ -8,7 +8,7 @@ import AnimeCarousel from "@/components/AnimeCarousel";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Lightbulb, Award, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   // Animation variants
@@ -57,13 +57,15 @@ const Index = () => {
       id: 1,
       title: "Evangelion: Depresión Creativa",
       category: "Behind the Scenes",
-      excerpt: "Hideaki Anno creó la serie mientras luchaba contra una severa depresión."
+      excerpt: "Hideaki Anno creó la serie mientras luchaba contra una severa depresión.",
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
     },
     {
       id: 2,
       title: "Referencias Culturales en Evangelion",
       category: "Easter Eggs",
-      excerpt: "La serie está repleta de simbolismo religioso y referencias culturales."
+      excerpt: "La serie está repleta de simbolismo religioso y referencias culturales.",
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
     }
   ];
 
@@ -107,10 +109,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <div className="flex items-center space-x-3">
-              <BookOpen className="text-retro-purple h-6 w-6" />
-              <h2 className="font-pixel text-2xl md:text-3xl">Reseñas Destacadas</h2>
-            </div>
+            <h2 className="font-silkscreen text-2xl md:text-3xl">Reseñas Destacadas</h2>
             <div className="h-px bg-border flex-grow"></div>
             <Link to="/resenas" className="text-sm font-medium text-retro-purple flex items-center hover:underline">
               Ver todas
@@ -165,10 +164,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <div className="flex items-center space-x-3">
-              <Lightbulb className="text-blue-500 h-6 w-6" />
-              <h2 className="font-pixel text-2xl md:text-3xl">Curiosidades</h2>
-            </div>
+            <h2 className="font-silkscreen text-2xl md:text-3xl">Curiosidades</h2>
             <div className="h-px bg-border flex-grow"></div>
             <Link to="/curiosidades" className="text-sm font-medium text-blue-500 flex items-center hover:underline">
               Ver todas
@@ -186,12 +182,19 @@ const Index = () => {
             {featuredCuriosities.map((item) => (
               <motion.div key={item.id} variants={itemVariants} whileHover={{ scale: 1.02 }}>
                 <Link to="/curiosidades">
-                  <Card className="h-full border-2 border-blue-500/30 bg-gradient-to-br from-card to-blue-900/10">
+                  <Card className="h-full border-2 border-blue-500/30 overflow-hidden flex flex-col">
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={item.image} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      />
+                    </div>
                     <CardHeader className="pb-2">
                       <CardTitle className="font-pixel text-blue-500">{item.title}</CardTitle>
                       <CardDescription>{item.category}</CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="flex-grow">
                       <p>{item.excerpt}</p>
                     </CardContent>
                     <CardFooter>
@@ -218,10 +221,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <div className="flex items-center space-x-3">
-              <Award className="text-amber-400 h-6 w-6" />
-              <h2 className="font-pixel text-2xl md:text-3xl">Top Lists</h2>
-            </div>
+            <h2 className="font-silkscreen text-2xl md:text-3xl">Top Lists</h2>
             <div className="h-px bg-border flex-grow"></div>
             <Link to="/top-list" className="text-sm font-medium text-amber-400 flex items-center hover:underline">
               Ver todas
@@ -276,7 +276,7 @@ const Index = () => {
             </div>
             <h2 className="font-pixel text-3xl md:text-4xl text-retro-purple mb-4">¡Únete a la comunidad RetroAnime!</h2>
             <p className="text-lg max-w-2xl mx-auto mb-8">Forma parte de nuestra comunidad de amantes del anime retro donde compartimos recuerdos, análisis y celebramos la época dorada de la animación japonesa.</p>
-            <Button className="retro-button text-lg px-8 py-6">Suscríbete a la Newsletter</Button>
+            <Button className="retro-button text-lg px-8 py-6 font-silkscreen">Suscríbete a la Newsletter</Button>
           </motion.div>
         </div>
       </section>
