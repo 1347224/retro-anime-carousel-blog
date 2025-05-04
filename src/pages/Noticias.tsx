@@ -90,6 +90,13 @@ const Noticias = () => {
 
   useEffect(() => {
     if (filteredNews.length > 0) {
+      setActiveIndex(prev => {
+        if (prev === null || prev >= filteredNews.length) {
+          return 0;
+        }
+        return prev;
+      });
+      
       const interval = setInterval(() => {
         setActiveIndex(prev => {
           if (prev === null || prev >= filteredNews.length - 1) {
@@ -161,24 +168,26 @@ const Noticias = () => {
               transition={{ duration: 1, delay: 0.8 }}
             >
               <AnimatePresence mode="wait">
-                <motion.div
-                  key={filteredNews[activeIndex].id}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -50 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-black/50 backdrop-blur-md p-4 border border-blue-500/50 rounded-lg"
-                >
-                  <Badge className="mb-2 bg-blue-500">{filteredNews[activeIndex].category}</Badge>
-                  <h3 className="text-white font-bold mb-1 text-lg">{filteredNews[activeIndex].title}</h3>
-                  <Button
-                    variant="link"
-                    className="text-blue-400 p-0 h-auto"
-                    onClick={() => setSelectedNews(filteredNews[activeIndex])}
+                {filteredNews[activeIndex] && (
+                  <motion.div
+                    key={filteredNews[activeIndex].id}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -50 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-black/50 backdrop-blur-md p-4 border border-blue-500/50 rounded-lg"
                   >
-                    Leer más
-                  </Button>
-                </motion.div>
+                    <Badge className="mb-2 bg-blue-500">{filteredNews[activeIndex].category}</Badge>
+                    <h3 className="text-white font-bold mb-1 text-lg">{filteredNews[activeIndex].title}</h3>
+                    <Button
+                      variant="link"
+                      className="text-blue-400 p-0 h-auto"
+                      onClick={() => setSelectedNews(filteredNews[activeIndex])}
+                    >
+                      Leer más
+                    </Button>
+                  </motion.div>
+                )}
               </AnimatePresence>
             </motion.div>
           )}
@@ -324,14 +333,16 @@ const Noticias = () => {
             >
               <div className="relative h-64 md:h-96">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 z-10"></div>
-                <motion.img 
-                  src={selectedNews.image}
-                  alt={selectedNews.title}
-                  className="w-full h-full object-cover"
-                  initial={{ scale: 1 }}
-                  animate={{ scale: 1.05 }}
-                  transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
-                />
+                {selectedNews && (
+                  <motion.img 
+                    src={selectedNews.image}
+                    alt={selectedNews.title}
+                    className="w-full h-full object-cover"
+                    initial={{ scale: 1 }}
+                    animate={{ scale: 1.05 }}
+                    transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+                  />
+                )}
                 <button
                   onClick={() => setSelectedNews(null)}
                   className="absolute top-4 right-4 z-20 bg-black/50 backdrop-blur-sm text-white rounded-full p-2 hover:bg-black/70 transition-colors"
@@ -339,28 +350,30 @@ const Noticias = () => {
                   ✕
                 </button>
                 <div className="absolute bottom-8 left-8 right-8 z-20">
-                  <Badge className="mb-3 bg-blue-500 hover:bg-blue-600">
-                    {selectedNews.category}
-                  </Badge>
+                  {selectedNews && (
+                    <Badge className="mb-3 bg-blue-500 hover:bg-blue-600">
+                      {selectedNews.category}
+                    </Badge>
+                  )}
                   <h2 className="text-white text-2xl md:text-4xl font-bold font-pixel mb-2">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-retro-purple">
-                      {selectedNews.title}
+                      {selectedNews?.title}
                     </span>
                   </h2>
                   <div className="flex items-center space-x-4 text-xs text-white/80 mt-2">
                     <span className="flex items-center">
                       <Calendar className="h-3 w-3 mr-1" />
-                      {selectedNews.date}
+                      {selectedNews?.date}
                     </span>
                     <span className="flex items-center">
                       <Clock className="h-3 w-3 mr-1" />
-                      {selectedNews.readTime} lectura
+                      {selectedNews?.readTime} lectura
                     </span>
                   </div>
                 </div>
               </div>
               <div className="p-8">
-                {selectedNews.content.split("\n\n").map((paragraph, idx) => (
+                {selectedNews && selectedNews.content.split("\n\n").map((paragraph, idx) => (
                   <p key={idx} className="mb-4 leading-relaxed">{paragraph}</p>
                 ))}
               </div>
