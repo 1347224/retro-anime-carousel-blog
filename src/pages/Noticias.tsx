@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Newspaper, Calendar, Clock, Search } from "lucide-react";
+import { Calendar, Clock, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 interface NewsItem {
@@ -60,6 +60,66 @@ const newsItems: NewsItem[] = [
     readTime: "5 min",
     category: "Descubrimientos",
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+  },
+  {
+    id: 5,
+    title: "Estudio Ghibli abre exhibición permanente de animación clásica",
+    excerpt: "El legendario estudio inaugura una muestra dedicada a técnicas de animación tradicional de los 80s y 90s.",
+    content: "El Museo Ghibli en Mitaka, Tokio, ha inaugurado una nueva área permanente dedicada a mostrar y preservar las técnicas de animación tradicional que hicieron famoso al estudio durante las décadas de 1980 y 1990. La exhibición, titulada 'El Arte de la Animación Analógica', permite a los visitantes observar de cerca celdas originales, fondos pintados a mano y equipamiento utilizado para crear clásicos como 'Mi Vecino Totoro' y 'La Princesa Mononoke'.\n\nLa exhibición incluye estaciones interactivas donde los visitantes pueden experimentar con técnicas de animación tradicional bajo la guía de animadores veteranos del estudio. 'En una era dominada por la tecnología digital, es fundamental recordar y honrar las técnicas que dieron vida a tantas obras maestras,' comentó Toshio Suzuki, productor y cofundador del estudio.\n\nHayao Miyazaki, quien recientemente anunció su retiro definitivo de la dirección después de su última película, ha supervisado personalmente el diseño de esta nueva sección del museo para asegurar que refleje fielmente el proceso creativo que caracterizó la edad dorada del estudio.",
+    date: "20/12/2024",
+    readTime: "7 min",
+    category: "Exposiciones",
+    image: "https://images.unsplash.com/photo-1541562232579-512a21360020?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+  },
+  {
+    id: 6,
+    title: "Restauración masiva de anime de los 80s anunciada por Toei Animation",
+    excerpt: "20 series clásicas serán restauradas en 4K utilizando inteligencia artificial y técnicas manuales.",
+    content: "Toei Animation ha revelado un ambicioso proyecto de restauración que abarcará 20 series de anime clásicas de la década de 1980, incluyendo títulos emblemáticos como 'Saint Seiya', 'Dragon Ball' y 'Sailor Moon'. El proyecto, denominado 'Renacimiento Retro', utilizará una combinación de restauración manual meticulosa e inteligencia artificial para llevar estas series a la calidad 4K.\n\n'Hemos desarrollado un algoritmo de IA específicamente entrenado para reconocer y preservar el estilo artístico único de cada serie mientras mejora la calidad visual', explicó Katsuhiro Takagi, director del proyecto. 'Cada fotograma es posteriormente revisado por especialistas en restauración para asegurar la fidelidad a la obra original.'\n\nEl proyecto incluirá también la restauración de las bandas sonoras originales a partir de las cintas maestras, así como nuevos doblajes opcionales que respetarán las interpretaciones originales. Las primeras series restauradas estarán disponibles en plataformas digitales y ediciones físicas coleccionables a partir de mediados de 2025.",
+    date: "05/11/2024",
+    readTime: "6 min",
+    category: "Restauraciones",
+    image: "https://images.unsplash.com/photo-1611457194403-d3aca4cf9d11?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+  },
+  {
+    id: 7,
+    title: "Festival RetroAnime anuncia gira mundial para 2025",
+    excerpt: "El evento dedicado al anime clásico visitará 15 ciudades en 4 continentes.",
+    content: "RetroAnime Festival, el evento itinerante dedicado exclusivamente a la celebración del anime de las décadas de 1980 a 2000, ha anunciado su primera gira mundial que abarcará 15 ciudades en Asia, Europa, América y Oceanía durante 2025.\n\nEl festival, que hasta ahora solo se había realizado en Japón, incluirá proyecciones de películas y series restauradas, paneles con creadores veteranos de la industria, exposiciones de arte original, conciertos con música icónica de anime y áreas de gaming retro con videojuegos basados en anime clásico.\n\n'El anime retro ha trascendido fronteras y generaciones, convirtiéndose en un fenómeno cultural global,' comentó Haruki Tanaka, director del festival. 'Esta gira es nuestra forma de celebrar este legado con fans de todo el mundo y presentar estas obras maestras a nuevas audiencias.'\n\nEntre las ciudades confirmadas se encuentran Tokio, Seúl, Hong Kong, Sydney, Los Ángeles, Ciudad de México, São Paulo, Londres, París y Barcelona. Las entradas saldrán a la venta a principios de 2025.",
+    date: "18/10/2024",
+    readTime: "5 min",
+    category: "Eventos",
+    image: "https://images.unsplash.com/photo-1516280906200-323121b2ca91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+  },
+  {
+    id: 8,
+    title: "Documental 'La Revolución Anime' explora el impacto cultural de los 90s",
+    excerpt: "Creadores y fans analizan cómo el anime de los 90s transformó la cultura global.",
+    content: "El aclamado documentalista Ken Burns ha presentado su nuevo proyecto: 'La Revolución Anime', una serie documental de seis episodios que explora en profundidad cómo las series de anime de los años 90s transformaron no solo la industria de la animación, sino también la cultura popular global.\n\nLa serie cuenta con entrevistas a figuras legendarias como Hideaki Anno (Neon Genesis Evangelion), Shinichiro Watanabe (Cowboy Bebop), y Mamoru Oshii (Ghost in the Shell), así como a académicos, críticos culturales y fans que vivieron esta revolución en primera persona.\n\n'Lo que ocurrió en los 90s fue un fenómeno cultural tan profundo como el rock and roll en los 50s o el cine independiente americano en los 70s,' explica Burns. 'El anime se convirtió en un lenguaje visual y narrativo que cambió para siempre cómo contamos historias en medios visuales.'\n\nEl documental también examina cómo estas series abrieron las puertas a la globalización de la cultura japonesa y sentaron las bases para la aceptación mainstream del anime en Occidente. 'La Revolución Anime' se estrenará en festivales de cine este otoño antes de llegar a plataformas de streaming a principios de 2025.",
+    date: "25/09/2024",
+    readTime: "9 min",
+    category: "Documentales",
+    image: "https://images.unsplash.com/photo-1492955869928-3c79239e1315?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+  },
+  {
+    id: 9,
+    title: "Colección completa de 'Serial Experiments Lain' en vinilo anunciada",
+    excerpt: "La icónica banda sonora de la serie cyberpunk recibirá una edición especial limitada.",
+    content: "Los fans de 'Serial Experiments Lain', la revolucionaria serie anime cyberpunk de 1998, están de enhorabuena con el anuncio de una edición especial de su banda sonora completa en formato vinilo. La colección, titulada 'Lain: Restored Protocol', incluirá cuatro discos con todas las piezas musicales creadas por Reichi Nakaido y el grupo Boa, incluyendo la emblemática opening 'Duvet'.\n\nLa edición, limitada a 3,000 unidades numeradas, vendrá en un estuche de diseño especial que recrea elementos visuales de la serie y contendrá material gráfico inédito, notas del director Ryutaro Nakamura y un código para descargar la versión digital remasterizada.\n\n'Serial Experiments Lain fue una serie que trascendió su medio para convertirse en una profunda reflexión sobre la identidad en la era digital', comenta el productor de la colección. 'Su música, atmosférica y avant-garde, fue parte integral de esa experiencia y merece ser preservada y celebrada en el formato más fiel posible.'\n\nLas pre-órdenes para esta colección comenzarán el próximo mes, con envíos previstos para inicios de 2025.",
+    date: "02/09/2024",
+    readTime: "4 min",
+    category: "Música",
+    image: "https://images.unsplash.com/photo-1593078165899-c7d2ac0d6aea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+  },
+  {
+    id: 10,
+    title: "Exposición 'Mechas: Del Papel a la Pantalla' llega al Museo de Arte Moderno",
+    excerpt: "La muestra explora la evolución del diseño mecánico en el anime desde los 70s hasta la actualidad.",
+    content: "El Museo de Arte Moderno de Nueva York inaugurará próximamente la exposición 'Mechas: Del Papel a la Pantalla', un recorrido por la evolución del diseño de robots gigantes en el anime desde los pioneros como 'Mazinger Z' hasta las interpretaciones contemporáneas del género.\n\nLa exposición, comisariada por el reconocido crítico de arte Takashi Murakami en colaboración con diseñadores veteranos de la industria del anime, presenta más de 200 piezas originales, incluyendo bocetos conceptuales, storyboards, celdas de animación y modelos tridimensionales utilizados en la producción de series icónicas como 'Mobile Suit Gundam', 'Neon Genesis Evangelion' y 'Code Geass'.\n\n'Los mechas no son simplemente máquinas de ficción; son expresiones artísticas que reflejan preocupaciones culturales, avances tecnológicos y cambios sociales en Japón y el mundo', explica Murakami. 'Esta exposición busca elevar estos diseños al lugar que merecen en la historia del arte contemporáneo.'\n\nLa muestra incluye también instalaciones interactivas que permiten a los visitantes explorar los procesos de diseño y animación, así como una sección que examina la influencia global de estos diseños en ámbitos como el cine occidental, los videojuegos y la robótica real. La exposición permanecerá abierta durante seis meses antes de iniciar una gira internacional.",
+    date: "15/08/2024",
+    readTime: "7 min",
+    category: "Arte",
+    image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
   }
 ];
 
@@ -135,13 +195,6 @@ const Noticias = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-retro-purple/50 mix-blend-multiply"></div>
         </motion.div>
         <div className="retro-container relative z-20 h-full flex flex-col justify-center items-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-          >
-            <Newspaper className="mx-auto h-16 w-16 text-blue-400 mb-6" />
-          </motion.div>
           <motion.h1
             className="font-pixel text-5xl md:text-7xl text-white mb-8 drop-shadow-[0_0_10px_rgba(155,135,245,0.8)]"
             initial={{ opacity: 0, y: 20 }}
@@ -151,7 +204,7 @@ const Noticias = () => {
             NOTI<span className="text-blue-400">ANIME</span>
           </motion.h1>
           <motion.p
-            className="text-xl md:text-2xl max-w-2xl text-white/90"
+            className="text-xl md:text-2xl max-w-2xl text-white/90 font-vt323"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
@@ -178,10 +231,10 @@ const Noticias = () => {
                     className="bg-black/50 backdrop-blur-md p-4 border border-blue-500/50 rounded-lg"
                   >
                     <Badge className="mb-2 bg-blue-500">{filteredNews[activeIndex].category}</Badge>
-                    <h3 className="text-white font-bold mb-1 text-lg">{filteredNews[activeIndex].title}</h3>
+                    <h3 className="text-white font-bold mb-1 text-lg font-vt323">{filteredNews[activeIndex].title}</h3>
                     <Button
                       variant="link"
-                      className="text-blue-400 p-0 h-auto"
+                      className="text-blue-400 p-0 h-auto font-silkscreen"
                       onClick={() => setSelectedNews(filteredNews[activeIndex])}
                     >
                       Leer más
@@ -197,7 +250,7 @@ const Noticias = () => {
       <div className="bg-gradient-to-br from-background via-blue-900/5 to-background">
         <div className="retro-container py-12">
           {/* Search and filter */}
-          <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-md">
+          <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-md rounded-lg">
             <div className="mb-6 flex flex-col md:flex-row gap-4">
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
@@ -205,7 +258,7 @@ const Noticias = () => {
                   placeholder="Buscar noticias..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-card/50 border-blue-500/30 focus:border-blue-500"
+                  className="pl-10 bg-card/50 border-blue-500/30 focus:border-blue-500 font-vt323"
                 />
               </div>
               <div className="flex gap-2 flex-wrap">
@@ -231,7 +284,7 @@ const Noticias = () => {
           </div>
 
           {filteredNews.length > 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredNews.map((news, index) => (
                 <motion.div
                   key={news.id}
@@ -239,22 +292,22 @@ const Noticias = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={index === 0 ? "lg:col-span-2 lg:row-span-2" : ""}
+                  className={index === 0 ? "md:col-span-2" : ""}
                 >
                   <Card 
-                    className={`h-full border overflow-hidden flex flex-col hover:shadow-[0_0_30px_rgba(155,135,245,0.3)] transition-all duration-500 cursor-pointer ${
+                    className={`h-full border overflow-hidden flex flex-col hover:shadow-[0_0_30px_rgba(155,135,245,0.3)] transition-all duration-300 cursor-pointer ${
                       index === 0 
                         ? "border-blue-500/50 bg-gradient-to-br from-blue-900/20 to-background" 
                         : "border-blue-500/30 bg-card/50"
                     }`}
                     onClick={() => setSelectedNews(news)}
                   >
-                    <div className={`${index === 0 ? "h-80" : "h-56"} relative overflow-hidden`}>
+                    <div className={`${index === 0 ? "h-64" : "h-56"} relative overflow-hidden`}>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
                       <img 
                         src={news.image}
                         alt={news.title}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                       />
                       <div className="absolute bottom-4 left-4 z-20">
                         <Badge className="bg-blue-500 hover:bg-blue-600">
@@ -267,7 +320,7 @@ const Noticias = () => {
                       </div>
                     </div>
                     <CardHeader className={`pb-2 ${index === 0 ? "space-y-2" : ""}`}>
-                      <CardTitle className={`line-clamp-2 ${index === 0 ? "text-2xl" : "text-xl"} font-bold`}>
+                      <CardTitle className={`line-clamp-2 ${index === 0 ? "text-2xl" : "text-xl"} font-bold font-silkscreen`}>
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-retro-purple">
                           {news.title}
                         </span>
@@ -278,10 +331,10 @@ const Noticias = () => {
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                      <p className={`${index === 0 ? "line-clamp-4" : "line-clamp-3"}`}>{news.excerpt}</p>
+                      <p className={`${index === 0 ? "line-clamp-4" : "line-clamp-3"} font-vt323 text-lg`}>{news.excerpt}</p>
                     </CardContent>
                     <CardFooter className="pt-0">
-                      <Button variant="outline" className="w-full border-blue-500/30 hover:bg-blue-500/10 hover:border-blue-500/50">
+                      <Button variant="outline" className="w-full border-blue-500/30 hover:bg-blue-500/10 hover:border-blue-500/50 font-silkscreen">
                         Leer artículo completo
                       </Button>
                     </CardFooter>
@@ -298,9 +351,9 @@ const Noticias = () => {
               >
                 <Newspaper className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
                 <h3 className="text-xl font-silkscreen mb-2">No se encontraron noticias</h3>
-                <p className="text-muted-foreground">Intenta con otra búsqueda o elimina los filtros</p>
+                <p className="text-muted-foreground font-vt323">Intenta con otra búsqueda o elimina los filtros</p>
                 <Button 
-                  className="mt-6 bg-blue-600 hover:bg-blue-700"
+                  className="mt-6 bg-blue-600 hover:bg-blue-700 font-silkscreen"
                   onClick={() => {
                     setSearchTerm("");
                     setCategoryFilter(null);
@@ -374,13 +427,13 @@ const Noticias = () => {
               </div>
               <div className="p-8">
                 {selectedNews && selectedNews.content.split("\n\n").map((paragraph, idx) => (
-                  <p key={idx} className="mb-4 leading-relaxed">{paragraph}</p>
+                  <p key={idx} className="mb-4 leading-relaxed font-vt323 text-lg">{paragraph}</p>
                 ))}
               </div>
               <div className="p-6 border-t border-blue-500/20">
                 <Button 
                   onClick={() => setSelectedNews(null)}
-                  className="bg-blue-600 hover:bg-blue-700"
+                  className="bg-blue-600 hover:bg-blue-700 font-silkscreen"
                 >
                   Volver a noticias
                 </Button>

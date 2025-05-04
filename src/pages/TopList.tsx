@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Award } from "lucide-react";
 
 const TopList = () => {
   const containerRef = useRef(null);
@@ -125,33 +124,32 @@ const TopList = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-indigo-900/5 to-background text-foreground overflow-hidden">
+    <div className="min-h-screen theme-toplist text-foreground overflow-hidden">
       <Navigation />
       
       <div className="py-12">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12 retro-container"
         >
           <h1 className="font-pixel text-4xl md:text-5xl text-amber-400 mb-4">Top Lists</h1>
-          <p className="text-lg max-w-2xl mx-auto">Rankings temáticos de lo mejor del anime retro. Descubre joyas nostálgicas y revive clásicos que definieron toda una era dorada de la animación japonesa.</p>
+          <p className="text-lg max-w-2xl mx-auto font-vt323">Rankings temáticos de lo mejor del anime retro. Descubre joyas nostálgicas y revive clásicos que definieron toda una era dorada de la animación japonesa.</p>
         </motion.div>
 
         {/* Top Mecha Animes Section */}
-        <section className="py-12 bg-gradient-to-r from-indigo-900/20 via-background to-indigo-900/20">
+        <section className="py-12 bg-gradient-to-r from-amber-900/20 via-background to-amber-900/20">
           <div className="retro-container">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="flex items-center mb-8 space-x-4"
             >
               <div className="h-1 flex-grow bg-gradient-to-r from-amber-400/20 to-amber-400"></div>
-              <h2 className="font-pixel text-3xl text-amber-400 whitespace-nowrap flex items-center">
-                <Award className="mr-2 h-8 w-8" />
+              <h2 className="font-pixel text-3xl text-amber-400 whitespace-nowrap">
                 Top 5 Mecha Animes de los 90s
               </h2>
               <div className="h-1 flex-grow bg-gradient-to-l from-amber-400/20 to-amber-400"></div>
@@ -163,7 +161,7 @@ const TopList = () => {
                   key={anime.rank}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -10 }}
                   className="col-span-1"
@@ -191,13 +189,13 @@ const TopList = () => {
                       </div>
                     </div>
                     <CardHeader className="pb-2">
-                      <CardTitle className="font-pixel text-xl">
+                      <CardTitle className="font-silkscreen text-xl font-bold">
                         {anime.title}
                       </CardTitle>
                       <CardDescription>{anime.year}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm">{anime.description}</p>
+                      <p className="text-sm font-vt323">{anime.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -212,13 +210,12 @@ const TopList = () => {
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="flex items-center mb-8 space-x-4"
             >
               <div className="h-1 flex-grow bg-gradient-to-r from-red-500 to-red-500/20"></div>
-              <h2 className="font-pixel text-3xl text-red-500 whitespace-nowrap flex items-center">
-                <Award className="mr-2 h-8 w-8" />
+              <h2 className="font-pixel text-3xl text-red-500 whitespace-nowrap">
                 Los Openings Más Épicos
               </h2>
               <div className="h-1 flex-grow bg-gradient-to-l from-red-500 to-red-500/20"></div>
@@ -230,7 +227,7 @@ const TopList = () => {
                   key={opening.rank}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ scale: 1.02 }}
                 >
@@ -250,8 +247,8 @@ const TopList = () => {
                       <div className="md:w-11/12 p-6">
                         <div className="md:flex justify-between items-start">
                           <div>
-                            <h3 className="font-pixel text-2xl mb-1">{opening.title}</h3>
-                            <p className="text-muted-foreground">
+                            <h3 className="font-silkscreen text-2xl mb-1 font-bold">{opening.title}</h3>
+                            <p className="text-muted-foreground font-vt323">
                               <span className="font-semibold">{opening.anime}</span> ({opening.year})
                             </p>
                           </div>
@@ -259,7 +256,7 @@ const TopList = () => {
                             Opening Theme
                           </Badge>
                         </div>
-                        <p className="mt-4">{opening.description}</p>
+                        <p className="mt-4 font-vt323">{opening.description}</p>
                       </div>
                     </div>
                   </Card>
@@ -275,13 +272,12 @@ const TopList = () => {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="flex items-center mb-8 space-x-4"
             >
               <div className="h-1 flex-grow bg-gradient-to-r from-green-500/20 to-green-500"></div>
-              <h2 className="font-pixel text-3xl text-green-500 whitespace-nowrap flex items-center">
-                <Award className="mr-2 h-8 w-8" />
+              <h2 className="font-pixel text-3xl text-green-500 whitespace-nowrap">
                 Animes Que Definieron Una Generación
               </h2>
               <div className="h-1 flex-grow bg-gradient-to-l from-green-500/20 to-green-500"></div>
@@ -291,7 +287,7 @@ const TopList = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
                 <table className="w-full border-collapse">
@@ -310,7 +306,7 @@ const TopList = () => {
                         key={anime.rank}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
+                        transition={{ duration: 0.2, delay: index * 0.1 }}
                         viewport={{ once: true }}
                         className={`border-b border-border ${index % 2 === 0 ? 'bg-green-900/5' : ''}`}
                       >
@@ -327,10 +323,10 @@ const TopList = () => {
                             #{anime.rank}
                           </Badge>
                         </td>
-                        <td className="p-4 font-semibold">{anime.title}</td>
-                        <td className="p-4 text-muted-foreground">{anime.year}</td>
-                        <td className="p-4 hidden md:table-cell">{anime.impact}</td>
-                        <td className="p-4 hidden lg:table-cell">{anime.legacy}</td>
+                        <td className="p-4 font-silkscreen font-bold">{anime.title}</td>
+                        <td className="p-4 text-muted-foreground font-vt323">{anime.year}</td>
+                        <td className="p-4 hidden md:table-cell font-vt323">{anime.impact}</td>
+                        <td className="p-4 hidden lg:table-cell font-vt323">{anime.legacy}</td>
                       </motion.tr>
                     ))}
                   </tbody>

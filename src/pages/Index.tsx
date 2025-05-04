@@ -8,12 +8,14 @@ import AnimeCarousel from "@/components/AnimeCarousel";
 import FeaturedNewsCarousel from "@/components/FeaturedNewsCarousel";
 import Footer from "@/components/Footer";
 import NewsletterForm from "@/components/NewsletterForm";
+import ShareDataForm from "@/components/ShareDataForm";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Index = () => {
   const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
+  const [isShareFormOpen, setIsShareFormOpen] = useState(false);
 
   // Animation variants
   const containerVariants = {
@@ -79,7 +81,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-purple-900/10">
+    <div className="min-h-screen theme-home">
       <Navigation />
       
       {/* Hero Section */}
@@ -104,7 +106,7 @@ const Index = () => {
       </section>
       
       {/* Anime Carousel */}
-      <section className="py-12 bg-gradient-to-r from-indigo-900/20 via-background to-indigo-900/20">
+      <section className="py-12 theme-home">
         <div className="retro-container">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -122,7 +124,7 @@ const Index = () => {
       </section>
       
       {/* Featured Reviews */}
-      <section className="py-12">
+      <section className="py-12 theme-reviews">
         <div className="retro-container">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -131,9 +133,9 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <h2 className="font-silkscreen text-2xl md:text-3xl">RESEÑAS DESTACADAS</h2>
+            <h2 className="font-silkscreen text-2xl md:text-3xl theme-reviews-text">RESEÑAS DESTACADAS</h2>
             <div className="h-px bg-border flex-grow"></div>
-            <Link to="/resenas" className="text-sm font-medium text-retro-purple flex items-center hover:underline">
+            <Link to="/resenas" className="text-sm font-medium text-retro-pink flex items-center hover:underline font-silkscreen">
               VER TODAS
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
@@ -147,18 +149,20 @@ const Index = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {featuredReviews.map((review) => (
-              <motion.div key={review.id} variants={itemVariants} whileHover={{ scale: 1.02 }}>
+              <motion.div key={review.id} variants={itemVariants} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                 <Link to="/resenas">
-                  <Card className="overflow-hidden border-2 border-retro-purple/30 h-full flex flex-col">
+                  <Card className="overflow-hidden border-2 border-retro-pink/30 h-full flex flex-col theme-reviews-card">
                     <div className="h-48 overflow-hidden">
-                      <img 
+                      <motion.img 
                         src={review.image} 
                         alt={review.title} 
-                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
                       />
                     </div>
                     <CardHeader className="pb-2">
-                      <CardTitle className="font-pixel text-retro-purple">{review.title}</CardTitle>
+                      <CardTitle className="font-pixel text-retro-pink">{review.title}</CardTitle>
                       <CardDescription className="flex">
                         {[...Array(review.rating)].map((_, i) => (
                           <span key={i} className="text-yellow-400">★</span>
@@ -177,7 +181,7 @@ const Index = () => {
       </section>
 
       {/* Featured Curiosities */}
-      <section className="py-12 bg-gradient-to-r from-blue-900/20 via-background to-blue-900/20">
+      <section className="py-12 theme-curiosities">
         <div className="retro-container">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -186,9 +190,9 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <h2 className="font-silkscreen text-2xl md:text-3xl">CURIOSIDADES</h2>
+            <h2 className="font-silkscreen text-2xl md:text-3xl theme-curiosities-text">CURIOSIDADES</h2>
             <div className="h-px bg-border flex-grow"></div>
-            <Link to="/curiosidades" className="text-sm font-medium text-blue-500 flex items-center hover:underline">
+            <Link to="/curiosidades" className="text-sm font-medium text-blue-500 flex items-center hover:underline font-silkscreen">
               VER TODAS
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
@@ -202,14 +206,16 @@ const Index = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {featuredCuriosities.map((item) => (
-              <motion.div key={item.id} variants={itemVariants} whileHover={{ scale: 1.02 }}>
+              <motion.div key={item.id} variants={itemVariants} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                 <Link to="/curiosidades">
-                  <Card className="h-full border-2 border-blue-500/30 overflow-hidden flex flex-col">
+                  <Card className="h-full border-2 border-blue-500/30 overflow-hidden flex flex-col theme-curiosities-card">
                     <div className="h-48 overflow-hidden">
-                      <img 
+                      <motion.img 
                         src={item.image} 
                         alt={item.title} 
-                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
                       />
                     </div>
                     <CardHeader className="pb-2">
@@ -220,7 +226,7 @@ const Index = () => {
                       <p className="font-vt323 text-lg">{item.excerpt}</p>
                     </CardContent>
                     <CardFooter>
-                      <Button variant="ghost" size="sm" className="text-blue-500">
+                      <Button variant="ghost" size="sm" className="text-blue-500 font-silkscreen">
                         LEER MÁS
                         <ArrowRight className="ml-1 h-4 w-4" />
                       </Button>
@@ -234,7 +240,7 @@ const Index = () => {
       </section>
 
       {/* Featured Top List */}
-      <section className="py-12">
+      <section className="py-12 theme-toplist">
         <div className="retro-container">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -243,9 +249,9 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <h2 className="font-silkscreen text-2xl md:text-3xl">TOP LISTS</h2>
+            <h2 className="font-silkscreen text-2xl md:text-3xl theme-toplist-text">TOP LISTS</h2>
             <div className="h-px bg-border flex-grow"></div>
-            <Link to="/top-list" className="text-sm font-medium text-amber-400 flex items-center hover:underline">
+            <Link to="/top-list" className="text-sm font-medium text-amber-400 flex items-center hover:underline font-silkscreen">
               VER TODAS
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
@@ -257,16 +263,17 @@ const Index = () => {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{ scale: 1.01 }}
+            transition={{ duration: 0.3 }}
           >
             <Link to="/top-list">
-              <Card className="border-2 border-amber-400/30 bg-gradient-to-br from-card to-amber-900/10">
+              <Card className="border-2 border-amber-400/30 theme-toplist-card">
                 <CardHeader>
                   <CardTitle className="font-pixel text-amber-400">{featuredTopList.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2 font-vt323 text-lg">
                     {featuredTopList.items.map((item, index) => (
-                      <li key={index} className={`${index === 0 ? 'text-yellow-400 font-semibold' : ''}`}>
+                      <li key={index} className={`${index === 0 ? 'text-yellow-400 font-semibold font-silkscreen' : 'font-vt323'}`}>
                         {item}
                       </li>
                     ))}
@@ -298,18 +305,29 @@ const Index = () => {
             </div>
             <h2 className="font-pixel text-3xl md:text-4xl text-retro-purple mb-4">¡ÚNETE A LA COMUNIDAD RETROANIME!</h2>
             <p className="text-lg max-w-2xl mx-auto mb-8 font-vt323">Forma parte de nuestra comunidad de amantes del anime retro donde compartimos recuerdos, análisis y celebramos la época dorada de la animación japonesa.</p>
-            <Button 
-              className="retro-button text-lg px-8 py-6 font-silkscreen"
-              onClick={() => setIsNewsletterOpen(true)}
-            >
-              SUSCRÍBETE A LA NEWSLETTER
-            </Button>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Button 
+                className="retro-button text-lg px-8 py-6 font-silkscreen"
+                onClick={() => setIsNewsletterOpen(true)}
+              >
+                SUSCRÍBETE A LA NEWSLETTER
+              </Button>
+              <Button 
+                className="bg-blue-500 hover:bg-blue-600 text-white text-lg px-8 py-6 font-silkscreen hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+                onClick={() => setIsShareFormOpen(true)}
+              >
+                COMPARTIR DATO
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Newsletter Form Dialog */}
       <NewsletterForm open={isNewsletterOpen} onOpenChange={setIsNewsletterOpen} />
+      
+      {/* Share Data Form Dialog */}
+      <ShareDataForm open={isShareFormOpen} onOpenChange={setIsShareFormOpen} />
 
       <Footer />
     </div>
