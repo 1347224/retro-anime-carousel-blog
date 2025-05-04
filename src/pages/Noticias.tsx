@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Newspaper, Calendar, Clock, Tag, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
@@ -34,7 +34,7 @@ const newsItems: NewsItem[] = [
     id: 2,
     title: "Especial retrospectiva: 25 años de 'Cowboy Bebop'",
     excerpt: "La obra maestra de Shinichiro Watanabe celebra su 25 aniversario con eventos globales.",
-    content: "Este año marca el 25 aniversario de Cowboy Bebop, la revolucionaria serie de Shinichiro Watanabe que redefinió lo que el anime podía ser para audiencias occidentales. Para celebrar este hito, se han anunciado eventos conmemorativos en todo el mundo, incluyendo proyecciones especiales, conciertos con la música de Yoko Kanno, y una exposición itinerante con arte original.\n\nAdemás, se ha anunciado una edición especial de aniversario en 4K UHD que incluirá material nunca antes visto y entrevistas exclusivas con el equipo creativo. Watanabe ha expresado su gratitud por el continuo apoyo a la serie y ha mencionado que, aunque no hay planes para una secuela, está trabajando en un nuevo proyecto que compartirá el espíritu innovador de Bebop.",
+    content: "Este año marca el 25 aniversario de Cowboy Bebop, la revolucionaria serie de Shinichiro Watanabe que redefinió lo que el anime podía ser para audiencias occidentales. Para celebrar este hito, se han anunciados eventos conmemorativos en todo el mundo, incluyendo proyecciones especiales, conciertos con la música de Yoko Kanno, y una exposición itinerante con arte original.\n\nAdemás, se ha anunciado una edición especial de aniversario en 4K UHD que incluirá material nunca antes visto y entrevistas exclusivas con el equipo creativo. Watanabe ha expresado su gratitud por el continuo apoyo a la serie y ha mencionado que, aunque no hay planes para una secuela, está trabajando en un nuevo proyecto que compartirá el espíritu innovador de Bebop.",
     date: "28/02/2025",
     readTime: "6 min",
     category: "Aniversarios",
