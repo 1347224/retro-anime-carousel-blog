@@ -79,6 +79,40 @@
     z-index: 51;
     pointer-events: none;
   }
+
+  @keyframes scanline {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  /* Font classes */
+  .font-pixel {
+    font-family: 'Press Start 2P', cursive;
+  }
+
+  .font-silkscreen {
+    font-family: 'Silkscreen', cursive;
+  }
+
+  .font-vt323 {
+    font-family: 'VT323', monospace;
+  }
 }
 
 @layer components {
@@ -115,5 +149,9 @@
   .glowing-border {
     @apply relative border-2 border-retro-purple/50 rounded-lg overflow-hidden;
     box-shadow: 0 0 10px rgba(155, 135, 245, 0.3), inset 0 0 10px rgba(155, 135, 245, 0.3);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 }

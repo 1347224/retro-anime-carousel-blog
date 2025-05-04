@@ -51,6 +51,72 @@ const animeReviews: AnimeReview[] = [
     rating: 4,
     opinion: "Serie pionera de aventuras mitológicas con personajes memorables. Aunque con ritmo irregular, su épica narrativa capturó a toda una generación.",
     worthWatching: "Sí, aunque hay que tener en cuenta su ritmo y animación de la época. Su legado cultural es innegable."
+  },
+  {
+    id: 4,
+    title: "Cowboy Bebop",
+    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    year: "1998-1999",
+    studio: "Sunrise",
+    director: "Shinichirō Watanabe",
+    rating: 5,
+    opinion: "Obra maestra que mezcla géneros como el western, noir y ciencia ficción con jazz. Su narrativa episódica pero coherente permite explorar las historias de un grupo de cazarrecompensas espaciales con pasados complicados.",
+    worthWatching: "Imprescindible. Su estilo visual, narrativa y banda sonora siguen siendo insuperables. Cada episodio es una pequeña obra de arte."
+  },
+  {
+    id: 5,
+    title: "Serial Experiments Lain",
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    year: "1998",
+    studio: "Triangle Staff",
+    director: "Ryūtarō Nakamura",
+    rating: 5,
+    opinion: "Serie experimental que explora la relación entre humanidad, tecnología e identidad. Fue sorprendentemente profética sobre internet y las redes sociales en una época pre-digital masiva.",
+    worthWatching: "Absolutamente, aunque requiere paciencia. Su visión de la tecnología y la identidad digital es más relevante hoy que cuando se estrenó."
+  },
+  {
+    id: 6,
+    title: "Rurouni Kenshin",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    year: "1996-1998",
+    studio: "Studio Gallop, Studio Deen",
+    director: "Kazuhiro Furuhashi",
+    rating: 4,
+    opinion: "Drama histórico ambientado en la era Meiji que sigue al ex-asesino Kenshin Himura en su camino de redención. Combina acción intensa con momentos emotivos y toques de humor.",
+    worthWatching: "Sí, especialmente los dos primeros arcos argumentales. Su combinación de acción histórica y desarrollo de personajes sigue siendo atractiva."
+  },
+  {
+    id: 7,
+    title: "Perfect Blue",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    year: "1997",
+    studio: "Madhouse",
+    director: "Satoshi Kon",
+    rating: 5,
+    opinion: "Thriller psicológico brillante sobre la fama, la identidad y la obsesión. Su narrativa fragmentada y visualmente innovadora crea una experiencia desconcertante e inolvidable.",
+    worthWatching: "Definitivamente. Su influencia en cineastas como Darren Aronofsky es evidente y sus temas sobre cultura de celebridades son aún más relevantes hoy."
+  },
+  {
+    id: 8,
+    title: "Card Captor Sakura",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    year: "1998-2000",
+    studio: "Madhouse",
+    director: "Morio Asaka",
+    rating: 4,
+    opinion: "Refinó el género magical girl con personajes carismáticos y desarrollo emocional genuino. Su diseño visual es exquisito y sus relaciones complejas van más allá del típico anime infantil.",
+    worthWatching: "Sí. Bajo su apariencia de serie infantil hay una narración sofisticada y sensible sobre el crecimiento, las relaciones y la identidad."
+  },
+  {
+    id: 9,
+    title: "Trigun",
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    year: "1998",
+    studio: "Madhouse",
+    director: "Satoshi Nishimura",
+    rating: 4,
+    opinion: "Space western con un protagonista carismático que oculta un pasado oscuro. Mezcla brillantemente la comedia absurda con momentos dramáticos profundamente emotivos.",
+    worthWatching: "Definitivamente. Su balance entre humor, acción y drama existencial, junto a un protagonista memorable, la hacen una serie única."
   }
 ];
 
@@ -90,8 +156,8 @@ const Resenas = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="font-pixel text-4xl md:text-5xl text-retro-purple mb-4">Reseñas de Anime Retro</h1>
-          <p className="text-lg max-w-2xl mx-auto">Análisis profundos de series y películas clásicas que marcaron una época y definieron la estética del anime que conocemos hoy.</p>
+          <h1 className="font-pixel text-4xl md:text-5xl text-retro-purple mb-4">RESEÑAS DE ANIME RETRO</h1>
+          <p className="text-lg max-w-2xl mx-auto font-vt323">Análisis profundos de series y películas clásicas que marcaron una época y definieron la estética del anime que conocemos hoy.</p>
         </motion.div>
 
         <motion.div
@@ -118,7 +184,7 @@ const Resenas = () => {
                 </div>
                 <CardHeader className="pb-2">
                   <CardTitle className="font-pixel text-retro-purple">{review.title}</CardTitle>
-                  <CardDescription>{review.year} • {review.studio}</CardDescription>
+                  <CardDescription className="font-vt323">{review.year} • {review.studio}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
                   <div className="flex items-center mb-2">
@@ -129,10 +195,10 @@ const Resenas = () => {
                       />
                     ))}
                   </div>
-                  <p className="line-clamp-3 text-sm">{review.opinion}</p>
+                  <p className="line-clamp-3 text-sm font-vt323">{review.opinion}</p>
                 </CardContent>
                 <CardFooter className="pt-2 border-t border-border">
-                  <p className="text-xs text-muted-foreground">Director: {review.director}</p>
+                  <p className="text-xs text-muted-foreground font-vt323">Director: {review.director}</p>
                 </CardFooter>
               </Card>
             </motion.div>
@@ -172,7 +238,7 @@ const Resenas = () => {
                     </button>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                  <div className="grid grid-cols-2 gap-4 mb-4 text-sm font-vt323">
                     <div>
                       <p className="text-muted-foreground">Año:</p>
                       <p>{selectedReview.year}</p>
@@ -198,12 +264,12 @@ const Resenas = () => {
                     </div>
                   </div>
 
-                  <div className="mb-4">
+                  <div className="mb-4 font-vt323">
                     <h3 className="font-semibold mb-2">Opinión Personal</h3>
                     <p>{selectedReview.opinion}</p>
                   </div>
 
-                  <div>
+                  <div className="font-vt323">
                     <h3 className="font-semibold mb-2">¿Vale la pena verlo hoy?</h3>
                     <p>{selectedReview.worthWatching}</p>
                   </div>

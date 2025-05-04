@@ -1,276 +1,160 @@
 
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Info, BookOpen, Sparkles } from "lucide-react";
+import CuriosidadCard from "@/components/CuriosidadCard";
+import { Button } from "@/components/ui/button";
+
+interface Curiosidad {
+  id: number;
+  title: string;
+  category: string;
+  content: string;
+  image: string;
+  tags: string[];
+}
+
+const curiosidades: Curiosidad[] = [
+  {
+    id: 1,
+    title: "Evangelion: Depresión Creativa",
+    category: "Behind the Scenes",
+    content: "Hideaki Anno, el creador de Neon Genesis Evangelion, concibió la serie mientras luchaba contra una severa depresión. Esta experiencia personal influyó profundamente en los temas de la serie, especialmente en las luchas internas del protagonista Shinji Ikari. La serie se convirtió en una forma de terapia para Anno, quien proyectó muchos de sus propios conflictos psicológicos en la narrativa. Esto explica el enfoque cada vez más introspectivo de la serie, culminando en los controvertidos episodios finales que se adentran en la psique de los personajes.",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    tags: ["evangelion", "hideaki-anno", "depresion"]
+  },
+  {
+    id: 2,
+    title: "Referencias Culturales en Evangelion",
+    category: "Easter Eggs",
+    content: "Neon Genesis Evangelion está repleto de simbolismo religioso y referencias culturales. Los nombres de los ángeles provienen del cristianismo y judaísmo. Los diseños de los EVA están inspirados en deidades japonesas y la mitología sintoísta. Incluso el famoso símbolo de NERV es una referencia a la hoja de higuera que usaron Adán y Eva. Anno ha mencionado que incluyó símbolos cristianos principalmente por su exotismo visual en Japón, más que por su significado teológico profundo, aunque esto no ha impedido décadas de análisis y teorías por parte de los fans.",
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    tags: ["evangelion", "simbolismo", "religion"]
+  },
+  {
+    id: 3,
+    title: "El origen de los personajes de Dragon Ball",
+    category: "Inspiración",
+    content: "Akira Toriyama, el creador de Dragon Ball, basó muchos de sus personajes en la novela clásica china 'Viaje al Oeste'. Goku está inspirado en Sun Wukong (el Rey Mono), un ser sobrenatural con un báculo mágico que puede crecer y encogerse (como el Power Pole de Goku). El maestro Roshi se basa en el monje Tang Sanzang, mientras que Oolong y Yamcha tienen equivalentes en los compañeros del Rey Mono. Esta inspiración es evidente en las primeras aventuras de Dragon Ball, aunque la serie evolucionó después hacia un enfoque más orientado a las artes marciales y batallas.",
+    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    tags: ["dragon-ball", "viaje-al-oeste", "akira-toriyama"]
+  },
+  {
+    id: 4,
+    title: "La evolución del diseño de Pikachu",
+    category: "Diseño",
+    content: "Pikachu, la mascota más reconocible de Pokémon, ha experimentado cambios significativos en su diseño desde su creación. El Pikachu original era notablemente más rechoncho, con mejillas más prominentes y un cuerpo más redondeado. Con el paso de los años, su diseño se ha estilizado, haciéndose más delgado y adorable. Ken Sugimori, el director de arte original de Pokémon, quiso que Pikachu fuera reconocible por su silueta única, lo que explica su distintiva cola en forma de rayo. El color amarillo brillante se eligió específicamente para destacar entre otros personajes y atraer a un público más joven.",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    tags: ["pokemon", "pikachu", "diseño"]
+  },
+  {
+    id: 5,
+    title: "El origen accidental de Sailor Moon",
+    category: "Creación",
+    content: "Naoko Takeuchi, creadora de Sailor Moon, inicialmente había diseñado un manga muy diferente llamado 'Codename: Sailor V'. Su editor le sugirió expandir el concepto a un equipo de heroínas basadas en los planetas del sistema solar, lo que eventualmente se convirtió en Sailor Moon. Curiosamente, Takeuchi tenía formación en farmacia y química, lo que influyó en la precisión científica de algunos elementos de la serie. El éxito de Sailor Moon fue tan grande que revolucionó el género de magical girls, añadiendo elementos de acción y drama que no eran comunes en ese tipo de historias dirigidas a niñas.",
+    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    tags: ["sailor-moon", "naoko-takeuchi", "magical-girl"]
+  },
+  {
+    id: 6,
+    title: "La influencia de Studio Ghibli en Disney",
+    category: "Influencia Cultural",
+    content: "La relación entre Studio Ghibli y Disney ha sido significativa para ambas compañías. Durante los años 90, cuando Disney adquirió los derechos de distribución internacional de las películas de Ghibli, John Lasseter de Pixar (entonces parte de Disney) se declaró un gran admirador del trabajo de Miyazaki. Esta admiración influyó en el enfoque de Pixar hacia la narración visual y la creación de mundos detallados. Miyazaki, por su parte, ha citado a Disney como una influencia temprana, creando una relación circular de inspiración mutua entre estos gigantes de la animación de distintas culturas.",
+    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    tags: ["ghibli", "disney", "miyazaki", "animacion"]
+  }
+];
 
 const Curiosidades = () => {
-  const cardVariants = {
-    offscreen: { y: 50, opacity: 0 },
-    onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8
-      }
+  const [filteredCuriosidades, setFilteredCuriosidades] = useState(curiosidades);
+  const [activeFilter, setActiveFilter] = useState("all");
+  
+  const categories = ["all", ...Array.from(new Set(curiosidades.map(item => item.category)))];
+  
+  const handleFilter = (category: string) => {
+    setActiveFilter(category);
+    if (category === "all") {
+      setFilteredCuriosidades(curiosidades);
+    } else {
+      setFilteredCuriosidades(curiosidades.filter(item => item.category === category));
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-purple-900/10 text-foreground">
+    <div className="min-h-screen bg-gradient-to-b from-background to-background/80 text-foreground">
       <Navigation />
       
       <div className="retro-container py-12">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="font-pixel text-4xl md:text-5xl bg-gradient-to-r from-blue-600 via-retro-purple to-pink-500 bg-clip-text text-transparent mb-4">Curiosidades y Datos Ocultos</h1>
-          <p className="text-lg max-w-2xl mx-auto">Descubre los secretos mejor guardados detrás de tus animes retro favoritos, referencias culturales y easter eggs que quizás nunca notaste.</p>
+          <h1 className="font-pixel text-4xl md:text-5xl text-blue-500 mb-4">CURIOSIDADES DE ANIME</h1>
+          <p className="text-lg max-w-2xl mx-auto font-vt323">Descubre datos fascinantes, secretos de producción y detalles ocultos de tus animes favoritos que quizás nunca habías escuchado.</p>
         </motion.div>
 
-        <Tabs defaultValue="behind-scenes" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-12">
-            <TabsTrigger value="behind-scenes" className="flex items-center gap-2">
-              <Info className="h-4 w-4" />
-              <span className="hidden sm:inline">Behind the Scenes</span>
-            </TabsTrigger>
-            <TabsTrigger value="comparisons" className="flex items-center gap-2">
-              <BookOpen className="h-4 w-4" />
-              <span className="hidden sm:inline">Manga vs Anime</span>
-            </TabsTrigger>
-            <TabsTrigger value="easter-eggs" className="flex items-center gap-2">
-              <Sparkles className="h-4 w-4" />
-              <span className="hidden sm:inline">Easter Eggs</span>
-            </TabsTrigger>
-          </TabsList>
-          
-          {/* Behind the Scenes */}
-          <TabsContent value="behind-scenes">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-              >
-                <Card className="h-full border-2 border-blue-600/30 overflow-hidden bg-gradient-to-br from-card to-blue-900/10">
-                  <CardHeader>
-                    <CardTitle className="font-pixel text-blue-500">Dragon Ball Z: Sangre Azul</CardTitle>
-                    <CardDescription>Censura Creativa</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p>¿Sabías que en algunas versiones internacionales de Dragon Ball Z, la sangre fue coloreada de azul o negro para evitar problemas de censura? Esta decisión provocó confusión entre los fans, que bromeaban sobre si los saiyajin tenían sangre de color diferente.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
+        <motion.div 
+          className="flex flex-wrap justify-center gap-2 mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          {categories.map(category => (
+            <Button
+              key={category}
+              onClick={() => handleFilter(category)}
+              variant={activeFilter === category ? "default" : "outline"}
+              className={`font-silkscreen ${
+                activeFilter === category 
+                  ? "bg-blue-500 hover:bg-blue-600" 
+                  : "border-blue-500 text-blue-500"
+              }`}
+            >
+              {category === "all" ? "TODAS" : category.toUpperCase()}
+            </Button>
+          ))}
+        </motion.div>
 
+        <AnimatePresence>
+          <motion.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {filteredCuriosidades.map(item => (
               <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
+                key={item.id}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.4 }}
+                layout
               >
-                <Card className="h-full border-2 border-blue-600/30 overflow-hidden bg-gradient-to-br from-card to-blue-900/10">
-                  <CardHeader>
-                    <CardTitle className="font-pixel text-blue-500">Evangelion: Depresión Creativa</CardTitle>
-                    <CardDescription>El estado mental detrás de una obra maestra</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p>Hideaki Anno, creador de Neon Genesis Evangelion, creó la serie mientras luchaba contra una severa depresión. Muchos de los temas oscuros y psicológicos de la serie reflejan su propio estado mental, y la producción se volvió más experimental y surrealista a medida que la serie avanzaba.</p>
-                  </CardContent>
-                </Card>
+                <CuriosidadCard
+                  id={item.id}
+                  title={item.title}
+                  category={item.category}
+                  content={item.content}
+                  image={item.image}
+                />
               </motion.div>
-
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-              >
-                <Card className="h-full border-2 border-blue-600/30 overflow-hidden bg-gradient-to-br from-card to-blue-900/10">
-                  <CardHeader>
-                    <CardTitle className="font-pixel text-blue-500">Pokémon: Episodio Prohibido</CardTitle>
-                    <CardDescription>El incidente de las convulsiones</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p>El episodio 38 de Pokémon, "Dennō Senshi Porygon", fue prohibido mundialmente después de que más de 600 niños japoneses fueran hospitalizados con síntomas similares a la epilepsia tras ver una secuencia con destellos rojos y azules. Este incidente llevó a revisar los estándares de animación en todo el mundo.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-              >
-                <Card className="h-full border-2 border-blue-600/30 overflow-hidden bg-gradient-to-br from-card to-blue-900/10">
-                  <CardHeader>
-                    <CardTitle className="font-pixel text-blue-500">Cowboy Bebop: Homenajes Cinematográficos</CardTitle>
-                    <CardDescription>Un collage de referencias</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p>El director Shinichirō Watanabe llenó Cowboy Bebop de referencias a películas clásicas. Cada episodio contiene homenajes a obras de Bruce Lee, Alien, filmes noir, westerns y numerosas películas que Watanabe admiraba, creando un tapiz cultural que contribuyó a su atractivo internacional.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </TabsContent>
-          
-          {/* Manga vs Anime Comparisons */}
-          <TabsContent value="comparisons">
-            <div className="space-y-8">
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-              >
-                <Card className="overflow-hidden border-2 border-green-600/30 bg-gradient-to-br from-card to-green-900/10">
-                  <div className="md:flex">
-                    <div className="md:w-1/3 bg-gradient-to-r from-green-900/20 to-card p-8 flex flex-col justify-center">
-                      <h3 className="font-pixel text-xl text-green-500 mb-4">Akira: Un Manga Monumental</h3>
-                      <p className="text-sm">El manga de Akira comprende más de 2000 páginas y una historia mucho más compleja que lo que se pudo incluir en la película de 1988. Katsuhiro Otomo tuvo que condensar drásticamente su propia obra para la adaptación cinematográfica.</p>
-                    </div>
-                    <div className="md:w-2/3 p-8">
-                      <h4 className="font-semibold mb-4 text-lg">Principales diferencias:</h4>
-                      <ul className="space-y-2 list-disc pl-5">
-                        <li>La película termina aproximadamente a mitad del arco narrativo del manga.</li>
-                        <li>Los personajes de Kaori, Chiyoko y el Coronel tienen roles mucho más desarrollados en el manga.</li>
-                        <li>El manga explora extensamente las facciones políticas y religiosas que se forman tras el despertar de Akira.</li>
-                        <li>La transformación final de Tetsuo es mucho más gradual y aterradora en el manga, extendiéndose a lo largo de varios volúmenes.</li>
-                        <li>El manga incluye una parte final post-apocalíptica ambientada en Neo-Tokyo destruida que nunca apareció en la película.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-              >
-                <Card className="overflow-hidden border-2 border-green-600/30 bg-gradient-to-br from-card to-green-900/10">
-                  <div className="md:flex">
-                    <div className="md:w-1/3 bg-gradient-to-r from-green-900/20 to-card p-8 flex flex-col justify-center">
-                      <h3 className="font-pixel text-xl text-green-500 mb-4">Sailor Moon: Censura y Adaptación</h3>
-                      <p className="text-sm">La versión occidental de Sailor Moon sufrió numerosos cambios respecto al manga y anime original japonés, incluyendo la eliminación de personajes LGBT+ y la suavización de temas considerados adultos.</p>
-                    </div>
-                    <div className="md:w-2/3 p-8">
-                      <h4 className="font-semibold mb-4 text-lg">Cambios controversiales:</h4>
-                      <ul className="space-y-2 list-disc pl-5">
-                        <li>La pareja homosexual formada por Sailor Uranus (Haruka) y Sailor Neptune (Michiru) fue presentada como "primas" en la versión occidental.</li>
-                        <li>Zoisite, villano masculino, fue cambiado a mujer en el doblaje para evitar mostrar su relación romántica con Kunzite.</li>
-                        <li>Fish Eye, personaje masculino que se vestía como mujer, fue presentado directamente como un personaje femenino.</li>
-                        <li>Numerosas escenas de transformación fueron recortadas o censuradas por mostrar siluetas desnudas.</li>
-                        <li>El manga original de Naoko Takeuchi contiene temas más oscuros y maduros que fueron suavizados tanto en el anime japonés como, especialmente, en las versiones occidentales.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            </div>
-          </TabsContent>
-          
-          {/* Easter Eggs */}
-          <TabsContent value="easter-eggs">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-              >
-                <Card className="h-full border-2 border-pink-600/30 overflow-hidden bg-gradient-to-br from-card to-pink-900/10">
-                  <CardHeader>
-                    <CardTitle className="font-pixel text-pink-500">Universo Compartido</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>En el universo de Studio Ghibli, aparecen personajes cruzando entre diferentes películas. El más notable es el "Totoro de peluche" que aparece en "El viaje de Chihiro" y otras producciones como un guiño al clásico de Miyazaki.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-              >
-                <Card className="h-full border-2 border-pink-600/30 overflow-hidden bg-gradient-to-br from-card to-pink-900/10">
-                  <CardHeader>
-                    <CardTitle className="font-pixel text-pink-500">Referencia a Star Wars</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>En "Cowboy Bebop", hay una nave llamada "Red Tail" que es una clara referencia al "Halcón Milenario" de Star Wars. Además, en varios episodios aparecen homenajes visuales a la saga de George Lucas.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-              >
-                <Card className="h-full border-2 border-pink-600/30 overflow-hidden bg-gradient-to-br from-card to-pink-900/10">
-                  <CardHeader>
-                    <CardTitle className="font-pixel text-pink-500">Cameo de Nausicaä</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>En "Porco Rosso", hay una escena donde se puede ver un avión con la silueta de Nausicaä volando en su planeador, conectando así dos mundos diferentes de Miyazaki en un sutil homenaje.</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={cardVariants}
-                className="md:col-span-3"
-              >
-                <Card className="border-2 border-pink-600/30 overflow-hidden bg-gradient-to-br from-card to-pink-900/10">
-                  <CardHeader>
-                    <CardTitle className="font-pixel text-pink-500">Referencias Culturales en Evangelion</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="mb-4">Neon Genesis Evangelion está repleto de simbolismo religioso y referencias culturales que muchos espectadores pueden pasar por alto:</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <h4 className="font-semibold mb-2">Referencias Religiosas:</h4>
-                        <ul className="list-disc pl-5 space-y-1">
-                          <li>Los Ángeles toman nombres de ángeles bíblicos como Sachiel, Ramiel y Arael.</li>
-                          <li>La organización SEELE utiliza símbolos derivados de textos judeo-cristianos y cabalísticos.</li>
-                          <li>La "Lanza de Longinus" hace referencia a la lanza que hirió a Jesús durante la crucifixión.</li>
-                          <li>El "Mar de LCL" y el "Huevo de Lilith" tienen conexiones con el mito de la creación en varias tradiciones.</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Referencias Literarias y Filosóficas:</h4>
-                        <ul className="list-disc pl-5 space-y-1">
-                          <li>El título del episodio "The Hedgehog's Dilemma" se refiere a un concepto de Schopenhauer sobre las relaciones humanas.</li>
-                          <li>Los "Manuscritos del Mar Muerto" en la serie son una referencia a textos históricos reales.</li>
-                          <li>El "Proyecto de Complementación Humana" tiene vínculos con las ideas de Nietzsche sobre la evolución humana.</li>
-                          <li>Las escenas del tren con Shinji y Gendo recuerdan a aspectos del existencialismo de Sartre.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </div>
-          </TabsContent>
-        </Tabs>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+        
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="font-pixel text-2xl text-blue-500 mb-4">¿CONOCES ALGUNA CURIOSIDAD?</h2>
+          <p className="font-vt323 text-lg mb-6">¿Tienes algún dato interesante sobre anime retro que quieras compartir? ¡Escríbenos y podría aparecer en nuestra lista!</p>
+          <Button className="font-silkscreen bg-blue-500 hover:bg-blue-600">COMPARTIR DATO</Button>
+        </motion.div>
       </div>
       
       <Footer />

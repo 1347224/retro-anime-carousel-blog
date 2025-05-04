@@ -5,12 +5,16 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AnimeCarousel from "@/components/AnimeCarousel";
+import FeaturedNewsCarousel from "@/components/FeaturedNewsCarousel";
 import Footer from "@/components/Footer";
+import NewsletterForm from "@/components/NewsletterForm";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Index = () => {
+  const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -80,6 +84,24 @@ const Index = () => {
       
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Featured News Carousel Section */}
+      <section className="py-12 bg-gradient-to-r from-indigo-900/20 via-background to-indigo-900/20">
+        <div className="retro-container">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-pixel text-3xl md:text-4xl text-retro-purple mb-4">ÚLTIMA HORA</h2>
+            <p className="text-lg max-w-2xl mx-auto font-vt323">Lo más fresco del mundo del anime retro. Noticias, eventos y lanzamientos que no puedes perderte.</p>
+          </motion.div>
+          
+          <FeaturedNewsCarousel />
+        </div>
+      </section>
       
       {/* Anime Carousel */}
       <section className="py-12 bg-gradient-to-r from-indigo-900/20 via-background to-indigo-900/20">
@@ -91,8 +113,8 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="font-pixel text-3xl md:text-4xl text-retro-purple mb-4">Viaja al Pasado</h2>
-            <p className="text-lg max-w-2xl mx-auto">Explora nuestra colección de animes retro icónicos que definieron toda una era.</p>
+            <h2 className="font-pixel text-3xl md:text-4xl text-retro-purple mb-4">VIAJA AL PASADO</h2>
+            <p className="text-lg max-w-2xl mx-auto font-vt323">Explora nuestra colección de animes retro icónicos que definieron toda una era.</p>
           </motion.div>
           
           <AnimeCarousel />
@@ -109,10 +131,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <h2 className="font-silkscreen text-2xl md:text-3xl">Reseñas Destacadas</h2>
+            <h2 className="font-silkscreen text-2xl md:text-3xl">RESEÑAS DESTACADAS</h2>
             <div className="h-px bg-border flex-grow"></div>
             <Link to="/resenas" className="text-sm font-medium text-retro-purple flex items-center hover:underline">
-              Ver todas
+              VER TODAS
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </motion.div>
@@ -144,7 +166,7 @@ const Index = () => {
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                      <p>{review.excerpt}</p>
+                      <p className="font-vt323 text-lg">{review.excerpt}</p>
                     </CardContent>
                   </Card>
                 </Link>
@@ -164,10 +186,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <h2 className="font-silkscreen text-2xl md:text-3xl">Curiosidades</h2>
+            <h2 className="font-silkscreen text-2xl md:text-3xl">CURIOSIDADES</h2>
             <div className="h-px bg-border flex-grow"></div>
             <Link to="/curiosidades" className="text-sm font-medium text-blue-500 flex items-center hover:underline">
-              Ver todas
+              VER TODAS
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </motion.div>
@@ -195,11 +217,11 @@ const Index = () => {
                       <CardDescription>{item.category}</CardDescription>
                     </CardHeader>
                     <CardContent className="flex-grow">
-                      <p>{item.excerpt}</p>
+                      <p className="font-vt323 text-lg">{item.excerpt}</p>
                     </CardContent>
                     <CardFooter>
                       <Button variant="ghost" size="sm" className="text-blue-500">
-                        Leer más
+                        LEER MÁS
                         <ArrowRight className="ml-1 h-4 w-4" />
                       </Button>
                     </CardFooter>
@@ -221,10 +243,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="flex items-center mb-8 space-x-4"
           >
-            <h2 className="font-silkscreen text-2xl md:text-3xl">Top Lists</h2>
+            <h2 className="font-silkscreen text-2xl md:text-3xl">TOP LISTS</h2>
             <div className="h-px bg-border flex-grow"></div>
             <Link to="/top-list" className="text-sm font-medium text-amber-400 flex items-center hover:underline">
-              Ver todas
+              VER TODAS
               <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </motion.div>
@@ -242,7 +264,7 @@ const Index = () => {
                   <CardTitle className="font-pixel text-amber-400">{featuredTopList.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ol className="list-decimal pl-5 space-y-2">
+                  <ol className="list-decimal pl-5 space-y-2 font-vt323 text-lg">
                     {featuredTopList.items.map((item, index) => (
                       <li key={index} className={`${index === 0 ? 'text-yellow-400 font-semibold' : ''}`}>
                         {item}
@@ -251,8 +273,8 @@ const Index = () => {
                   </ol>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" className="border-amber-400/30 text-amber-400 hover:bg-amber-400/10">
-                    Ver lista completa
+                  <Button variant="outline" className="border-amber-400/30 text-amber-400 hover:bg-amber-400/10 font-silkscreen">
+                    VER LISTA COMPLETA
                   </Button>
                 </CardFooter>
               </Card>
@@ -274,12 +296,20 @@ const Index = () => {
             <div className="pixelated-border p-1 mb-6 inline-block">
               <div className="h-12 w-12 bg-retro-purple rounded-full mx-auto animate-pulse"></div>
             </div>
-            <h2 className="font-pixel text-3xl md:text-4xl text-retro-purple mb-4">¡Únete a la comunidad RetroAnime!</h2>
-            <p className="text-lg max-w-2xl mx-auto mb-8">Forma parte de nuestra comunidad de amantes del anime retro donde compartimos recuerdos, análisis y celebramos la época dorada de la animación japonesa.</p>
-            <Button className="retro-button text-lg px-8 py-6 font-silkscreen">Suscríbete a la Newsletter</Button>
+            <h2 className="font-pixel text-3xl md:text-4xl text-retro-purple mb-4">¡ÚNETE A LA COMUNIDAD RETROANIME!</h2>
+            <p className="text-lg max-w-2xl mx-auto mb-8 font-vt323">Forma parte de nuestra comunidad de amantes del anime retro donde compartimos recuerdos, análisis y celebramos la época dorada de la animación japonesa.</p>
+            <Button 
+              className="retro-button text-lg px-8 py-6 font-silkscreen"
+              onClick={() => setIsNewsletterOpen(true)}
+            >
+              SUSCRÍBETE A LA NEWSLETTER
+            </Button>
           </motion.div>
         </div>
       </section>
+
+      {/* Newsletter Form Dialog */}
+      <NewsletterForm open={isNewsletterOpen} onOpenChange={setIsNewsletterOpen} />
 
       <Footer />
     </div>
