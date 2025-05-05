@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -431,7 +432,7 @@ const Noticias = () => {
               </div>
               <div className="p-6 border-t border-blue-500/20">
                 <Button 
-                  onClick={()={() => setSelectedNews(null)}
+                  onClick={() => setSelectedNews(null)}
                   className="bg-blue-600 hover:bg-blue-700 font-silkscreen"
                 >
                   Volver a noticias
