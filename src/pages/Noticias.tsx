@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Search } from "lucide-react";
+import { Calendar, Clock, Search, Newspaper } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 interface NewsItem {
