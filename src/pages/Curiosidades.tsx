@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import CuriosidadCard from "@/components/CuriosidadCard";
+import ShareDataForm from "@/components/ShareDataForm";
 import { Button } from "@/components/ui/button";
 
 interface Curiosidad {
@@ -69,6 +70,7 @@ const curiosidades: Curiosidad[] = [
 const Curiosidades = () => {
   const [filteredCuriosidades, setFilteredCuriosidades] = useState(curiosidades);
   const [activeFilter, setActiveFilter] = useState("all");
+  const [isShareFormOpen, setIsShareFormOpen] = useState(false);
   
   const categories = ["all", ...Array.from(new Set(curiosidades.map(item => item.category)))];
   
@@ -153,10 +155,14 @@ const Curiosidades = () => {
         >
           <h2 className="font-pixel text-2xl text-blue-500 mb-4">¿CONOCES ALGUNA CURIOSIDAD?</h2>
           <p className="font-vt323 text-lg mb-6">¿Tienes algún dato interesante sobre anime retro que quieras compartir? ¡Escríbenos y podría aparecer en nuestra lista!</p>
-          <Button className="font-silkscreen bg-blue-500 hover:bg-blue-600">COMPARTIR DATO</Button>
+          <Button 
+            className="font-silkscreen bg-blue-500 hover:bg-blue-600"
+            onClick={() => setIsShareFormOpen(true)}
+          >COMPARTIR DATO</Button>
         </motion.div>
       </div>
       
+      <ShareDataForm open={isShareFormOpen} onOpenChange={setIsShareFormOpen} />
       <Footer />
     </div>
   );

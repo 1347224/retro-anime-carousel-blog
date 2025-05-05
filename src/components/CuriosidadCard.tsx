@@ -1,9 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import ShareDataForm from "./ShareDataForm";
 
 interface CuriosidadCardProps {
   id: number;
@@ -15,7 +13,6 @@ interface CuriosidadCardProps {
 
 const CuriosidadCard = ({ id, title, category, content, image }: CuriosidadCardProps) => {
   const [expanded, setExpanded] = useState(false);
-  const [isShareFormOpen, setIsShareFormOpen] = useState(false);
 
   return (
     <motion.div 
@@ -42,7 +39,9 @@ const CuriosidadCard = ({ id, title, category, content, image }: CuriosidadCardP
         </div>
         
         <CardHeader className="pb-2">
-          <CardTitle className="font-pixel text-blue-500">{title}</CardTitle>
+          <CardTitle className="font-silkscreen text-blue-500 text-base md:text-lg lg:text-xl line-clamp-2">
+            {title}
+          </CardTitle>
         </CardHeader>
         
         <CardContent className="flex-grow flex flex-col">
@@ -66,23 +65,9 @@ const CuriosidadCard = ({ id, title, category, content, image }: CuriosidadCardP
                 LEER MÁS
               </motion.span>
             )}
-            
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="ml-auto border-blue-500/30 text-blue-500 hover:bg-blue-500/10 font-silkscreen"
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsShareFormOpen(true);
-              }}
-            >
-              COMPARTIR DATO
-            </Button>
           </div>
         </CardContent>
       </Card>
-      
-      <ShareDataForm open={isShareFormOpen} onOpenChange={setIsShareFormOpen} />
     </motion.div>
   );
 };
