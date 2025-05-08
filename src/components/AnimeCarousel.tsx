@@ -8,28 +8,28 @@ const animes = [
     id: 1,
     title: "Cowboy Bebop",
     year: "1998-1999",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&h=400&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BNGNlNjBkODEtZThlOC00YzUxLWI0MjMtMjk3YzJmMDFlNWZlXkEyXkFqcGdeQXVyNjI0MDg2NzE@._V1_.jpg",
     description: "Spike Spiegel and his crew aboard the spaceship Bebop chase bounties across the solar system in this genre-defining anime."
   },
   {
     id: 2,
     title: "Naruto",
     year: "2002-2007",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BZmQ5NGFiNWEtMmMyMC00MDdiLTg4YjktOGY5Yzc2MDUxMTE1XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
     description: "Follow the journey of Naruto Uzumaki, a young ninja seeking recognition from his peers and dreaming of becoming the Hokage."
   },
   {
     id: 3,
     title: "Bleach",
     year: "2004-2012",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=800&h=400&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BZjE0YjVjODQtZGY2NS00MDcyLThhMDAtZGQwMTZiOWNmNjRiXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
     description: "Ichigo Kurosaki gains the powers of a Soul Reaper and takes on the duty to defend humans from evil spirits and guide souls to the afterlife."
   },
   {
     id: 4,
     title: "Fullmetal Alchemist",
     year: "2003-2004",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=800&h=400&fit=crop",
+    image: "https://m.media-amazon.com/images/M/MV5BMmI5NmFlZjItOTBhOC00NGI0LWIyNDAtODJhOTJjZDEyMTYyXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
     description: "Two brothers search for the Philosopher's Stone to restore their bodies after a failed alchemical experiment."
   }
 ];

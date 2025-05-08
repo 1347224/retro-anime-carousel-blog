@@ -22,7 +22,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 1,
     title: "Akira",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BM2ZiZTk1ODgtMTZkNS00NTYxLWIxZTUtNWExZGYwZTRjODViXkEyXkFqcGdeQXVyMTE2MzA3MDM@._V1_.jpg",
     year: "1988",
     studio: "Tokyo Movie Shinsha",
     director: "Katsuhiro Otomo",
@@ -33,7 +33,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 2,
     title: "Ghost in the Shell",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BYWRiYjQyOGItNzQ1Mi00MGI1LWE3NjItNTg1ZDQwNjUwNDM2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
     year: "1995",
     studio: "Production I.G",
     director: "Mamoru Oshii",
@@ -44,7 +44,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 3,
     title: "Saint Seiya",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BMTMyNDg0Mzk3N15BMl5BanBnXkFtZTcwNDgxOTEyMQ@@._V1_.jpg",
     year: "1986-1989",
     studio: "Toei Animation",
     director: "Kōzō Morishita",
@@ -55,7 +55,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 4,
     title: "Cowboy Bebop",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BNGNlNjBkODEtZThlOC00YzUxLWI0MjMtMjk3YzJmMDFlNWZlXkEyXkFqcGdeQXVyNjI0MDg2NzE@._V1_.jpg",
     year: "1998-1999",
     studio: "Sunrise",
     director: "Shinichirō Watanabe",
@@ -66,7 +66,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 5,
     title: "Serial Experiments Lain",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BZjk2YmRkNTctOTYxYi00NDljLWE1ODEtNTRmZTY2MzJjYWMxXkEyXkFqcGdeQXVyMTI0MzA4NTgw._V1_.jpg",
     year: "1998",
     studio: "Triangle Staff",
     director: "Ryūtarō Nakamura",
@@ -77,7 +77,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 6,
     title: "Rurouni Kenshin",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BNjA3NjE3NTgwMV5BMl5BanBnXkFtZTcwMTgwNTIyMQ@@._V1_.jpg",
     year: "1996-1998",
     studio: "Studio Gallop, Studio Deen",
     director: "Kazuhiro Furuhashi",
@@ -88,7 +88,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 7,
     title: "Perfect Blue",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BMmMzOWNhNTYtYmY0My00OGJiLWIzNjgtZjYwZTIwYTU4YjM4XkEyXkFqcGdeQXVyNjUxMDQ0MTg@._V1_.jpg",
     year: "1997",
     studio: "Madhouse",
     director: "Satoshi Kon",
@@ -99,7 +99,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 8,
     title: "Card Captor Sakura",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BN2QwZWQ0NzYtNzJlOS00MzZlLTkzOTctZDYwNzMwNDM3N2UyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
     year: "1998-2000",
     studio: "Madhouse",
     director: "Morio Asaka",
@@ -110,7 +110,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 9,
     title: "Trigun",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://m.media-amazon.com/images/M/MV5BNjkzMjI3OTY5MV5BMl5BanBnXkFtZTcwODYxMjEyMQ@@._V1_.jpg",
     year: "1998",
     studio: "Madhouse",
     director: "Satoshi Nishimura",
