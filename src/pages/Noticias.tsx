@@ -109,7 +109,7 @@ const newsItems: NewsItem[] = [
     date: "02/09/2024",
     readTime: "4 min",
     category: "Música",
-    image: "https://images.unsplash.com/photo-1593078165899-c7d2ac0d6aea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://wallpapercave.com/wp/wp14664153.jpg"
   },
   {
     id: 10,
