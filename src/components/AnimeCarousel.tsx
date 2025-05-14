@@ -8,7 +8,7 @@ const animes = [
     id: 1,
     title: "Cowboy Bebop",
     year: "1998-1999",
-    image: "https://m.media-amazon.com/images/M/MV5BNGNlNjBkODEtZThlOC00YzUxLWI0MjMtMjk3YzJmMDFlNWZlXkEyXkFqcGdeQXVyNjI0MDg2NzE@._V1_.jpg",
+    image: "https://wallpapercave.com/wp/wp2755868.jpg",
     description: "Spike Spiegel and his crew aboard the spaceship Bebop chase bounties across the solar system in this genre-defining anime."
   },
   {
@@ -29,7 +29,7 @@ const animes = [
     id: 4,
     title: "Fullmetal Alchemist",
     year: "2003-2004",
-    image: "https://m.media-amazon.com/images/M/MV5BMmI5NmFlZjItOTBhOC00NGI0LWIyNDAtODJhOTJjZDEyMTYyXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+    image: "https://wallpapercave.com/wp/wp3276734.jpg",
     description: "Two brothers search for the Philosopher's Stone to restore their bodies after a failed alchemical experiment."
   }
 ];

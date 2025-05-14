@@ -13,14 +13,14 @@ const Index = () => {
     {
       id: 1,
       title: "Akira",
-      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "https://wallpapercave.com/wp/wp2609873.jpg",
       excerpt: "Obra maestra del cyberpunk que revolucionó la animación japonesa.",
       rating: 5
     },
     {
       id: 2,
       title: "Ghost in the Shell",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "https://wallpapercave.com/wp/wp2527761.jpg",
       excerpt: "Reflexión filosófica sobre la identidad en la era digital.",
       rating: 5
     }
@@ -32,14 +32,14 @@ const Index = () => {
       title: "Evangelion: Depresión Creativa",
       category: "Behind the Scenes",
       excerpt: "Hideaki Anno creó la serie mientras luchaba contra una severa depresión.",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+      image: "https://wallpapercave.com/wp/wp5158867.jpg"
     },
     {
       id: 2,
       title: "Referencias Culturales en Evangelion",
       category: "Easter Eggs",
       excerpt: "La serie está repleta de simbolismo religioso y referencias culturales.",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+      image: "https://wallpapercave.com/wp/wp7794825.jpg"
     }
   ];
 
