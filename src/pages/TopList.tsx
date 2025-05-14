@@ -35,7 +35,7 @@ const TopList = () => {
       rank: 4,
       title: "Code Geass",
       year: "2006",
-      image: "https://wallpapercave.com/wp/wp5887498.jpg",
+      image: "https://wallpapercave.com/wp/wp5972466.jpg",
       description: "Combina la política, estrategia y acción mecha en una narrativa compleja con uno de los finales más memorables del anime."
     },
     {
