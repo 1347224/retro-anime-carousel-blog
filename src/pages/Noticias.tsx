@@ -29,7 +29,7 @@ const newsItems: NewsItem[] = [
     date: "12/03/2025",
     readTime: "4 min",
     category: "Anuncios",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://areajugones.sport.es/wp-content/uploads/2024/04/akira-remake-anime-1.jpg"
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const newsItems: NewsItem[] = [
     date: "28/02/2025",
     readTime: "6 min",
     category: "Aniversarios",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://geekzilla.tech/home/wp-content/uploads/2023/08/Cowboy-bebop-geekzillatech.png"
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const newsItems: NewsItem[] = [
     date: "15/02/2025",
     readTime: "8 min",
     category: "Análisis",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://preview.redd.it/how-popular-is-retro-anime-today-v0-ob86gt3ivqhe1.jpg?width=1080&crop=smart&auto=webp&s=328cd3d50623f77be3f365bd7731dc954269a47c"
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ const newsItems: NewsItem[] = [
     date: "03/01/2025",
     readTime: "5 min",
     category: "Descubrimientos",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://diariodefriki.wordpress.com/wp-content/uploads/2021/07/vlcsnap-2021-07-25-18h37m22s810.png?w=1024"
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ const newsItems: NewsItem[] = [
     date: "20/12/2024",
     readTime: "7 min",
     category: "Exposiciones",
-    image: "https://images.unsplash.com/photo-1541562232579-512a21360020?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://mascultura.mx/wp-content/uploads/2020/05/Museo-Ghibli.jpg"
   },
   {
     id: 6,
