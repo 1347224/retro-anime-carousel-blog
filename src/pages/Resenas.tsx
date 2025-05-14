@@ -55,7 +55,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 4,
     title: "Cowboy Bebop",
-    image: "https://wallpapercave.com/wp/wp13529068.jpg",
+    image: "https://wallpapercave.com/wp/wp13879775.jpg",
     year: "1998-1999",
     studio: "Sunrise",
     director: "Shinichirō Watanabe",
@@ -77,7 +77,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 6,
     title: "Rurouni Kenshin",
-    image: "https://wallpapercave.com/wp/wp8679140.jpg",
+    image: "https://wallpapercave.com/wp/wp14919217.webp",
     year: "1996-1998",
     studio: "Studio Gallop, Studio Deen",
     director: "Kazuhiro Furuhashi",
@@ -99,7 +99,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 8,
     title: "Card Captor Sakura",
-    image: "https://wallpapercave.com/wp/wp5516705.jpg",
+    image: "https://wallpapercave.com/wp/wp5516832.jpg",
     year: "1998-2000",
     studio: "Madhouse",
     director: "Morio Asaka",
