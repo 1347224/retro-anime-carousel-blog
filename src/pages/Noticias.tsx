@@ -79,7 +79,7 @@ const newsItems: NewsItem[] = [
     date: "05/11/2024",
     readTime: "6 min",
     category: "Restauraciones",
-    image: "https://images.unsplash.com/photo-1611457194403-d3aca4cf9d11?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhH7QT0ucXAOIWu9afbGgmRUY3gPoudE9LZvBj2xQSu1OTUzMyPYy2vboEN18KV-75zoc9gI3pWx5YA3DxovuAD88MVOJv0QXF7L6gqaJHzRfVxFormYZb4JelrxVHthLliY9QqDjo7WzY/s1600/digimon-adventure-2.png"
   },
   {
     id: 7,
@@ -99,7 +99,7 @@ const newsItems: NewsItem[] = [
     date: "25/09/2024",
     readTime: "9 min",
     category: "Documentales",
-    image: "https://images.unsplash.com/photo-1492955869928-3c79239e1315?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://static1.srcdn.com/wordpress/wp-content/uploads/2025/03/untitled-design-2025-03-21t134632-665-2.jpg"
   },
   {
     id: 9,
@@ -187,7 +187,7 @@ const Noticias = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-10"></div>
         <motion.div 
-          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80&ixlib=rb-4.0.3')] bg-cover bg-center"
+          className="absolute inset-0 bg-[url('https://giffiles.alphacoders.com/222/222787.gif')] bg-cover bg-center"
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
           transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
