@@ -21,7 +21,7 @@ const TopList = () => {
       rank: 2,
       title: "Mobile Suit Gundam",
       year: "1979",
-      image: "https://a.storyblok.com/f/178900/1003x1504/ef815d4bd6/54d0c4b65a4a0b9f5c95e1cc456f6b291611536767_main.jpg/m/filters:quality(95)format(webp)",
+      image: "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GKEH2G9XV-backdrop_wide",
       description: "La serie que estableció el realismo militar en el género mecha y dio inicio a una de las franquicias más extensas del anime."
     },
     {
@@ -35,7 +35,7 @@ const TopList = () => {
       rank: 4,
       title: "Code Geass",
       year: "2006",
-      image: "https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=cover,format=auto,quality=85,width=1920/keyart/GKEH2G9XV-backdrop_wide",
+      image: "https://wallpapercave.com/wp/wp5887498.jpg",
       description: "Combina la política, estrategia y acción mecha en una narrativa compleja con uno de los finales más memorables del anime."
     },
     {
