@@ -38,7 +38,7 @@ const curiosidades: Curiosidad[] = [
     title: "El origen de los personajes de Dragon Ball",
     category: "Inspiración",
     content: "Akira Toriyama, el creador de Dragon Ball, basó muchos de sus personajes en la novela clásica china 'Viaje al Oeste'. Goku está inspirado en Sun Wukong (el Rey Mono), un ser sobrenatural con un báculo mágico que puede crecer y encogerse (como el Power Pole de Goku). El maestro Roshi se basa en el monje Tang Sanzang, mientras que Oolong y Yamcha tienen equivalentes en los compañeros del Rey Mono. Esta inspiración es evidente en las primeras aventuras de Dragon Ball, aunque la serie evolucionó después hacia un enfoque más orientado a las artes marciales y batallas.",
-    image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/02/dragon-ball-significan-nombres-personajes-1858451.jpg?tf=3840x",
     tags: ["dragon-ball", "viaje-al-oeste", "akira-toriyama"]
   },
   {
@@ -46,7 +46,7 @@ const curiosidades: Curiosidad[] = [
     title: "La evolución del diseño de Pikachu",
     category: "Diseño",
     content: "Pikachu, la mascota más reconocible de Pokémon, ha experimentado cambios significativos en su diseño desde su creación. El Pikachu original era notablemente más rechoncho, con mejillas más prominentes y un cuerpo más redondeado. Con el paso de los años, su diseño se ha estilizado, haciéndose más delgado y adorable. Ken Sugimori, el director de arte original de Pokémon, quiso que Pikachu fuera reconocible por su silueta única, lo que explica su distintiva cola en forma de rayo. El color amarillo brillante se eligió específicamente para destacar entre otros personajes y atraer a un público más joven.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://wallpapercave.com/uwp/uwp4520874.png",
     tags: ["pokemon", "pikachu", "diseño"]
   },
   {
@@ -54,7 +54,7 @@ const curiosidades: Curiosidad[] = [
     title: "El origen accidental de Sailor Moon",
     category: "Creación",
     content: "Naoko Takeuchi, creadora de Sailor Moon, inicialmente había diseñado un manga muy diferente llamado 'Codename: Sailor V'. Su editor le sugirió expandir el concepto a un equipo de heroínas basadas en los planetas del sistema solar, lo que eventualmente se convirtió en Sailor Moon. Curiosamente, Takeuchi tenía formación en farmacia y química, lo que influyó en la precisión científica de algunos elementos de la serie. El éxito de Sailor Moon fue tan grande que revolucionó el género de magical girls, añadiendo elementos de acción y drama que no eran comunes en ese tipo de historias dirigidas a niñas.",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://wallpapercave.com/wp/wp13601691.jpg",
     tags: ["sailor-moon", "naoko-takeuchi", "magical-girl"]
   },
   {
@@ -62,7 +62,7 @@ const curiosidades: Curiosidad[] = [
     title: "La influencia de Studio Ghibli en Disney",
     category: "Influencia Cultural",
     content: "La relación entre Studio Ghibli y Disney ha sido significativa para ambas compañías. Durante los años 90, cuando Disney adquirió los derechos de distribución internacional de las películas de Ghibli, John Lasseter de Pixar (entonces parte de Disney) se declaró un gran admirador del trabajo de Miyazaki. Esta admiración influyó en el enfoque de Pixar hacia la narración visual y la creación de mundos detallados. Miyazaki, por su parte, ha citado a Disney como una influencia temprana, creando una relación circular de inspiración mutua entre estos gigantes de la animación de distintas culturas.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://fwmedia.fandomwire.com/wp-content/uploads/2024/10/01094230/studio-ghibli-disney-fantasia-2000-768x432.jpg",
     tags: ["ghibli", "disney", "miyazaki", "animacion"]
   }
 ];
