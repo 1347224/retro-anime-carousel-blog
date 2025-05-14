@@ -15,21 +15,21 @@ const animes = [
     id: 2,
     title: "Naruto",
     year: "2002-2007",
-    image: "https://wallpapercave.com/wp/wp8332428.jpg",
+    image: "https://images.alphacoders.com/473/thumb-1920-473144.jpg",
     description: "Follow the journey of Naruto Uzumaki, a young ninja seeking recognition from his peers and dreaming of becoming the Hokage."
   },
   {
     id: 3,
     title: "Bleach",
     year: "2004-2012",
-    image: "https://wallpapercave.com/wp/wp8699893.jpg",
+    image: "https://images4.alphacoders.com/259/thumb-1920-259316.jpg",
     description: "Ichigo Kurosaki gains the powers of a Soul Reaper and takes on the duty to defend humans from evil spirits and guide souls to the afterlife."
   },
   {
     id: 4,
     title: "Fullmetal Alchemist",
     year: "2003-2004",
-    image: "https://wallpapercave.com/wp/wp7310205.jpg",
+    image: "https://images5.alphacoders.com/857/thumb-1920-857564.jpg",
     description: "Two brothers search for the Philosopher's Stone to restore their bodies after a failed alchemical experiment."
   }
 ];
