@@ -30,7 +30,7 @@ const curiosidades: Curiosidad[] = [
     title: "Referencias Culturales en Evangelion",
     category: "Easter Eggs",
     content: "Neon Genesis Evangelion está repleto de simbolismo religioso y referencias culturales. Los nombres de los ángeles provienen del cristianismo y judaísmo. Los diseños de los EVA están inspirados en deidades japonesas y la mitología sintoísta. Incluso el famoso símbolo de NERV es una referencia a la hoja de higuera que usaron Adán y Eva. Anno ha mencionado que incluyó símbolos cristianos principalmente por su exotismo visual en Japón, más que por su significado teológico profundo, aunque esto no ha impedido décadas de análisis y teorías por parte de los fans.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://images6.alphacoders.com/691/thumb-1920-691066.jpg",
     tags: ["evangelion", "simbolismo", "religion"]
   },
   {
