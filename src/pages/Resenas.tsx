@@ -22,7 +22,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 1,
     title: "Akira",
-    image: "https://m.media-amazon.com/images/M/MV5BM2ZiZTk1ODgtMTZkNS00NTYxLWIxZTUtNWExZGYwZTRjODViXkEyXkFqcGdeQXVyMTE2MzA3MDM@._V1_.jpg",
+    image: "https://wallpapercave.com/wp/pYFAW3Z.jpg",
     year: "1988",
     studio: "Tokyo Movie Shinsha",
     director: "Katsuhiro Otomo",
