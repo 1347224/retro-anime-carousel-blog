@@ -36,7 +36,7 @@ const HeroSection = () => {
         style={{ y: backgroundY }}
       >
         {/* Background stars */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=1200&h=800&fit=crop')] bg-cover bg-center opacity-30"></div>
+        <div className="absolute inset-0 bg-[url('https://images3.alphacoders.com/754/thumb-1920-754559.png')] bg-cover bg-center opacity-30"></div>
         
         {/* Animated gradient orbs */}
         <motion.div 
