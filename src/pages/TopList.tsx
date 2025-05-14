@@ -14,35 +14,35 @@ const TopList = () => {
       rank: 1,
       title: "Neon Genesis Evangelion",
       year: "1995",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "https://wallpapercave.com/wp/wp12710756.jpg",
       description: "Revolucionó el género mecha con su profundidad psicológica y su deconstrucción de los tropos del género. Sus EVAs son algunos de los diseños más icónicos del anime."
     },
     {
       rank: 2,
       title: "Mobile Suit Gundam",
       year: "1979",
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "https://a.storyblok.com/f/178900/1003x1504/ef815d4bd6/54d0c4b65a4a0b9f5c95e1cc456f6b291611536767_main.jpg/m/filters:quality(95)format(webp)",
       description: "La serie que estableció el realismo militar en el género mecha y dio inicio a una de las franquicias más extensas del anime."
     },
     {
       rank: 3,
       title: "Tengen Toppa Gurren Lagann",
       year: "2007",
-      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "https://wallpapercave.com/wp/NZjrHMj.jpg",
       description: "Una montaña rusa de acción sobre el top que celebra y lleva al extremo los tropos del género mecha con un estilo visual único."
     },
     {
       rank: 4,
       title: "Code Geass",
       year: "2006",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "https://wallpapercave.com/wp/wp5972190.jpg",
       description: "Combina la política, estrategia y acción mecha en una narrativa compleja con uno de los finales más memorables del anime."
     },
     {
       rank: 5,
       title: "Macross Plus",
       year: "1994",
-      image: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      image: "https://wallpapercave.com/wp/wp5042391.jpg",
       description: "Una obra maestra visual con increíbles secuencias de vuelo y transformación de mechas, complementada por la música de Yoko Kanno."
     }
   ];
