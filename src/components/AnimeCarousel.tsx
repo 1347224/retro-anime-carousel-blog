@@ -8,7 +8,7 @@ const animes = [
     id: 1,
     title: "Cowboy Bebop",
     year: "1998-1999",
-    image: "https://images8.alphacoders.com/410/thumb-1920-410271.jpg",
+    image: "https://images4.alphacoders.com/457/thumb-1920-45774.jpg",
     description: "Spike Spiegel and his crew aboard the spaceship Bebop chase bounties across the solar system in this genre-defining anime."
   },
   {
