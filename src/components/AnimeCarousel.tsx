@@ -8,28 +8,28 @@ const animes = [
     id: 1,
     title: "Cowboy Bebop",
     year: "1998-1999",
-    image: "https://wallpapercave.com/wp/wp2755868.jpg",
+    image: "https://wallpapercave.com/wp/wp2874063.jpg",
     description: "Spike Spiegel and his crew aboard the spaceship Bebop chase bounties across the solar system in this genre-defining anime."
   },
   {
     id: 2,
     title: "Naruto",
     year: "2002-2007",
-    image: "https://m.media-amazon.com/images/M/MV5BZmQ5NGFiNWEtMmMyMC00MDdiLTg4YjktOGY5Yzc2MDUxMTE1XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+    image: "https://wallpapercave.com/wp/wp8332428.jpg",
     description: "Follow the journey of Naruto Uzumaki, a young ninja seeking recognition from his peers and dreaming of becoming the Hokage."
   },
   {
     id: 3,
     title: "Bleach",
     year: "2004-2012",
-    image: "https://m.media-amazon.com/images/M/MV5BZjE0YjVjODQtZGY2NS00MDcyLThhMDAtZGQwMTZiOWNmNjRiXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
+    image: "https://wallpapercave.com/wp/wp8699893.jpg",
     description: "Ichigo Kurosaki gains the powers of a Soul Reaper and takes on the duty to defend humans from evil spirits and guide souls to the afterlife."
   },
   {
     id: 4,
     title: "Fullmetal Alchemist",
     year: "2003-2004",
-    image: "https://wallpapercave.com/wp/wp3276734.jpg",
+    image: "https://wallpapercave.com/wp/wp7310205.jpg",
     description: "Two brothers search for the Philosopher's Stone to restore their bodies after a failed alchemical experiment."
   }
 ];

@@ -20,7 +20,7 @@ const featuredNews: NewsItem[] = [
     title: "Nuevo anime de Evangelion anunciado para 2026",
     date: "2025-04-30",
     excerpt: "Studio Khara ha confirmado una nueva serie centrada en el universo de Evangelion.",
-    image: "https://m.media-amazon.com/images/M/MV5BMjU0MzQwMmMtMWU3OS00MDlkLTk1MjctM2JiNTQ5YmFjNDY3XkEyXkFqcGdeQXVyNDQxNjcxNQ@@._V1_FMjpg_UX1000_.jpg",
+    image: "https://wallpapercave.com/wp/wp8493329.jpg",
     category: "Anuncios"
   },
   {
@@ -28,7 +28,7 @@ const featuredNews: NewsItem[] = [
     title: "Studio Ghibli abrirá museo virtual en metaverso",
     date: "2025-04-25",
     excerpt: "Los fans podrán visitar recreaciones de los mundos de Miyazaki en esta experiencia inmersiva.",
-    image: "https://m.media-amazon.com/images/M/MV5BNmM4YTFmMmItMGE3Yy00MmRkLTlmZGEtMzZlOTQzYjk3MzA2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
+    image: "https://wallpapercave.com/wp/wp2055835.jpg",
     category: "Tecnología"
   },
   {
@@ -36,7 +36,7 @@ const featuredNews: NewsItem[] = [
     title: "Se confirma adaptación live-action de Sailor Moon",
     date: "2025-04-20",
     excerpt: "Netflix producirá la primera adaptación occidental de la icónica serie de los 90.",
-    image: "https://m.media-amazon.com/images/M/MV5BNjUyMDJkNzktNjUwMS00ZDM1LTg3OTYtNGRkZDA4Y2M5ZmI0XkEyXkFqcGdeQXVyMTQzOTkwNjU1._V1_.jpg",
+    image: "https://wallpapercave.com/wp/wp9697349.jpg",
     category: "Adaptaciones"
   }
 ];

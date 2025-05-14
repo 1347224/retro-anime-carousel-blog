@@ -13,14 +13,14 @@ const Index = () => {
     {
       id: 1,
       title: "Akira",
-      image: "https://wallpapercave.com/wp/wp2609873.jpg",
+      image: "https://wallpapercave.com/wp/wp4570407.jpg",
       excerpt: "Obra maestra del cyberpunk que revolucionó la animación japonesa.",
       rating: 5
     },
     {
       id: 2,
       title: "Ghost in the Shell",
-      image: "https://wallpapercave.com/wp/wp2527761.jpg",
+      image: "https://wallpapercave.com/wp/wp4602505.jpg",
       excerpt: "Reflexión filosófica sobre la identidad en la era digital.",
       rating: 5
     }
@@ -32,14 +32,14 @@ const Index = () => {
       title: "Evangelion: Depresión Creativa",
       category: "Behind the Scenes",
       excerpt: "Hideaki Anno creó la serie mientras luchaba contra una severa depresión.",
-      image: "https://wallpapercave.com/wp/wp5158867.jpg"
+      image: "https://wallpapercave.com/wp/wp11634245.jpg"
     },
     {
       id: 2,
       title: "Referencias Culturales en Evangelion",
       category: "Easter Eggs",
       excerpt: "La serie está repleta de simbolismo religioso y referencias culturales.",
-      image: "https://wallpapercave.com/wp/wp7794825.jpg"
+      image: "https://wallpapercave.com/wp/wp7081575.jpg"
     }
   ];
 
