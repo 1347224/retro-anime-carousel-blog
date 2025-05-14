@@ -22,7 +22,7 @@ const curiosidades: Curiosidad[] = [
     title: "Evangelion: Depresión Creativa",
     category: "Behind the Scenes",
     content: "Hideaki Anno, el creador de Neon Genesis Evangelion, concibió la serie mientras luchaba contra una severa depresión. Esta experiencia personal influyó profundamente en los temas de la serie, especialmente en las luchas internas del protagonista Shinji Ikari. La serie se convirtió en una forma de terapia para Anno, quien proyectó muchos de sus propios conflictos psicológicos en la narrativa. Esto explica el enfoque cada vez más introspectivo de la serie, culminando en los controvertidos episodios finales que se adentran en la psique de los personajes.",
-    image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    image: "https://giffiles.alphacoders.com/111/111891.gif",
     tags: ["evangelion", "hideaki-anno", "depresion"]
   },
   {
