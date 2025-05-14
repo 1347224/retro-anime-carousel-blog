@@ -33,7 +33,7 @@ const animeReviews: AnimeReview[] = [
   {
     id: 2,
     title: "Ghost in the Shell",
-    image: "https://m.media-amazon.com/images/M/MV5BYWRiYjQyOGItNzQ1Mi00MGI1LWE3NjItNTg1ZDQwNjUwNDM2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+    image: "https://wallpapercave.com/wp/wp1843939.jpg",
     year: "1995",
     studio: "Production I.G",
     director: "Mamoru Oshii",
