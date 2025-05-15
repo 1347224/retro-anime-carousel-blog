@@ -92,9 +92,6 @@ const newsItems: NewsItem[] = [
     image: "https://images.unsplash.com/photo-1516280906200-323121b2ca91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
   },
   {
-
-  },
-  {
     id: 9,
     title: "Colección completa de 'Serial Experiments Lain' en vinilo anunciada",
     excerpt: "La icónica banda sonora de la serie cyberpunk recibirá una edición especial limitada.",
