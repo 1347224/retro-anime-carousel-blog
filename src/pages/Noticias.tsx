@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -92,16 +91,6 @@ const newsItems: NewsItem[] = [
     image: "https://images.unsplash.com/photo-1516280906200-323121b2ca91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
   },
   {
-    id: 8,
-    title: "Documental 'La Revolución Anime' explora el impacto cultural de los 90s",
-    excerpt: "Creadores y fans analizan cómo el anime de los 90s transformó la cultura global.",
-    content: "El aclamado documentalista Ken Burns ha presentado su nuevo proyecto: 'La Revolución Anime', una serie documental de seis episodios que explora en profundidad cómo las series de anime de los años 90s transformaron no solo la industria de la animación, sino también la cultura popular global.\n\nLa serie cuenta con entrevistas a figuras legendarias como Hideaki Anno (Neon Genesis Evangelion), Shinichiro Watanabe (Cowboy Bebop), y Mamoru Oshii (Ghost in the Shell), así como a académicos, críticos culturales y fans que vivieron esta revolución en primera persona.\n\n'Lo que ocurrió en los 90s fue un fenómeno cultural tan profundo como el rock and roll en los 50s o el cine independiente americano en los 70s,' explica Burns. 'El anime se convirtió en un lenguaje visual y narrativo que cambió para siempre cómo contamos historias en medios visuales.'\n\nEl documental también examina cómo estas series abrieron las puertas a la globalización de la cultura japonesa y sentaron las bases para la aceptación mainstream del anime en Occidente. 'La Revolución Anime' se estrenará en festivales de cine este otoño antes de llegar a plataformas de streaming a principios de 2025.",
-    date: "25/09/2024",
-    readTime: "9 min",
-    category: "Documentales",
-    image: "https://static1.srcdn.com/wordpress/wp-content/uploads/2025/03/untitled-design-2025-03-21t134632-665-2.jpg"
-  },
-  {
     id: 9,
     title: "Colección completa de 'Serial Experiments Lain' en vinilo anunciada",
     excerpt: "La icónica banda sonora de la serie cyberpunk recibirá una edición especial limitada.",
@@ -110,16 +99,6 @@ const newsItems: NewsItem[] = [
     readTime: "4 min",
     category: "Música",
     image: "https://wallpapercave.com/wp/wp14664153.jpg"
-  },
-  {
-    id: 10,
-    title: "Exposición 'Mechas: Del Papel a la Pantalla' llega al Museo de Arte Moderno",
-    excerpt: "La muestra explora la evolución del diseño mecánico en el anime desde los 70s hasta la actualidad.",
-    content: "El Museo de Arte Moderno de Nueva York inaugurará próximamente la exposición 'Mechas: Del Papel a la Pantalla', un recorrido por la evolución del diseño de robots gigantes en el anime desde los pioneros como 'Mazinger Z' hasta las interpretaciones contemporáneas del género.\n\nLa exposición, comisariada por el reconocido crítico de arte Takashi Murakami en colaboración con diseñadores veteranos de la industria del anime, presenta más de 200 piezas originales, incluyendo bocetos conceptuales, storyboards, celdas de animación y modelos tridimensionales utilizados en la producción de series icónicas como 'Mobile Suit Gundam', 'Neon Genesis Evangelion' y 'Code Geass'.\n\n'Los mechas no son simplemente máquinas de ficción; son expresiones artísticas que reflejan preocupaciones culturales, avances tecnológicos y cambios sociales en Japón y el mundo', explica Murakami. 'Esta exposición busca elevar estos diseños al lugar que merecen en la historia del arte contemporáneo.'\n\nLa muestra incluye también instalaciones interactivas que permiten a los visitantes explorar los procesos de diseño y animación, así como una sección que examina la influencia global de estos diseños en ámbitos como el cine occidental, los videojuegos y la robótica real. La exposición permanecerá abierta durante seis meses antes de iniciar una gira internacional.",
-    date: "15/08/2024",
-    readTime: "7 min",
-    category: "Arte",
-    image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
   }
 ];
 
@@ -253,7 +232,7 @@ const Noticias = () => {
           <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-md rounded-lg">
             <div className="mb-6 flex flex-col md:flex-row gap-4">
               <div className="relative flex-grow">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4 pointer-events-none" />
                 <Input
                   placeholder="Buscar noticias..."
                   value={searchTerm}
@@ -408,7 +387,7 @@ const Noticias = () => {
                       {selectedNews.category}
                     </Badge>
                   )}
-                  <h2 className="text-white text-2xl md:text-4xl font-bold font-pixel mb-2">
+                  <h2 className="text-white text-2xl md:text-4xl font-bold font-vt323 mb-2 leading-tight">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-retro-purple">
                       {selectedNews?.title}
                     </span>
