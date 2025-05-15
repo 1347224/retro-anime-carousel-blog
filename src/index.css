@@ -1,234 +1,229 @@
 
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
- 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
- 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
- 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
- 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
- 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
- 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
- 
+    --background: 240 10% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 10% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 10% 10%; 
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 255 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 320 70% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 5% 25%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 30 90% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 255 70% 65%;
+
     --radius: 0.5rem;
+
+    /* Custom theme colors for each section */
+    --home-primary: 255 70% 65%;   /* RetroAnime Purple */
+    --reviews-primary: 320 70% 65%; /* Pink */
+    --curiosities-primary: 191 97% 77%; /* Blue */
+    --toplist-primary: 48 95% 67%;   /* Gold/Yellow */
+    --news-primary: 217 91% 60%;   /* Blue */
   }
- 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
- 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
- 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
- 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
- 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
- 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
- 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
- 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+
+  html {
+    scroll-behavior: smooth;
   }
-}
- 
-@layer base {
+
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at center, rgba(155, 135, 245, 0.1) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(26, 31, 44, 1), rgba(26, 31, 44, 0.8));
+    font-family: 'VT323', monospace;
   }
-}
 
-/* Retro UI Theme */
-.theme-home {
-  @apply bg-gradient-to-b from-slate-900 via-[#1A1F2C] to-slate-900;
-}
+  /* CRT screen effect */
+  .crt-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 50;
+    pointer-events: none;
+  }
 
-.theme-reviews {
-  @apply bg-gradient-to-r from-pink-900/20 via-background to-pink-900/20;
-}
+  .crt-screen::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: scanline 8s linear infinite;
+    z-index: 51;
+    pointer-events: none;
+  }
 
-.theme-curiosities {
-  @apply bg-gradient-to-r from-blue-900/20 via-background to-blue-900/20;
-}
+  @keyframes scanline {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
 
-.theme-toplist {
-  @apply bg-gradient-to-r from-amber-900/20 via-background to-amber-900/20;
-}
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
-.theme-reviews-text {
-  @apply text-retro-pink;
-}
+  /* Font classes */
+  .font-pixel {
+    font-family: 'Press Start 2P', cursive;
+  }
 
-.theme-curiosities-text {
-  @apply text-blue-500;
-}
+  .font-silkscreen {
+    font-family: 'Silkscreen', cursive;
+  }
 
-.theme-toplist-text {
-  @apply text-amber-400;
+  .font-vt323 {
+    font-family: 'VT323', monospace;
+  }
 }
 
 @layer components {
+  .retro-container {
+    @apply relative mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .retro-title {
+    @apply font-pixel text-transparent bg-clip-text bg-gradient-to-r from-retro-purple to-retro-pink;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 
+                6px 6px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .retro-card {
+    @apply relative overflow-hidden rounded-lg border border-retro-purple/30 bg-card/80 backdrop-blur-sm p-6;
+    box-shadow: 0 0 15px rgba(155, 135, 245, 0.3), 
+                0 0 30px rgba(155, 135, 245, 0.1);
+  }
+
+  .card-highlight {
+    @apply absolute -inset-0.5 bg-gradient-to-r from-retro-purple to-retro-pink opacity-30 blur-sm;
+    z-index: -1;
+  }
+  
   .retro-button {
-    @apply bg-retro-purple hover:bg-retro-purple-dark text-white rounded-md transition-all hover:shadow-[0_0_15px_rgba(155,135,245,0.5)];
+    @apply px-6 py-2 rounded-md bg-retro-purple text-white font-medium transition-all 
+           hover:bg-retro-purple/80 hover:shadow-[0_0_15px_rgba(155,135,245,0.5)] active:scale-95;
   }
-}
-
-.retro-title {
-  @apply font-pixel text-retro-purple leading-tight;
-}
-
-.retro-container {
-  @apply container mx-auto px-4;
-}
-
-.crt-screen {
-  position: relative;
-}
-
-.crt-screen::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.25) 50%
-  );
-  background-size: 100% 4px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.3;
-}
-
-.pixelated-border {
-  position: relative;
-  display: inline-block;
-}
-
-.pixelated-border::after {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
-  background: repeating-conic-gradient(
-    rgba(155, 135, 245, 0.3) 0% 25%, 
-    rgba(155, 135, 245, 0.1) 0% 50%
-  );
-  background-size: 10px 10px;
-  border-radius: 50%;
-  z-index: -1;
-  animation: rotate 8s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
+  
+  .retro-gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-retro-purple to-retro-pink font-bold;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .glowing-border {
+    @apply relative border-2 border-retro-purple/50 rounded-lg overflow-hidden;
+    box-shadow: 0 0 10px rgba(155, 135, 245, 0.3), inset 0 0 10px rgba(155, 135, 245, 0.3);
   }
-}
 
-/* Custom Colors */
-:root {
-  --retro-purple: rgb(155, 135, 245);
-  --retro-purple-dark: rgb(125, 105, 215);
-  --retro-pink: rgb(245, 152, 168);
-  --retro-orange: rgb(247, 148, 30);
-}
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
 
-.text-retro-purple {
-  color: var(--retro-purple);
-}
-
-.text-retro-pink {
-  color: var(--retro-pink);
-}
-
-.text-retro-orange {
-  color: var(--retro-orange);
-}
-
-.bg-retro-purple {
-  background-color: var(--retro-purple);
-}
-
-.bg-retro-pink {
-  background-color: var(--retro-pink);
-}
-
-.bg-retro-orange {
-  background-color: var(--retro-orange);
-}
-
-.border-retro-purple {
-  border-color: var(--retro-purple);
-}
-
-.glow-text-purple {
-  text-shadow: 0 0 5px rgba(155, 135, 245, 0.7);
-}
-
-.glow-text-orange {
-  text-shadow: 0 0 5px rgba(247, 148, 30, 0.7);
-}
-
-/* Utility classes */
-.hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari and Opera */
-}
-
-.bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(155, 135, 245, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(155, 135, 245, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+  /* Section-specific theme classes */
+  .theme-home {
+    @apply bg-gradient-to-br from-background via-background/95 to-purple-900/10;
+  }
+  
+  .theme-home-card {
+    @apply border-retro-purple/30 bg-gradient-to-br from-card to-purple-900/20;
+  }
+  
+  .theme-home-text {
+    @apply text-retro-purple;
+  }
+  
+  .theme-reviews {
+    @apply bg-gradient-to-br from-background via-background/95 to-pink-900/10;
+  }
+  
+  .theme-reviews-card {
+    @apply border-retro-pink/30 bg-gradient-to-br from-card to-pink-900/20;
+  }
+  
+  .theme-reviews-text {
+    @apply text-retro-pink;
+  }
+  
+  .theme-curiosities {
+    @apply bg-gradient-to-br from-background via-background/95 to-blue-900/10;
+  }
+  
+  .theme-curiosities-card {
+    @apply border-blue-400/30 bg-gradient-to-br from-card to-blue-900/20;
+  }
+  
+  .theme-curiosities-text {
+    @apply text-blue-400;
+  }
+  
+  .theme-toplist {
+    @apply bg-gradient-to-br from-background via-background/95 to-amber-900/10;
+  }
+  
+  .theme-toplist-card {
+    @apply border-amber-400/30 bg-gradient-to-br from-card to-amber-900/20;
+  }
+  
+  .theme-toplist-text {
+    @apply text-amber-400;
+  }
+  
+  .theme-news {
+    @apply bg-gradient-to-br from-background via-background/95 to-blue-600/10;
+  }
+  
+  .theme-news-card {
+    @apply border-blue-500/30 bg-gradient-to-br from-card to-blue-900/20;
+  }
+  
+  .theme-news-text {
+    @apply text-blue-500;
+  }
 }
