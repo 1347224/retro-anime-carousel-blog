@@ -97,7 +97,7 @@ const HeroSection = () => {
         style={{ y: textY, opacity }}
       >
         <motion.div 
-          className="max-w-2xl"
+          className="max-w-2xl ml-0 mr-auto" // Cambio aquí para alinear a la izquierda
           initial="hidden"
           animate="visible"
           variants={{
@@ -113,7 +113,7 @@ const HeroSection = () => {
             variants={fadeInVariants}
             custom={0}
           >
-            <h1 className="retro-title text-5xl md:text-7xl mb-2 leading-tight">
+            <h1 className="retro-title text-5xl md:text-7xl mb-2 leading-tight text-left"> {/* Agregado text-left */}
               RETRO ANIME
               <span className="block">TIME MACHINE</span>
             </h1>
@@ -123,7 +123,7 @@ const HeroSection = () => {
             variants={fadeInVariants}
             custom={1}
           >
-            <p className="text-xl md:text-2xl text-foreground/80 mb-8 font-vt323">
+            <p className="text-xl md:text-2xl text-foreground/80 mb-8 font-vt323 text-left"> {/* Agregado text-left */}
               Viaja al pasado y revive la época dorada del anime de los 90s y 2000s. 
               Donde la nostalgia y los clásicos te esperan.
             </p>
@@ -132,7 +132,7 @@ const HeroSection = () => {
           <motion.div
             variants={fadeInVariants}
             custom={2}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 justify-start" /* Agregado justify-start */
           >
             <Button className="retro-button text-lg px-8 py-6 font-silkscreen" asChild>
               <Link to="/resenas">EXPLORAR CLÁSICOS</Link>
