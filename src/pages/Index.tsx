@@ -3,9 +3,9 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
-import SectionCarousels from "@/components/home/SectionCarousels";
 import FeaturedContent from "@/components/home/FeaturedContent";
 import CallToAction from "@/components/home/CallToAction";
+import SectionCarousels from "@/components/home/SectionCarousels";
 
 const Index = () => {
   // Featured content from other sections
@@ -54,8 +54,8 @@ const Index = () => {
       
       {/* Hero Section */}
       <HeroSection />
-
-      {/* Carousels Sections */}
+      
+      {/* Anime Carousel Section */}
       <SectionCarousels />
       
       {/* Featured Content Sections */}

@@ -60,11 +60,11 @@ export default {
 				},
 				retro: {
 					purple: '#9b87f5',
+					'purple-dark': '#7d69d7',
 					dark: '#1A1F2C',
 					pink: '#D946EF', 
 					orange: '#F97316',
 					blue: '#33C3F0',
-					'purple-dark': '#7E69AB', // Added the dark purple color
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
