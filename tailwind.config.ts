@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -59,6 +60,7 @@ export default {
 				},
 				retro: {
 					purple: '#9b87f5',
+					'purple-dark': '#7d69d7',  // Añadido el color para hover:bg-retro-purple-dark
 					dark: '#1A1F2C',
 					pink: '#D946EF', 
 					orange: '#F97316',
