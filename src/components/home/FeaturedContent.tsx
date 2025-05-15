@@ -59,8 +59,18 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
   return (
     <>
       {/* Featured Reviews */}
-      <section className="py-12 theme-reviews">
-        <div className="retro-container">
+      <section className="py-12 relative">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/70"></div>
+          <img 
+            src="https://wallpapercave.com/wp/wp9697349.jpg" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        
+        <div className="retro-container relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -86,7 +96,7 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
             {featuredReviews.map((review) => (
               <motion.div key={review.id} variants={itemVariants} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                 <Link to="/resenas">
-                  <Card className="overflow-hidden border-2 border-retro-pink/30 h-full flex flex-col theme-reviews-card">
+                  <Card className="overflow-hidden border-2 border-retro-pink/30 h-full flex flex-col theme-reviews-card backdrop-blur-sm bg-black/40">
                     <div className="h-48 overflow-hidden">
                       <motion.img 
                         src={review.image} 
@@ -116,8 +126,18 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
       </section>
 
       {/* Featured Curiosities */}
-      <section className="py-12 theme-curiosities">
-        <div className="retro-container">
+      <section className="py-12 relative">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/70"></div>
+          <img 
+            src="https://wallpapercave.com/wp/wp2055835.jpg" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        
+        <div className="retro-container relative z-10">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -143,7 +163,7 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
             {featuredCuriosities.map((item) => (
               <motion.div key={item.id} variants={itemVariants} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                 <Link to="/curiosidades">
-                  <Card className="h-full border-2 border-blue-500/30 overflow-hidden flex flex-col theme-curiosities-card">
+                  <Card className="h-full border-2 border-blue-500/30 overflow-hidden flex flex-col theme-curiosities-card backdrop-blur-sm bg-black/40">
                     <div className="h-48 overflow-hidden">
                       <motion.img 
                         src={item.image} 
@@ -174,9 +194,19 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
         </div>
       </section>
 
-      {/* Featured Top List */}
-      <section className="py-12 theme-toplist">
-        <div className="retro-container">
+      {/* Featured Top List - Redesigned section */}
+      <section className="py-12 relative">
+        {/* Background image with overlay */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/70"></div>
+          <img 
+            src="https://wallpapercave.com/wp/wp8493329.jpg" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+        
+        <div className="retro-container relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -193,34 +223,58 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
           </motion.div>
 
           <motion.div
-            variants={itemVariants}
+            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            <Link to="/top-list">
-              <Card className="border-2 border-amber-400/30 theme-toplist-card">
-                <CardHeader>
-                  <CardTitle className="font-pixel text-amber-400">{featuredTopList.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ol className="list-decimal pl-5 space-y-2 font-vt323 text-lg">
-                    {featuredTopList.items.map((item, index) => (
-                      <li key={index} className={`${index === 0 ? 'text-yellow-400 font-semibold font-silkscreen' : 'font-vt323'}`}>
-                        {item}
-                      </li>
-                    ))}
-                  </ol>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" className="border-amber-400/30 text-amber-400 hover:bg-amber-400/10 font-silkscreen">
-                    VER LISTA COMPLETA
-                  </Button>
-                </CardFooter>
-              </Card>
-            </Link>
+            {/* Display items in reverse order, showing only 5th, 4th, and 3rd positions */}
+            {featuredTopList.items.slice(2, 5).reverse().map((item, index) => (
+              <motion.div 
+                key={index} 
+                variants={itemVariants} 
+                className="group cursor-pointer"
+              >
+                <Link to="/top-list">
+                  <motion.div 
+                    className="relative overflow-hidden rounded-lg border-2 border-amber-400/30 backdrop-blur-sm bg-black/40 h-64"
+                    whileHover={{ y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {/* Image overlay with position indicator */}
+                    <img 
+                      src={
+                        index === 0 
+                          ? "https://wallpapercave.com/wp/wp5042391.jpg" // Macross Plus
+                          : index === 1 
+                            ? "https://wallpapercave.com/wp/wp5972466.jpg" // Code Geass
+                            : "https://wallpapercave.com/wp/NZjrHMj.jpg" // Tengen Toppa Gurren Lagann
+                      }
+                      alt={item}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex flex-col justify-end p-4">
+                      <div className="font-pixel text-6xl text-amber-400/40 absolute top-4 right-4">
+                        #{index === 0 ? "5" : index === 1 ? "4" : "3"}
+                      </div>
+                      <h3 className="font-silkscreen text-xl text-white mb-2 z-10 group-hover:text-amber-400 transition-colors">{item}</h3>
+                      <div className="w-0 h-1 bg-amber-400 group-hover:w-full transition-all duration-500"></div>
+                      <motion.div 
+                        className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        initial={{ height: 0 }}
+                        whileHover={{ height: 'auto' }}
+                      >
+                        <Button variant="ghost" size="sm" className="px-0 text-amber-400 font-silkscreen">
+                          DESCUBRIR
+                          <ArrowRight className="ml-1 h-4 w-4" />
+                        </Button>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </Link>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
