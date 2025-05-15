@@ -15,22 +15,24 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/resenas" element={<Resenas />} />
-          <Route path="/curiosidades" element={<Curiosidades />} />
-          <Route path="/top-list" element={<TopList />} />
-          <Route path="/noticias" element={<Noticias />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/resenas" element={<Resenas />} />
+            <Route path="/curiosidades" element={<Curiosidades />} />
+            <Route path="/top-list" element={<TopList />} />
+            <Route path="/noticias" element={<Noticias />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </React.StrictMode>
 );
 
 export default App;
