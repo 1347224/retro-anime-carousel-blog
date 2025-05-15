@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import TopMechaAnimes from "@/components/TopMechaAnimes";
 
 interface FeaturedReview {
   id: number;
@@ -172,28 +171,6 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* Top Mecha Animes Section */}
-      <section className="py-12 theme-toplist bg-gradient-to-r from-amber-900/20 via-background to-amber-900/20">
-        <div className="retro-container">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex items-center mb-4 space-x-4"
-          >
-            <h2 className="font-silkscreen text-2xl md:text-3xl text-amber-400">TOP 5 MECHA ANIMES DE LOS 90s</h2>
-            <div className="h-px bg-border flex-grow"></div>
-            <Link to="/top-list" className="text-sm font-medium text-amber-400 flex items-center hover:underline font-silkscreen">
-              VER MÁS
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
-          </motion.div>
-
-          <TopMechaAnimes />
         </div>
       </section>
 
