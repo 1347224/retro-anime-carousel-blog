@@ -105,10 +105,8 @@
   @apply text-amber-400;
 }
 
-@layer components {
-  .retro-button {
-    @apply bg-retro-purple hover:bg-retro-purple-dark text-white rounded-md transition-all hover:shadow-[0_0_15px_rgba(155,135,245,0.5)];
-  }
+.retro-button {
+  @apply bg-retro-purple hover:bg-retro-purple-dark text-white rounded-md transition-all hover:shadow-[0_0_15px_rgba(155,135,245,0.5)];
 }
 
 .retro-title {
