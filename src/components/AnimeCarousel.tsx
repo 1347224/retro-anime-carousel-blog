@@ -105,7 +105,7 @@ const AnimeCarousel = () => {
                   exit={{ opacity: 0, y: -50 }}
                   transition={{ duration: 0.7 }}
                 >
-                  <div className="w-full md:w-1/2 h-60 md:h-full relative overflow-hidden">
+                  <div className="w-full md:w-1/2 h-60 md:h-auto relative overflow-hidden">
                     <motion.img 
                       src={anime.image} 
                       alt={anime.title} 
@@ -141,7 +141,6 @@ const AnimeCarousel = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6, duration: 0.5 }}
-                      className="mb-10"
                     >
                       <Button 
                         className="retro-button self-start"
@@ -152,7 +151,7 @@ const AnimeCarousel = () => {
                     </motion.div>
                     
                     {/* Indicators moved to bottom */}
-                    <div className="flex justify-center gap-3 mt-4">
+                    <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 mt-8">
                       {animes.map((_, idx) => (
                         <button
                           key={idx}
@@ -198,24 +197,21 @@ const AnimeCarousel = () => {
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
         <DialogContent className="bg-gradient-to-br from-slate-900 to-slate-950 border-retro-purple/30 max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="font-vt323 text-retro-purple text-3xl font-bold">
+            <DialogTitle className="font-pixel text-retro-purple text-2xl">
               {animes[activeIndex]?.title} - Analysis
             </DialogTitle>
           </DialogHeader>
           
-          <div className="relative overflow-hidden rounded-md h-64 mb-6">
-            <motion.img 
+          <div className="relative">
+            <img 
               src={animes[activeIndex]?.image} 
               alt={animes[activeIndex]?.title} 
-              className="w-full h-full object-cover"
-              initial={{ scale: 1 }}
-              animate={{ scale: 1.05 }}
-              transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+              className="w-full h-48 object-cover rounded-md mb-4 opacity-50"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
           </div>
           
-          <DialogDescription className="text-foreground/90 font-vt323 text-lg space-y-4 leading-relaxed">
+          <DialogDescription className="text-foreground/90 font-vt323 text-lg space-y-4">
             <p>{animes[activeIndex]?.analysis}</p>
           </DialogDescription>
           
