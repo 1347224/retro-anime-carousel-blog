@@ -89,7 +89,7 @@ const newsItems: NewsItem[] = [
     date: "18/10/2024",
     readTime: "5 min",
     category: "Eventos",
-    image: "https://images.unsplash.com/photo-1516280906200-323121b2ca91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Animefest2019CosplayCompetition2.jpg"
   },
   {
     id: 9,
