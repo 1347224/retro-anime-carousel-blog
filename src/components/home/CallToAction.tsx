@@ -1,9 +1,12 @@
 
 import { motion } from "framer-motion";
 import NewsletterForm from "../NewsletterForm";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const CallToAction = () => {
+  const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
+  
   return (
     <section className="py-12 relative">
       {/* Background image with overlay */}
@@ -31,7 +34,16 @@ const CallToAction = () => {
         </motion.div>
         
         <div className="max-w-md mx-auto">
-          <NewsletterForm />
+          <Button 
+            className="retro-button font-silkscreen mx-auto block"
+            onClick={() => setIsNewsletterOpen(true)}
+          >
+            SUSCRÍBETE A LA NEWSLETTER
+          </Button>
+          <NewsletterForm 
+            open={isNewsletterOpen}
+            onOpenChange={setIsNewsletterOpen}
+          />
         </div>
       </div>
     </section>
