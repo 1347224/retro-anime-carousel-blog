@@ -41,8 +41,14 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
     items: [] 
   };
 
-  // Reversed top list items (5th, 4th, 3rd, etc.)
-  const reversedItems = [...safeTopList.items].reverse();
+  // Modified: Filter out "Mobile Suit Gundam" and "Neon Genesis Evangelion" from the items list
+  const filteredItems = safeTopList.items.filter(item => 
+    item !== "Mobile Suit Gundam" && 
+    item !== "Neon Genesis Evangelion"
+  );
+  
+  // Reversed top list items (without the filtered ones)
+  const reversedItems = [...filteredItems].reverse();
   
   // Images for specific anime titles
   const animeImages = {
@@ -219,15 +225,18 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
           >
             <Card className="border-2 border-amber-400/30 theme-toplist-card">
               <CardHeader>
-                <CardTitle className="font-pixel text-amber-400">{safeTopList.title}</CardTitle>
-                <CardDescription className="font-vt323">
+                {/* Modified: Changed font from Silkscreen to VT323 with bold text */}
+                <CardTitle className="font-vt323 text-amber-400 font-bold text-2xl">{safeTopList.title}</CardTitle>
+                {/* Modified: Increased text size by 2px for better legibility */}
+                <CardDescription className="font-vt323 text-lg">
                   El ranking inverso para generar expectativa - ¡Descubre quién está en el primer lugar!
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {reversedItems.slice(0, 3).map((item, index) => {
-                    const realRank = safeTopList.items.length - index;
+                    // Use the original index in the filtered array to determine rank
+                    const realRank = filteredItems.length - index;
                     const imageUrl = animeImages[item] || "";
                     
                     return (
@@ -250,7 +259,10 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
                           )}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                           <div className="absolute bottom-0 left-0 right-0 p-4">
-                            <span className="bg-amber-400 text-black px-2 py-1 text-xs rounded-full font-bold inline-block mb-1">
+                            {/* Modified: Enhanced badge design for rank numbering */}
+                            <span className="bg-gradient-to-r from-amber-500 to-amber-300 text-black px-3 py-1.5 
+                                           text-sm rounded-full font-bold inline-block mb-2 shadow-lg 
+                                           border-2 border-amber-200/30 transform -rotate-2">
                               #{realRank}
                             </span>
                             <h3 className="font-silkscreen text-white text-lg mb-1">{item}</h3>
@@ -270,10 +282,15 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
                 <div className="mt-6">
                   <ol className="list-decimal pl-5 space-y-2 font-vt323 text-lg">
                     {reversedItems.slice(3).map((item, index) => {
-                      const realRank = safeTopList.items.length - 3 - index;
+                      const realRank = filteredItems.length - 3 - index;
                       return (
-                        <li key={index} className={`${realRank === 1 ? 'text-yellow-400 font-semibold font-silkscreen' : 'font-vt323'}`}>
-                          <span className="mr-2 font-bold">#{realRank}</span>
+                        <li key={index} className="font-vt323">
+                          {/* Modified: Enhanced rank number styling */}
+                          <span className="inline-flex items-center justify-center bg-gradient-to-r 
+                                         from-amber-500 to-amber-300 text-black w-6 h-6 rounded-full 
+                                         mr-2 font-bold shadow-md border border-amber-200/30">
+                            {realRank}
+                          </span>
                           {item}
                         </li>
                       );
