@@ -225,8 +225,8 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
           >
             <Card className="border-2 border-amber-400/30 theme-toplist-card">
               <CardHeader>
-                {/* Modified: Changed font from Silkscreen to VT323 with bold text */}
-                <CardTitle className="font-vt323 text-amber-400 font-bold text-2xl">{safeTopList.title}</CardTitle>
+                {/* Modified: Changed font from VT323 to Silkscreen with bold text */}
+                <CardTitle className="font-silkscreen text-amber-400 font-bold text-2xl">{safeTopList.title}</CardTitle>
                 {/* Modified: Increased text size by 2px for better legibility */}
                 <CardDescription className="font-vt323 text-lg">
                   El ranking inverso para generar expectativa - ¡Descubre quién está en el primer lugar!
