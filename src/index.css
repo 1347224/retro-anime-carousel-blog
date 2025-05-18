@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -36,17 +36,6 @@
     --ring: 255 70% 65%;
 
     --radius: 0.5rem;
-
-    /* Custom theme colors for each section */
-    --home-primary: 255 70% 65%;   /* RetroAnime Purple */
-    --reviews-primary: 320 70% 65%; /* Pink */
-    --curiosities-primary: 191 97% 77%; /* Blue */
-    --toplist-primary: 48 95% 67%;   /* Gold/Yellow */
-    --news-primary: 217 91% 60%;   /* Blue */
-  }
-
-  html {
-    scroll-behavior: smooth;
   }
 
   * {
@@ -58,7 +47,6 @@
     background-image: 
       radial-gradient(circle at center, rgba(155, 135, 245, 0.1) 0%, transparent 70%),
       linear-gradient(to bottom, rgba(26, 31, 44, 1), rgba(26, 31, 44, 0.8));
-    font-family: 'VT323', monospace;
   }
 
   /* CRT screen effect */
@@ -89,40 +77,6 @@
     animation: scanline 8s linear infinite;
     z-index: 51;
     pointer-events: none;
-  }
-
-  @keyframes scanline {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(100vh);
-    }
-  }
-
-  @keyframes float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
-  /* Font classes */
-  .font-pixel {
-    font-family: 'Press Start 2P', cursive;
-  }
-
-  .font-silkscreen {
-    font-family: 'Silkscreen', cursive;
-  }
-
-  .font-vt323 {
-    font-family: 'VT323', monospace;
   }
 }
 
@@ -160,70 +114,5 @@
   .glowing-border {
     @apply relative border-2 border-retro-purple/50 rounded-lg overflow-hidden;
     box-shadow: 0 0 10px rgba(155, 135, 245, 0.3), inset 0 0 10px rgba(155, 135, 245, 0.3);
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  /* Section-specific theme classes */
-  .theme-home {
-    @apply bg-gradient-to-br from-background via-background/95 to-purple-900/10;
-  }
-  
-  .theme-home-card {
-    @apply border-retro-purple/30 bg-gradient-to-br from-card to-purple-900/20;
-  }
-  
-  .theme-home-text {
-    @apply text-retro-purple;
-  }
-  
-  .theme-reviews {
-    @apply bg-gradient-to-br from-background via-background/95 to-pink-900/10;
-  }
-  
-  .theme-reviews-card {
-    @apply border-retro-pink/30 bg-gradient-to-br from-card to-pink-900/20;
-  }
-  
-  .theme-reviews-text {
-    @apply text-retro-pink;
-  }
-  
-  .theme-curiosities {
-    @apply bg-gradient-to-br from-background via-background/95 to-blue-900/10;
-  }
-  
-  .theme-curiosities-card {
-    @apply border-blue-400/30 bg-gradient-to-br from-card to-blue-900/20;
-  }
-  
-  .theme-curiosities-text {
-    @apply text-blue-400;
-  }
-  
-  .theme-toplist {
-    @apply bg-gradient-to-br from-background via-background/95 to-amber-900/10;
-  }
-  
-  .theme-toplist-card {
-    @apply border-amber-400/30 bg-gradient-to-br from-card to-amber-900/20;
-  }
-  
-  .theme-toplist-text {
-    @apply text-amber-400;
-  }
-  
-  .theme-news {
-    @apply bg-gradient-to-br from-background via-background/95 to-blue-600/10;
-  }
-  
-  .theme-news-card {
-    @apply border-blue-500/30 bg-gradient-to-br from-card to-blue-900/20;
-  }
-  
-  .theme-news-text {
-    @apply text-blue-500;
   }
 }
