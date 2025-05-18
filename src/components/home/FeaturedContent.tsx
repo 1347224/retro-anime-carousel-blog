@@ -33,14 +33,6 @@ interface FeaturedContentProps {
 }
 
 const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList }: FeaturedContentProps) => {
-  // Ensure each array has valid items to prevent toLowerCase() errors
-  const safeReviews = featuredReviews?.filter(item => item && item.title && item.excerpt && item.image) || [];
-  const safeCuriosities = featuredCuriosities?.filter(item => item && item.title && item.category && item.excerpt && item.image) || [];
-  const safeTopList = featuredTopList?.title && featuredTopList?.items ? featuredTopList : { 
-    title: "Top Anime List", 
-    items: [] 
-  };
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -91,7 +83,7 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            {safeReviews.map((review) => (
+            {featuredReviews.map((review) => (
               <motion.div key={review.id} variants={itemVariants} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                 <Link to="/resenas">
                   <Card className="overflow-hidden border-2 border-retro-pink/30 h-full flex flex-col theme-reviews-card">
@@ -148,7 +140,7 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            {safeCuriosities.map((item) => (
+            {featuredCuriosities.map((item) => (
               <motion.div key={item.id} variants={itemVariants} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                 <Link to="/curiosidades">
                   <Card className="h-full border-2 border-blue-500/30 overflow-hidden flex flex-col theme-curiosities-card">
@@ -211,11 +203,11 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
             <Link to="/top-list">
               <Card className="border-2 border-amber-400/30 theme-toplist-card">
                 <CardHeader>
-                  <CardTitle className="font-pixel text-amber-400">{safeTopList.title}</CardTitle>
+                  <CardTitle className="font-pixel text-amber-400">{featuredTopList.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ol className="list-decimal pl-5 space-y-2 font-vt323 text-lg">
-                    {safeTopList.items.map((item, index) => (
+                    {featuredTopList.items.map((item, index) => (
                       <li key={index} className={`${index === 0 ? 'text-yellow-400 font-semibold font-silkscreen' : 'font-vt323'}`}>
                         {item}
                       </li>

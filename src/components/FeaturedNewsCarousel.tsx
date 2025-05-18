@@ -44,45 +44,27 @@ const featuredNews: NewsItem[] = [
 const FeaturedNewsCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
-  
-  // Filter out any potentially undefined items
-  const safeNewsList = featuredNews.filter(item => 
-    item && 
-    item.id && 
-    item.title && 
-    item.date && 
-    item.excerpt && 
-    item.image && 
-    item.category
-  );
 
   const nextSlide = () => {
-    if (animating || !safeNewsList.length) return;
+    if (animating) return;
     setAnimating(true);
-    setActiveIndex((current) => (current === safeNewsList.length - 1 ? 0 : current + 1));
+    setActiveIndex((current) => (current === featuredNews.length - 1 ? 0 : current + 1));
     setTimeout(() => setAnimating(false), 500);
   };
 
   const prevSlide = () => {
-    if (animating || !safeNewsList.length) return;
+    if (animating) return;
     setAnimating(true);
-    setActiveIndex((current) => (current === 0 ? safeNewsList.length - 1 : current - 1));
+    setActiveIndex((current) => (current === 0 ? featuredNews.length - 1 : current - 1));
     setTimeout(() => setAnimating(false), 500);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (safeNewsList.length > 1) {
-        nextSlide();
-      }
+      nextSlide();
     }, 8000);
     return () => clearInterval(interval);
   }, []);
-
-  // Guard against empty news list
-  if (!safeNewsList.length) {
-    return null;
-  }
 
   return (
     <div className="relative overflow-hidden crt-screen rounded-lg border-2 border-retro-purple/30">
@@ -90,7 +72,7 @@ const FeaturedNewsCarousel = () => {
         <span className="font-pixel text-sm md:text-base text-white">NOTICIAS DESTACADAS</span>
       </div>
       
-      {safeNewsList.map((news, index) => (
+      {featuredNews.map((news, index) => (
         <motion.div
           key={news.id}
           className={`absolute inset-0 transition-all duration-500 ease-in-out flex flex-col ${
@@ -152,39 +134,35 @@ const FeaturedNewsCarousel = () => {
         </motion.div>
       ))}
       
-      {safeNewsList.length > 1 && (
-        <>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-black/30 text-white rounded-full hover:bg-black/50"
-            onClick={prevSlide}
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
+      <Button 
+        variant="ghost" 
+        size="icon" 
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-black/30 text-white rounded-full hover:bg-black/50"
+        onClick={prevSlide}
+      >
+        <ChevronLeft className="h-6 w-6" />
+      </Button>
 
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-black/30 text-white rounded-full hover:bg-black/50"
-            onClick={nextSlide}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
-          
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
-            {safeNewsList.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-full ${
-                  index === activeIndex ? 'bg-retro-purple' : 'bg-white/50'
-                }`}
-                onClick={() => setActiveIndex(index)}
-              />
-            ))}
-          </div>
-        </>
-      )}
+      <Button 
+        variant="ghost" 
+        size="icon" 
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-black/30 text-white rounded-full hover:bg-black/50"
+        onClick={nextSlide}
+      >
+        <ChevronRight className="h-6 w-6" />
+      </Button>
+      
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+        {featuredNews.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full ${
+              index === activeIndex ? 'bg-retro-purple' : 'bg-white/50'
+            }`}
+            onClick={() => setActiveIndex(index)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

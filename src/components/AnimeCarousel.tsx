@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 
 const animes = [
   {
@@ -37,6 +38,8 @@ const animes = [
 const AnimeCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const [selectedAnime, setSelectedAnime] = useState(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const nextSlide = () => {
     if (animating) return;
@@ -50,6 +53,11 @@ const AnimeCarousel = () => {
     setAnimating(true);
     setActiveIndex((current) => (current === 0 ? animes.length - 1 : current - 1));
     setTimeout(() => setAnimating(false), 500);
+  };
+
+  const handleLearnMore = (anime) => {
+    setSelectedAnime(anime);
+    setIsDialogOpen(true);
   };
 
   useEffect(() => {
@@ -86,7 +94,12 @@ const AnimeCarousel = () => {
               <div className="w-full md:w-1/2 p-6 md:p-10 bg-card flex flex-col justify-center">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 retro-gradient-text">{anime.title}</h3>
                 <p className="text-foreground/80 mb-6">{anime.description}</p>
-                <Button className="retro-button self-start">Learn More</Button>
+                <Button 
+                  className="retro-button self-start"
+                  onClick={() => handleLearnMore(anime)}
+                >
+                  Learn More
+                </Button>
               </div>
             </div>
           ))}
@@ -122,6 +135,32 @@ const AnimeCarousel = () => {
           </div>
         </div>
       </div>
+
+      {/* Diálogo estático para "Learn More" */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-md border-retro-purple">
+          {selectedAnime && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-pixel text-xl text-retro-purple">{selectedAnime.title}</DialogTitle>
+                <DialogDescription className="text-sm text-muted-foreground">{selectedAnime.year}</DialogDescription>
+              </DialogHeader>
+              <div className="mt-4">
+                <img src={selectedAnime.image} alt={selectedAnime.title} className="w-full h-48 object-cover rounded-md mb-4" />
+                <p className="text-foreground/80">{selectedAnime.description}</p>
+                <div className="mt-4">
+                  <h4 className="font-pixel text-md text-retro-purple mb-2">CARACTERÍSTICAS</h4>
+                  <ul className="list-disc pl-5 text-sm space-y-1">
+                    <li>Género: Acción, Aventura</li>
+                    <li>Episodios: 24</li>
+                    <li>Estudio: Sunrise</li>
+                  </ul>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
