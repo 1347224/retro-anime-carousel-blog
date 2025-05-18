@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -88,7 +89,7 @@ const newsItems: NewsItem[] = [
     date: "18/10/2024",
     readTime: "5 min",
     category: "Eventos",
-    image: "https://images.unsplash.com/photo-1516280906200-323121b2ca91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Animefest2019CosplayCompetition2.jpg"
   },
   {
     id: 9,
@@ -99,7 +100,7 @@ const newsItems: NewsItem[] = [
     readTime: "4 min",
     category: "Música",
     image: "https://wallpapercave.com/wp/wp14664153.jpg"
-  }
+  },
 ];
 
 const Noticias = () => {
@@ -232,7 +233,7 @@ const Noticias = () => {
           <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-md rounded-lg">
             <div className="mb-6 flex flex-col md:flex-row gap-4">
               <div className="relative flex-grow">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4 pointer-events-none" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                 <Input
                   placeholder="Buscar noticias..."
                   value={searchTerm}
@@ -387,7 +388,7 @@ const Noticias = () => {
                       {selectedNews.category}
                     </Badge>
                   )}
-                  <h2 className="text-white text-2xl md:text-4xl font-bold font-vt323 mb-2 leading-tight">
+                  <h2 className="text-white text-2xl md:text-4xl font-bold font-pixel mb-2">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-retro-purple">
                       {selectedNews?.title}
                     </span>

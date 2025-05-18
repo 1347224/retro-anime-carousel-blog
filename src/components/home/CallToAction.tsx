@@ -1,52 +1,43 @@
 
-import { motion } from "framer-motion";
-import NewsletterForm from "../NewsletterForm";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import NewsletterForm from "@/components/NewsletterForm";
 
 const CallToAction = () => {
   const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
-  
+
   return (
-    <section className="py-12 relative">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/80 to-slate-900/90"></div>
-        <img 
-          src="https://images5.alphacoders.com/857/thumb-1920-857564.jpg" 
-          alt="Background" 
-          className="w-full h-full object-cover opacity-20"
-        />
-      </div>
-      
-      <div className="retro-container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="max-w-3xl mx-auto text-center mb-8"
-        >
-          <h2 className="font-pixel text-3xl md:text-4xl retro-gradient-text mb-4">ÚNETE A LA COMUNIDAD RETROANIME</h2>
-          <p className="text-lg font-vt323">
-            Comparte tu nostalgia y pasión por los clásicos del anime. Recibe noticias, curiosidades y recomendaciones directamente en tu correo.
-          </p>
-        </motion.div>
-        
-        <div className="max-w-md mx-auto">
-          <Button 
-            className="retro-button font-silkscreen mx-auto block"
-            onClick={() => setIsNewsletterOpen(true)}
+    <>
+      <section className="py-16 bg-gradient-to-r from-retro-purple/20 via-background to-retro-purple/20">
+        <div className="retro-container">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
           >
-            SUSCRÍBETE A LA NEWSLETTER
-          </Button>
-          <NewsletterForm 
-            open={isNewsletterOpen}
-            onOpenChange={setIsNewsletterOpen}
-          />
+            <div className="pixelated-border p-1 mb-6 inline-block">
+              <div className="h-12 w-12 bg-retro-purple rounded-full mx-auto animate-pulse"></div>
+            </div>
+            <h2 className="font-pixel text-3xl md:text-4xl text-retro-purple mb-4">¡ÚNETE A LA COMUNIDAD RETROANIME!</h2>
+            <p className="text-lg max-w-2xl mx-auto mb-8 font-vt323">Forma parte de nuestra comunidad de amantes del anime retro donde compartimos recuerdos, análisis y celebramos la época dorada de la animación japonesa.</p>
+            <div className="flex justify-center">
+              <Button 
+                className="retro-button text-lg px-8 py-6 font-silkscreen"
+                onClick={() => setIsNewsletterOpen(true)}
+              >
+                SUSCRÍBETE A LA NEWSLETTER
+              </Button>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Newsletter Form Dialog */}
+      <NewsletterForm open={isNewsletterOpen} onOpenChange={setIsNewsletterOpen} />
+    </>
   );
 };
 

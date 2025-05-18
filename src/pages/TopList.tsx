@@ -2,12 +2,22 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useLocation } from "react-router-dom";
 
 const TopList = () => {
   const containerRef = useRef(null);
+  const mechaSection = useRef<HTMLElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle direct navigation to the mecha animes section
+    if (location.hash === '#mecha-animes' && mechaSection.current) {
+      mechaSection.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location]);
   
   const topMechaAnimes = [
     {
@@ -139,7 +149,7 @@ const TopList = () => {
         </motion.div>
 
         {/* Top Mecha Animes Section */}
-        <section className="py-12 bg-gradient-to-r from-amber-900/20 via-background to-amber-900/20">
+        <section id="mecha-animes" ref={mechaSection} className="py-12 bg-gradient-to-r from-amber-900/20 via-background to-amber-900/20">
           <div className="retro-container">
             <motion.div
               initial={{ opacity: 0, x: -50 }}

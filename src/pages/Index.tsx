@@ -5,7 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import FeaturedContent from "@/components/home/FeaturedContent";
 import CallToAction from "@/components/home/CallToAction";
-import SectionCarousels from "@/components/home/SectionCarousels";
+import SectionCarousels from "@/components/home/SectionCarousels"; 
 
 const Index = () => {
   // Featured content from other sections
@@ -55,7 +55,7 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection />
       
-      {/* Anime Carousel Section */}
+      {/* Section Carousels */}
       <SectionCarousels />
       
       {/* Featured Content Sections */}
