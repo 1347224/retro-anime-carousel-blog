@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import FeaturedContent from "@/components/home/FeaturedContent";
 import CallToAction from "@/components/home/CallToAction";
 import SectionCarousels from "@/components/home/SectionCarousels"; 
-import BlogSection from "@/components/BlogSection";
 
 const Index = () => {
   // Featured content from other sections
@@ -65,9 +64,6 @@ const Index = () => {
         featuredCuriosities={featuredCuriosities}
         featuredTopList={featuredTopList}
       />
-
-      {/* Blog Section */}
-      <BlogSection />
 
       {/* CTA Section */}
       <CallToAction />
