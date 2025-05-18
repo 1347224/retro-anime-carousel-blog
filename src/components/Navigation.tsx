@@ -3,9 +3,11 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import NewsletterForm from '@/components/NewsletterForm';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
 
   const navItems = [
     { name: 'Inicio', path: '/' },
@@ -37,7 +39,12 @@ const Navigation = () => {
               </span>
             </Link>
           ))}
-          <Button className="retro-button font-silkscreen">Subscribe</Button>
+          <Button 
+            className="retro-button font-silkscreen"
+            onClick={() => setIsNewsletterOpen(true)}
+          >
+            Subscribe
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -50,7 +57,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden absolute w-full bg-card border-b border-border">
+        <div className="md:hidden absolute w-full bg-card/90 backdrop-blur-md border-b border-border rounded-b-lg">
           <div className="retro-container py-4 space-y-4">
             {navItems.map((item) => (
               <Link
@@ -62,10 +69,21 @@ const Navigation = () => {
                 <span>{item.name}</span>
               </Link>
             ))}
-            <Button className="retro-button font-silkscreen w-full">Subscribe</Button>
+            <Button 
+              className="retro-button font-silkscreen w-full"
+              onClick={() => {
+                setIsOpen(false);
+                setIsNewsletterOpen(true);
+              }}
+            >
+              Subscribe
+            </Button>
           </div>
         </div>
       )}
+
+      {/* Newsletter Form Dialog */}
+      <NewsletterForm open={isNewsletterOpen} onOpenChange={setIsNewsletterOpen} />
     </nav>
   );
 };
