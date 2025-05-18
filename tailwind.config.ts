@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -22,6 +21,7 @@ export default {
 			fontFamily: {
 				pixel: ['"Press Start 2P"', 'cursive'],
 				anime: ['"VT323"', 'monospace'],
+				silkscreen: ['Silkscreen', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
