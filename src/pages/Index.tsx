@@ -45,7 +45,7 @@ const Index = () => {
 
   const featuredTopList = {
     title: "Top 5 Mecha Animes de los 90s",
-    items: ["Neon Genesis Evangelion", "Mobile Suit Gundam", "Tengen Toppa Gurren Lagann", "Code Geass", "Macross Plus"]
+    items: ["Tengen Toppa Gurren Lagann", "Code Geass", "Macross Plus"]
   };
 
   return (
