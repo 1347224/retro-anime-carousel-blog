@@ -124,7 +124,7 @@ const TopList = () => {
       anime: "Sailor Moon",
       year: "1992",
       description: "Un opening que trasciende generaciones y ha sido versionado múltiples veces, manteniendo su encanto nostálgico.",
-      videoUrl: "https://www.youtube.com/embed/nU21rCWkuJw"
+      videoUrl: "https://www.youtube.com/embed/LGQCPOMcYJQ"
     },
     {
       rank: 5,
