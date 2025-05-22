@@ -297,6 +297,7 @@ const TopList = () => {
                         year={opening.year}
                         description={opening.description}
                         videoUrl={opening.videoUrl}
+                        imageUrl={opening.imageUrl}
                       />
                     </CarouselItem>
                   ))}
