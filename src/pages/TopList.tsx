@@ -282,7 +282,7 @@ const TopList = () => {
               >
                 <CarouselContent className="-ml-4">
                   {topOpenings.map((opening) => (
-                    <CarouselItem key={opening.rank} className="pl-4 md:basis-1/3">
+                    <CarouselItem key={opening.rank} className="pl-8 md:basis-1/3">
                       <TopOpeningCard
                         rank={opening.rank}
                         title={opening.title}
@@ -325,7 +325,7 @@ const TopList = () => {
               >
                 <CarouselContent className="-ml-4">
                   {animesThatDefinedGeneration.map((anime) => (
-                    <CarouselItem key={anime.rank} className="pl-4 md:basis-1/3">
+                    <CarouselItem key={anime.rank} className="pl-6 md:basis-1/3">
                       <TopAnimeCard
                         rank={anime.rank}
                         title={anime.title}
