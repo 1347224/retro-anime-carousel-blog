@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -7,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import TopOpeningCard from "@/components/TopOpeningCard";
 import TopAnimeCard from "@/components/TopAnimeCard";
+import { Badge } from "@/components/ui/badge";
 
 const TopList = () => {
   const containerRef = useRef(null);
