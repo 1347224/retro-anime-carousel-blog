@@ -11,7 +11,7 @@ interface TopOpeningCardProps {
   year: string;
   description: string;
   videoUrl?: string;
-  imageUrl: string;
+  imageUrl?: string;
 }
 
 const TopOpeningCard = ({ rank, title, anime, year, description, videoUrl, imageUrl }: TopOpeningCardProps) => {
