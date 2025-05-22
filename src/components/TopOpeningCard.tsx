@@ -75,7 +75,7 @@ const TopOpeningCard = ({ rank, title, anime, year, description, videoUrl }: Top
           </DialogHeader>
           
           <div className="mt-4">
-            <div className="relative pb-[65.25%] bg-black rounded-md overflow-hidden mb-6">
+            <div className="relative pb-[56.25%] bg-black rounded-md overflow-hidden mb-6">
               {videoUrl ? (
                 <iframe 
                   src={videoUrl}
