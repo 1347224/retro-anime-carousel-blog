@@ -227,41 +227,6 @@ const Noticias = () => {
         </div>
       </motion.div>
       
-      <div className="bg-gradient-to-br from-background via-blue-900/5 to-background">
-        <div className="retro-container py-12">
-          {/* Search and filter */}
-          <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-md rounded-lg">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div className="relative w-full md:w-auto md:flex-grow md:mr-4">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                <Input
-                  placeholder="Buscar noticias..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-card/50 border-blue-500/30 focus:border-blue-500 font-vt323"
-                />
-              </div>
-              <div className="flex gap-2 flex-wrap w-full md:w-auto">
-                <Button 
-                  variant={categoryFilter === null ? "default" : "outline"}
-                  onClick={() => setCategoryFilter(null)}
-                  className="h-10 font-silkscreen"
-                >
-                  Todos
-                </Button>
-                {categories.map(category => (
-                  <Button
-                    key={category}
-                    variant={categoryFilter === category ? "default" : "outline"}
-                    onClick={() => setCategoryFilter(category)}
-                    className="h-10 font-silkscreen"
-                  >
-                    {category}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
 
           {filteredNews.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
