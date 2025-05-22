@@ -333,7 +333,7 @@ const TopList = () => {
               >
                 <CarouselContent className="-ml-4">
                   {animesThatDefinedGeneration.map((anime) => (
-                    <CarouselItem key={anime.rank} className="pl-6 md:basis-1/3">
+                    <CarouselItem key={anime.rank} className="pl-6 md:basis-1/4">
                       <TopAnimeCard
                         rank={anime.rank}
                         title={anime.title}
