@@ -116,7 +116,7 @@ const TopList = () => {
       anime: "Rurouni Kenshin",
       year: "1996",
       description: "Un tema de J-rock enérgico que combina perfectamente con la acción de la serie y se volvió emblemático de la época.",
-      videoUrl: "https://youtu.be/YvvlGma6COM?si=fXW88KYrtrN66qyx"
+      videoUrl: "https://www.youtube.com/embed/YvvlGma6COM"
     },
     {
       rank: 4,
