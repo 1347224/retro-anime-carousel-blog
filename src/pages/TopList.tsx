@@ -139,7 +139,7 @@ const TopList = () => {
       year: "1989",
       description: "Posiblemente uno de los openings más reconocibles globalmente, que continúa siendo cantado por fans en todo el mundo.",
       videoUrl: "https://www.youtube.com/embed/cie7scVUdQE",
-      imageUrl: "https://images.alphacoders.com/863/thumb-1920-863521.jpg"
+      imageUrl: "https://giffiles.alphacoders.com/456/4560.gif"
     }
   ];
 
