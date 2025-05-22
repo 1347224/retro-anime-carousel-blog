@@ -1,6 +1,5 @@
 
 import { useState, useRef, useEffect } from "react";
-import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
