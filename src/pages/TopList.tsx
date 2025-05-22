@@ -276,7 +276,7 @@ const TopList = () => {
             </motion.div>
             
             <div className="openings-carousel">
-              <Carousel className="w-200px" 
+              <Carousel className="w-full" 
                 onMouseEnter={() => setAutoPlayOpenings(false)}
                 onMouseLeave={() => setAutoPlayOpenings(true)}
               >
