@@ -116,7 +116,7 @@ const TopList = () => {
       anime: "Rurouni Kenshin",
       year: "1996",
       description: "Un tema de J-rock enérgico que combina perfectamente con la acción de la serie y se volvió emblemático de la época.",
-      videoUrl: "https://www.youtube.com/embed/Qq61e-LtJTU"
+      videoUrl: "https://www.youtube.com/watch?v=YvvlGma6COM"
     },
     {
       rank: 4,
@@ -124,7 +124,7 @@ const TopList = () => {
       anime: "Sailor Moon",
       year: "1992",
       description: "Un opening que trasciende generaciones y ha sido versionado múltiples veces, manteniendo su encanto nostálgico.",
-      videoUrl: "https://www.youtube.com/embed/sf1oFDiJE-c"
+      videoUrl: "https://www.youtube.com/watch?v=LGQCPOMcYJQ"
     },
     {
       rank: 5,
@@ -132,7 +132,7 @@ const TopList = () => {
       anime: "Dragon Ball Z",
       year: "1989",
       description: "Posiblemente uno de los openings más reconocibles globalmente, que continúa siendo cantado por fans en todo el mundo.",
-      videoUrl: "https://www.youtube.com/embed/pYnLO7MVKno"
+      videoUrl: "https://www.youtube.com/watch?v=cie7scVUdQE"
     }
   ];
 
@@ -143,7 +143,7 @@ const TopList = () => {
       year: "1989-1996",
       impact: "Globalizó el anime y se convirtió en un fenómeno cultural mundial. Introdujo a millones de personas al medio.",
       legacy: "Sus personajes, frases y escenas de batalla son referencias culturales inmediatas en todo el mundo.",
-      imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&fit=crop"
+      imageUrl: "https://wallpapercave.com/wp/wp6341982.jpg"
     },
     {
       rank: 2,
@@ -151,7 +151,7 @@ const TopList = () => {
       year: "1992-1997",
       impact: "Redefinió el género magical girl y presentó heroínas fuertes que resonaron con audiencias de todos los géneros.",
       legacy: "Su estética y temas continúan influyendo en el anime y la cultura pop actual.",
-      imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=600&fit=crop"
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     },
     {
       rank: 3,
@@ -159,7 +159,7 @@ const TopList = () => {
       year: "1997-presente",
       impact: "Trascendió el anime para convertirse en un fenómeno multimedia global que abarca juegos, cartas, juguetes y más.",
       legacy: "La franquicia más rentable de todos los tiempos, que continúa siendo relevante para nuevas generaciones.",
-      imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=600&fit=crop"
+      imageUrl: "https://images7.alphacoders.com/592/thumb-1920-592678.jpg"
     },
     {
       rank: 4,
@@ -167,7 +167,7 @@ const TopList = () => {
       year: "1995-1996",
       impact: "Revolucionó la narrativa y estética del anime con su deconstrucción del género mecha y exploración psicológica.",
       legacy: "Sentó las bases para un anime más experimental y psicológicamente complejo.",
-      imageUrl: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=600&fit=crop"
+      imageUrl: "https://images6.alphacoders.com/691/thumb-1920-691066.jpg"
     },
     {
       rank: 5,
@@ -175,7 +175,7 @@ const TopList = () => {
       year: "1995",
       impact: "Exploró temas filosóficos sobre la identidad humana en la era digital que siguen siendo relevantes.",
       legacy: "Su estética y temas influenciaron a toda una generación de creadores, incluyendo a los directores de Matrix.",
-      imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&fit=crop"
+      imageUrl: "https://wallpapercave.com/wp/wp1843957.jpg"
     }
   ];
 
