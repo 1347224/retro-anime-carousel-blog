@@ -273,7 +273,7 @@ const TopList = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="flex items-center mb-4 space-x-4"
+              className="flex items-center mb-8 space-x-4"
             >
               <div className="h-1 flex-grow bg-gradient-to-r from-red-500 to-red-500/20"></div>
               <h2 className="font-pixel text-3xl text-red-500 whitespace-nowrap">
