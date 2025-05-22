@@ -102,7 +102,7 @@ const TopList = () => {
       year: "1995",
       description: "Un tema enérgico y pegadizo que contrasta con los temas oscuros de la serie. Se ha convertido en un himno de la cultura otaku.",
       videoUrl: "https://www.youtube.com/embed/nU21rCWkuJw",
-      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
+      imageUrl: "https://images6.alphacoders.com/691/thumb-1920-691066.jpg"
 
     },
     {
