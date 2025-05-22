@@ -231,14 +231,14 @@ const TopList = () => {
                           ? "border-amber-700/70 bg-amber-700/10"
                           : "border-indigo-600/30 bg-indigo-600/5"
                   } rounded-lg overflow-hidden`}>
-                    <div className="relative h-96 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
                       <img 
                         src={anime.image} 
                         alt={anime.title}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute bottom-4 left-4 z-20">
+                      <div className="absolute bottom-8 left-4 z-20">
                         <Badge className="font-bold text-lg bg-amber-400 hover:bg-amber-500 text-black">
                           #{anime.rank}
                         </Badge>
