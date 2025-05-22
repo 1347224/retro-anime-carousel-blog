@@ -268,7 +268,7 @@ const TopList = () => {
               viewport={{ once: true }}
               className="flex items-center mb-12 space-x-4"
             >
-              <div className="h-3 flex-grow bg-gradient-to-r from-red-500 to-red-500/20"></div>
+              <div className="h-1 flex-grow bg-gradient-to-r from-red-500 to-red-500/20"></div>
               <h2 className="font-pixel text-3xl text-red-500 whitespace-nowrap">
                 Los Openings Más Épicos
               </h2>
@@ -276,7 +276,7 @@ const TopList = () => {
             </motion.div>
             
             <div className="openings-carousel">
-              <Carousel className="w-full" 
+              <Carousel className="w-200px" 
                 onMouseEnter={() => setAutoPlayOpenings(false)}
                 onMouseLeave={() => setAutoPlayOpenings(true)}
               >
