@@ -231,7 +231,7 @@ const Noticias = () => {
         <div className="retro-container py-12">
           {/* Search and filter */}
           <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-md rounded-lg">
-            <div className="mb-6 flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="relative w-full md:w-auto md:flex-grow md:mr-4">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                 <Input
