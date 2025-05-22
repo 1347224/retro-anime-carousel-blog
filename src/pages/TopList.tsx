@@ -337,8 +337,8 @@ const TopList = () => {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="carousel-prev -left-4 lg:-left-12 bg-green-500/20 hover:bg-green-500/40 border-green-500/30 text-green-400" />
-                <CarouselNext className="carousel-next -right-4 lg:-right-12 bg-green-500/20 hover:bg-green-500/40 border-green-500/30 text-green-400" />
+                <CarouselPrevious className="carousel-prev -left-4 lg:-left-12 bg-green-500/20 hover:bg-green-1000/40 border-green-700/30 text-green-400" />
+                <CarouselNext className="carousel-next -right-4 lg:-right-12 bg-green-500/20 hover:bg-green-1000/40 border-green-700/30 text-green-400" />
               </Carousel>
             </div>
           </div>
