@@ -11,10 +11,9 @@ interface TopOpeningCardProps {
   year: string;
   description: string;
   videoUrl?: string;
-  imageUrl: string;
 }
 
-const TopOpeningCard = ({ rank, title, anime, year, description, videoUrl, imageUrl }: TopOpeningCardProps) => {
+const TopOpeningCard = ({ rank, title, anime, year, description, videoUrl }: TopOpeningCardProps) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -33,7 +32,7 @@ const TopOpeningCard = ({ rank, title, anime, year, description, videoUrl, image
           <div className="h-[180px] overflow-hidden">
             {/* Placeholder image - in a real app, we would have unique images */}
             <motion.img 
-              src={imageUrl} 
+              src={`sd`} 
               alt={title}
               className="w-full h-full object-cover"
               whileHover={{ scale: 1.1 }}
