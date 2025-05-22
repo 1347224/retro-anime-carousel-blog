@@ -102,7 +102,7 @@ const TopList = () => {
       year: "1995",
       description: "Un tema enérgico y pegadizo que contrasta con los temas oscuros de la serie. Se ha convertido en un himno de la cultura otaku.",
       videoUrl: "https://www.youtube.com/embed/nU21rCWkuJw",
-      imageUrl: "https://giffiles.alphacoders.com/113/113043.gif"
+      imageUrl: "https://preview.redd.it/r4qg02hmkoq71.jpg?vthumb=1&s=de886d51809f7e9aa441cd51f3a1dafe3caa058f"
 
     },
     {
@@ -112,7 +112,7 @@ const TopList = () => {
       year: "1998",
       description: "Una explosiva introducción de jazz que captura perfectamente la esencia estilizada y cool de la serie.",
       videoUrl: "https://www.youtube.com/embed/EL-D9LrFJd4",
-      imageUrl: "https://giffiles.alphacoders.com/102/102752.gif"
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     },
     {
       rank: 3,
@@ -121,7 +121,7 @@ const TopList = () => {
       year: "1996",
       description: "Un tema de J-rock enérgico que combina perfectamente con la acción de la serie y se volvió emblemático de la época.",
       videoUrl: "https://www.youtube.com/embed/YvvlGma6COM",
-      imageUrl: "https://giffiles.alphacoders.com/148/148166.gif"
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     },
     {
       rank: 4,
@@ -130,7 +130,7 @@ const TopList = () => {
       year: "1992",
       description: "Un opening que trasciende generaciones y ha sido versionado múltiples veces, manteniendo su encanto nostálgico.",
       videoUrl: "https://www.youtube.com/embed/LGQCPOMcYJQ",
-      imageUrl: "https://giffiles.alphacoders.com/137/137134.gif"
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     },
     {
       rank: 5,
@@ -139,7 +139,7 @@ const TopList = () => {
       year: "1989",
       description: "Posiblemente uno de los openings más reconocibles globalmente, que continúa siendo cantado por fans en todo el mundo.",
       videoUrl: "https://www.youtube.com/embed/cie7scVUdQE",
-      imageUrl: "https://images.alphacoders.com/863/thumb-1920-863521.jpg"
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     }
   ];
 
