@@ -132,7 +132,7 @@ const TopList = () => {
       anime: "Dragon Ball Z",
       year: "1989",
       description: "Posiblemente uno de los openings más reconocibles globalmente, que continúa siendo cantado por fans en todo el mundo.",
-      videoUrl: "https://youtu.be/cie7scVUdQE?si=jCiRrIUV0P-YeNar"
+      videoUrl: "https://www.youtube.com/watch?v=cie7scVUdQE"
     }
   ];
 
