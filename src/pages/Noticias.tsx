@@ -152,13 +152,13 @@ const Noticias = () => {
   }, [filteredNews]);
 
   return (
-    <div className="min-h-screen bg-black text-foreground overflow-hidden">
+    <div className="min-h-screen bg-black text-foreground overflow-hidden pt-16">
       <Navigation />
       
       {/* Hero header */}
       <motion.div 
         ref={headerRef}
-        className="relative h-[70vh] overflow-hidden"
+        className="relative h-[70vh] overflow-hidden mt-16"
         style={{
           opacity: headerOpacity,
           scale: headerScale,
