@@ -39,7 +39,7 @@ const TopOpeningCard = ({ rank, title, anime, year, description, videoUrl, image
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
               onError={(e) => {
-                (e.target as HTMLImageElement).src = 'https://via.placeholder.com/280x180';
+                (e.target as HTMLImageElement).src = 'https://via.placeholder.com/280x180'}}
             />
             <div className="absolute top-3 left-3">
               <Badge className="font-bold text-lg bg-red-500 hover:bg-red-600 text-white">
