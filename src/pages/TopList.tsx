@@ -101,6 +101,7 @@ const TopList = () => {
       year: "1995",
       description: "Un tema enérgico y pegadizo que contrasta con los temas oscuros de la serie. Se ha convertido en un himno de la cultura otaku.",
       videoUrl: "https://www.youtube.com/embed/nU21rCWkuJw"
+      imageUrl: "https://preview.redd.it/r4qg02hmkoq71.jpg?vthumb=1&s=de886d51809f7e9aa441cd51f3a1dafe3caa058f"
     },
     {
       rank: 2,
