@@ -259,14 +259,14 @@ const TopList = () => {
         </section>
 
         {/* Top Openings Section - Now with carousel */}
-        <section className="py-6">
+        <section className="py-12">
           <div className="retro-container">
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="flex items-center mb-8 space-x-4"
+              className="flex items-center mb-2 space-x-4"
             >
               <div className="h-1 flex-grow bg-gradient-to-r from-red-500 to-red-500/20"></div>
               <h2 className="font-pixel text-3xl text-red-500 whitespace-nowrap">
