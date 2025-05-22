@@ -1,17 +1,27 @@
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import TopOpeningCard from "@/components/TopOpeningCard";
 import TopAnimeCard from "@/components/TopAnimeCard";
 import { Badge } from "@/components/ui/badge";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 const TopList = () => {
   const containerRef = useRef(null);
   const mechaSection = useRef<HTMLElement>(null);
   const location = useLocation();
+  const [autoPlayOpenings, setAutoPlayOpenings] = useState(true);
+  const [autoPlayAnimes, setAutoPlayAnimes] = useState(true);
 
   useEffect(() => {
     // Handle direct navigation to the mecha animes section
@@ -20,6 +30,31 @@ const TopList = () => {
     }
   }, [location]);
   
+  // Auto-play carousels
+  useEffect(() => {
+    let openingsInterval: NodeJS.Timeout;
+    let animesInterval: NodeJS.Timeout;
+    
+    if (autoPlayOpenings) {
+      openingsInterval = setInterval(() => {
+        const nextButton = document.querySelector('.openings-carousel .carousel-next') as HTMLButtonElement | null;
+        if (nextButton) nextButton.click();
+      }, 5000);
+    }
+    
+    if (autoPlayAnimes) {
+      animesInterval = setInterval(() => {
+        const nextButton = document.querySelector('.animes-carousel .carousel-next') as HTMLButtonElement | null;
+        if (nextButton) nextButton.click();
+      }, 7000);
+    }
+    
+    return () => {
+      clearInterval(openingsInterval);
+      clearInterval(animesInterval);
+    };
+  }, [autoPlayOpenings, autoPlayAnimes]);
+
   const topMechaAnimes = [
     {
       rank: 1,
@@ -223,7 +258,7 @@ const TopList = () => {
           </div>
         </section>
 
-        {/* Top Openings Section - Now with horizontal cards and popups */}
+        {/* Top Openings Section - Now with carousel */}
         <section className="py-12">
           <div className="retro-container">
             <motion.div
@@ -240,25 +275,33 @@ const TopList = () => {
               <div className="h-1 flex-grow bg-gradient-to-l from-red-500 to-red-500/20"></div>
             </motion.div>
             
-            <ScrollArea className="w-full pb-6">
-              <div className="flex space-x-6 px-1 py-4">
-                {topOpenings.map((opening) => (
-                  <TopOpeningCard
-                    key={opening.rank}
-                    rank={opening.rank}
-                    title={opening.title}
-                    anime={opening.anime}
-                    year={opening.year}
-                    description={opening.description}
-                    videoUrl={opening.videoUrl}
-                  />
-                ))}
-              </div>
-            </ScrollArea>
+            <div className="openings-carousel">
+              <Carousel className="w-full" 
+                onMouseEnter={() => setAutoPlayOpenings(false)}
+                onMouseLeave={() => setAutoPlayOpenings(true)}
+              >
+                <CarouselContent className="-ml-4">
+                  {topOpenings.map((opening) => (
+                    <CarouselItem key={opening.rank} className="pl-4 md:basis-1/3">
+                      <TopOpeningCard
+                        rank={opening.rank}
+                        title={opening.title}
+                        anime={opening.anime}
+                        year={opening.year}
+                        description={opening.description}
+                        videoUrl={opening.videoUrl}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="carousel-prev -left-4 lg:-left-12 bg-red-500/20 hover:bg-red-500/40 border-red-500/30 text-red-400" />
+                <CarouselNext className="carousel-next -right-4 lg:-right-12 bg-red-500/20 hover:bg-red-500/40 border-red-500/30 text-red-400" />
+              </Carousel>
+            </div>
           </div>
         </section>
 
-        {/* Animes That Defined A Generation - Now with horizontal cards and popups */}
+        {/* Animes That Defined A Generation - Now with carousel */}
         <section className="py-12 bg-gradient-to-r from-purple-900/20 via-background to-purple-900/20">
           <div className="retro-container">
             <motion.div
@@ -275,21 +318,29 @@ const TopList = () => {
               <div className="h-1 flex-grow bg-gradient-to-l from-green-500/20 to-green-500"></div>
             </motion.div>
             
-            <ScrollArea className="w-full pb-6">
-              <div className="flex space-x-6 px-1 py-4">
-                {animesThatDefinedGeneration.map((anime) => (
-                  <TopAnimeCard
-                    key={anime.rank}
-                    rank={anime.rank}
-                    title={anime.title}
-                    year={anime.year}
-                    impact={anime.impact}
-                    legacy={anime.legacy}
-                    imageUrl={anime.imageUrl}
-                  />
-                ))}
-              </div>
-            </ScrollArea>
+            <div className="animes-carousel">
+              <Carousel className="w-full"
+                onMouseEnter={() => setAutoPlayAnimes(false)}
+                onMouseLeave={() => setAutoPlayAnimes(true)}
+              >
+                <CarouselContent className="-ml-4">
+                  {animesThatDefinedGeneration.map((anime) => (
+                    <CarouselItem key={anime.rank} className="pl-4 md:basis-1/3">
+                      <TopAnimeCard
+                        rank={anime.rank}
+                        title={anime.title}
+                        year={anime.year}
+                        impact={anime.impact}
+                        legacy={anime.legacy}
+                        imageUrl={anime.imageUrl}
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="carousel-prev -left-4 lg:-left-12 bg-green-500/20 hover:bg-green-500/40 border-green-500/30 text-green-400" />
+                <CarouselNext className="carousel-next -right-4 lg:-right-12 bg-green-500/20 hover:bg-green-500/40 border-green-500/30 text-green-400" />
+              </Carousel>
+            </div>
           </div>
         </section>
       </div>
