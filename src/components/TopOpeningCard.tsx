@@ -28,7 +28,7 @@ const TopOpeningCard = ({ rank, title, anime, year, description, videoUrl }: Top
         className="cursor-pointer"
         onClick={() => setOpen(true)}
       >
-        <div className="bg-gradient-to-b from-red-900/20 to-background rounded-lg overflow-hidden border-2 border-red-500/30 shadow-lg w-[280px] h-[340px] relative">
+        <div className="bg-gradient-to-b from-red-900/20 to-background rounded-lg overflow-hidden border-2 border-red-500/30 shadow-lg w-[320px] h-[380px] relative">
           <div className="h-[180px] overflow-hidden">
             {/* Placeholder image - in a real app, we would have unique images */}
             <motion.img 
