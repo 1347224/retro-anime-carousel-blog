@@ -1,11 +1,12 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { useLocation } from "react-router-dom";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import TopOpeningCard from "@/components/TopOpeningCard";
+import TopAnimeCard from "@/components/TopAnimeCard";
 
 const TopList = () => {
   const containerRef = useRef(null);
@@ -63,35 +64,40 @@ const TopList = () => {
       title: "A Cruel Angel's Thesis",
       anime: "Neon Genesis Evangelion",
       year: "1995",
-      description: "Un tema enérgico y pegadizo que contrasta con los temas oscuros de la serie. Se ha convertido en un himno de la cultura otaku."
+      description: "Un tema enérgico y pegadizo que contrasta con los temas oscuros de la serie. Se ha convertido en un himno de la cultura otaku.",
+      videoUrl: "https://www.youtube.com/embed/nU21rCWkuJw"
     },
     {
       rank: 2,
       title: "Tank!",
       anime: "Cowboy Bebop",
       year: "1998",
-      description: "Una explosiva introducción de jazz que captura perfectamente la esencia estilizada y cool de la serie."
+      description: "Una explosiva introducción de jazz que captura perfectamente la esencia estilizada y cool de la serie.",
+      videoUrl: "https://www.youtube.com/embed/EL-D9LrFJd4"
     },
     {
       rank: 3,
       title: "Sobakasu",
       anime: "Rurouni Kenshin",
       year: "1996",
-      description: "Un tema de J-rock enérgico que combina perfectamente con la acción de la serie y se volvió emblemático de la época."
+      description: "Un tema de J-rock enérgico que combina perfectamente con la acción de la serie y se volvió emblemático de la época.",
+      videoUrl: "https://www.youtube.com/embed/Qq61e-LtJTU"
     },
     {
       rank: 4,
       title: "Moonlight Densetsu",
       anime: "Sailor Moon",
       year: "1992",
-      description: "Un opening que trasciende generaciones y ha sido versionado múltiples veces, manteniendo su encanto nostálgico."
+      description: "Un opening que trasciende generaciones y ha sido versionado múltiples veces, manteniendo su encanto nostálgico.",
+      videoUrl: "https://www.youtube.com/embed/sf1oFDiJE-c"
     },
     {
       rank: 5,
       title: "Cha-La Head-Cha-La",
       anime: "Dragon Ball Z",
       year: "1989",
-      description: "Posiblemente uno de los openings más reconocibles globalmente, que continúa siendo cantado por fans en todo el mundo."
+      description: "Posiblemente uno de los openings más reconocibles globalmente, que continúa siendo cantado por fans en todo el mundo.",
+      videoUrl: "https://www.youtube.com/embed/pYnLO7MVKno"
     }
   ];
 
@@ -101,35 +107,40 @@ const TopList = () => {
       title: "Dragon Ball Z",
       year: "1989-1996",
       impact: "Globalizó el anime y se convirtió en un fenómeno cultural mundial. Introdujo a millones de personas al medio.",
-      legacy: "Sus personajes, frases y escenas de batalla son referencias culturales inmediatas en todo el mundo."
+      legacy: "Sus personajes, frases y escenas de batalla son referencias culturales inmediatas en todo el mundo.",
+      imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&fit=crop"
     },
     {
       rank: 2,
       title: "Sailor Moon",
       year: "1992-1997",
       impact: "Redefinió el género magical girl y presentó heroínas fuertes que resonaron con audiencias de todos los géneros.",
-      legacy: "Su estética y temas continúan influyendo en el anime y la cultura pop actual."
+      legacy: "Su estética y temas continúan influyendo en el anime y la cultura pop actual.",
+      imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=600&fit=crop"
     },
     {
       rank: 3,
       title: "Pokemon",
       year: "1997-presente",
       impact: "Trascendió el anime para convertirse en un fenómeno multimedia global que abarca juegos, cartas, juguetes y más.",
-      legacy: "La franquicia más rentable de todos los tiempos, que continúa siendo relevante para nuevas generaciones."
+      legacy: "La franquicia más rentable de todos los tiempos, que continúa siendo relevante para nuevas generaciones.",
+      imageUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=600&fit=crop"
     },
     {
       rank: 4,
       title: "Neon Genesis Evangelion",
       year: "1995-1996",
       impact: "Revolucionó la narrativa y estética del anime con su deconstrucción del género mecha y exploración psicológica.",
-      legacy: "Sentó las bases para un anime más experimental y psicológicamente complejo."
+      legacy: "Sentó las bases para un anime más experimental y psicológicamente complejo.",
+      imageUrl: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=600&fit=crop"
     },
     {
       rank: 5,
       title: "Ghost in the Shell",
       year: "1995",
       impact: "Exploró temas filosóficos sobre la identidad humana en la era digital que siguen siendo relevantes.",
-      legacy: "Su estética y temas influenciaron a toda una generación de creadores, incluyendo a los directores de Matrix."
+      legacy: "Su estética y temas influenciaron a toda una generación de creadores, incluyendo a los directores de Matrix.",
+      imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&fit=crop"
     }
   ];
 
@@ -176,7 +187,7 @@ const TopList = () => {
                   whileHover={{ y: -10 }}
                   className="col-span-1"
                 >
-                  <Card className={`h-full border-2 ${
+                  <div className={`h-full border-2 ${
                     index === 0 
                       ? "border-yellow-400/70 bg-yellow-400/10" 
                       : index === 1 
@@ -184,7 +195,7 @@ const TopList = () => {
                         : index === 2
                           ? "border-amber-700/70 bg-amber-700/10"
                           : "border-indigo-600/30 bg-indigo-600/5"
-                  }`}>
+                  } rounded-lg overflow-hidden`}>
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
                       <img 
@@ -198,23 +209,21 @@ const TopList = () => {
                         </Badge>
                       </div>
                     </div>
-                    <CardHeader className="pb-2">
-                      <CardTitle className="font-silkscreen text-xl font-bold">
+                    <div className="p-4">
+                      <h3 className="font-silkscreen font-bold text-xl mb-2">
                         {anime.title}
-                      </CardTitle>
-                      <CardDescription>{anime.year}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-2">{anime.year}</p>
                       <p className="text-sm font-vt323">{anime.description}</p>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Top Openings Section */}
+        {/* Top Openings Section - Now with horizontal cards and popups */}
         <section className="py-12">
           <div className="retro-container">
             <motion.div
@@ -231,52 +240,25 @@ const TopList = () => {
               <div className="h-1 flex-grow bg-gradient-to-l from-red-500 to-red-500/20"></div>
             </motion.div>
             
-            <div className="space-y-4">
-              {topOpenings.map((opening, index) => (
-                <motion.div
-                  key={opening.rank}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <Card className={`overflow-hidden border-l-4 ${
-                    index === 0 
-                      ? "border-l-yellow-400" 
-                      : index === 1 
-                        ? "border-l-gray-400"
-                        : index === 2
-                          ? "border-l-amber-700"
-                          : "border-l-red-500"
-                  }`}>
-                    <div className="md:flex">
-                      <div className="md:w-1/12 bg-gradient-to-r from-red-900/20 to-background flex items-center justify-center py-4">
-                        <span className="font-pixel text-4xl text-red-500">#{opening.rank}</span>
-                      </div>
-                      <div className="md:w-11/12 p-6">
-                        <div className="md:flex justify-between items-start">
-                          <div>
-                            <h3 className="font-silkscreen text-2xl mb-1 font-bold">{opening.title}</h3>
-                            <p className="text-muted-foreground font-vt323">
-                              <span className="font-semibold">{opening.anime}</span> ({opening.year})
-                            </p>
-                          </div>
-                          <Badge variant="outline" className="mt-2 md:mt-0">
-                            Opening Theme
-                          </Badge>
-                        </div>
-                        <p className="mt-4 font-vt323">{opening.description}</p>
-                      </div>
-                    </div>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
+            <ScrollArea className="w-full pb-6">
+              <div className="flex space-x-6 px-1 py-4">
+                {topOpenings.map((opening) => (
+                  <TopOpeningCard
+                    key={opening.rank}
+                    rank={opening.rank}
+                    title={opening.title}
+                    anime={opening.anime}
+                    year={opening.year}
+                    description={opening.description}
+                    videoUrl={opening.videoUrl}
+                  />
+                ))}
+              </div>
+            </ScrollArea>
           </div>
         </section>
 
-        {/* Animes That Defined A Generation */}
+        {/* Animes That Defined A Generation - Now with horizontal cards and popups */}
         <section className="py-12 bg-gradient-to-r from-purple-900/20 via-background to-purple-900/20">
           <div className="retro-container">
             <motion.div
@@ -293,56 +275,21 @@ const TopList = () => {
               <div className="h-1 flex-grow bg-gradient-to-l from-green-500/20 to-green-500"></div>
             </motion.div>
             
-            <div className="overflow-hidden">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <table className="w-full border-collapse">
-                  <thead>
-                    <tr className="bg-green-900/20">
-                      <th className="p-4 text-left font-pixel">Rank</th>
-                      <th className="p-4 text-left font-pixel">Anime</th>
-                      <th className="p-4 text-left font-pixel">Año</th>
-                      <th className="p-4 text-left font-pixel hidden md:table-cell">Impacto</th>
-                      <th className="p-4 text-left font-pixel hidden lg:table-cell">Legado</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {animesThatDefinedGeneration.map((anime, index) => (
-                      <motion.tr 
-                        key={anime.rank}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.2, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        className={`border-b border-border ${index % 2 === 0 ? 'bg-green-900/5' : ''}`}
-                      >
-                        <td className="p-4">
-                          <Badge className={`font-bold ${
-                            index === 0 
-                              ? "bg-yellow-400 hover:bg-yellow-500 text-black" 
-                              : index === 1 
-                                ? "bg-gray-400 hover:bg-gray-500 text-black"
-                                : index === 2
-                                  ? "bg-amber-700 hover:bg-amber-800 text-white"
-                                  : "bg-green-700 hover:bg-green-800"
-                          }`}>
-                            #{anime.rank}
-                          </Badge>
-                        </td>
-                        <td className="p-4 font-silkscreen font-bold">{anime.title}</td>
-                        <td className="p-4 text-muted-foreground font-vt323">{anime.year}</td>
-                        <td className="p-4 hidden md:table-cell font-vt323">{anime.impact}</td>
-                        <td className="p-4 hidden lg:table-cell font-vt323">{anime.legacy}</td>
-                      </motion.tr>
-                    ))}
-                  </tbody>
-                </table>
-              </motion.div>
-            </div>
+            <ScrollArea className="w-full pb-6">
+              <div className="flex space-x-6 px-1 py-4">
+                {animesThatDefinedGeneration.map((anime) => (
+                  <TopAnimeCard
+                    key={anime.rank}
+                    rank={anime.rank}
+                    title={anime.title}
+                    year={anime.year}
+                    impact={anime.impact}
+                    legacy={anime.legacy}
+                    imageUrl={anime.imageUrl}
+                  />
+                ))}
+              </div>
+            </ScrollArea>
           </div>
         </section>
       </div>
