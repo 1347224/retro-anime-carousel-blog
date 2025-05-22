@@ -101,7 +101,9 @@ const TopList = () => {
       anime: "Neon Genesis Evangelion",
       year: "1995",
       description: "Un tema enérgico y pegadizo que contrasta con los temas oscuros de la serie. Se ha convertido en un himno de la cultura otaku.",
-      videoUrl: "https://www.youtube.com/embed/nU21rCWkuJw"
+      videoUrl: "https://www.youtube.com/embed/nU21rCWkuJw",
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
+
     },
     {
       rank: 2,
@@ -109,7 +111,8 @@ const TopList = () => {
       anime: "Cowboy Bebop",
       year: "1998",
       description: "Una explosiva introducción de jazz que captura perfectamente la esencia estilizada y cool de la serie.",
-      videoUrl: "https://www.youtube.com/embed/EL-D9LrFJd4"
+      videoUrl: "https://www.youtube.com/embed/EL-D9LrFJd4",
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     },
     {
       rank: 3,
@@ -117,7 +120,8 @@ const TopList = () => {
       anime: "Rurouni Kenshin",
       year: "1996",
       description: "Un tema de J-rock enérgico que combina perfectamente con la acción de la serie y se volvió emblemático de la época.",
-      videoUrl: "https://www.youtube.com/embed/YvvlGma6COM"
+      videoUrl: "https://www.youtube.com/embed/YvvlGma6COM",
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     },
     {
       rank: 4,
@@ -125,7 +129,8 @@ const TopList = () => {
       anime: "Sailor Moon",
       year: "1992",
       description: "Un opening que trasciende generaciones y ha sido versionado múltiples veces, manteniendo su encanto nostálgico.",
-      videoUrl: "https://www.youtube.com/embed/LGQCPOMcYJQ"
+      videoUrl: "https://www.youtube.com/embed/LGQCPOMcYJQ",
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     },
     {
       rank: 5,
@@ -133,7 +138,8 @@ const TopList = () => {
       anime: "Dragon Ball Z",
       year: "1989",
       description: "Posiblemente uno de los openings más reconocibles globalmente, que continúa siendo cantado por fans en todo el mundo.",
-      videoUrl: "https://www.youtube.com/embed/cie7scVUdQE"
+      videoUrl: "https://www.youtube.com/embed/cie7scVUdQE",
+      imageUrl: "https://images2.alphacoders.com/454/thumb-1920-454764.jpg"
     }
   ];
 
