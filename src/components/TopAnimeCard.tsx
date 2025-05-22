@@ -31,7 +31,7 @@ const TopAnimeCard = ({ rank, title, year, impact, legacy, imageUrl }: TopAnimeC
         className="cursor-pointer"
         onClick={() => setOpen(true)}
       >
-        <div className="bg-gradient-to-b from-green-900/20 to-background rounded-lg overflow-hidden border-2 border-green-500/30 shadow-lg w-[260px] h-[300px] relative">
+        <div className="bg-gradient-to-b from-green-900/20 to-background rounded-lg overflow-hidden border-2 border-green-500/30 shadow-lg w-[260px] h-[340px] relative">
           <div className="h-[160px] overflow-hidden">
             <motion.img 
               src={imageSrc} 
