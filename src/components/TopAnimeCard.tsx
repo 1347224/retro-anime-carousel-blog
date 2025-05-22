@@ -81,7 +81,7 @@ const TopAnimeCard = ({ rank, title, year, impact, legacy, imageUrl }: TopAnimeC
           </DialogHeader>
           
           <div className="mt-4 grid md:grid-cols-2 gap-6">
-            <div className="relative h-[450px] overflow-hidden rounded-lg">
+            <div className="relative w-[450px] h-[350px] overflow-hidden rounded-lg">
               <img 
                 src={imageSrc} 
                 alt={title}
