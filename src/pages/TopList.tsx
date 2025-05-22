@@ -124,7 +124,7 @@ const TopList = () => {
       anime: "Sailor Moon",
       year: "1992",
       description: "Un opening que trasciende generaciones y ha sido versionado múltiples veces, manteniendo su encanto nostálgico.",
-      videoUrl: "https://youtu.be/LGQCPOMcYJQ?si=rZQI1GXyvED__De7"
+      <iframe width="872" height="654" src="https://www.youtube.com/embed/LGQCPOMcYJQ" title="Sailor Moon OP 1 ~ Classic - 1080p HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     },
     {
       rank: 5,
