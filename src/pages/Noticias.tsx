@@ -231,9 +231,9 @@ const Noticias = () => {
         <div className="retro-container py-12">
           {/* Search and filter */}
           <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-md rounded-lg">
-            <div className="mb-6 flex flex-col md:flex-row gap-4">
-              <div className="relative flex-grow">
-                <Search className="absolute left-9 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="relative w-full md:w-auto md:flex-grow md:mr-4">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                 <Input
                   placeholder="Buscar noticias..."
                   value={searchTerm}
@@ -241,7 +241,7 @@ const Noticias = () => {
                   className="pl-10 bg-card/50 border-blue-500/30 focus:border-blue-500 font-vt323"
                 />
               </div>
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex gap-2 flex-wrap w-full md:w-auto">
                 <Button 
                   variant={categoryFilter === null ? "default" : "outline"}
                   onClick={() => setCategoryFilter(null)}
