@@ -231,7 +231,7 @@ const TopList = () => {
                           ? "border-amber-700/70 bg-amber-700/10"
                           : "border-indigo-600/30 bg-indigo-600/5"
                   } rounded-lg overflow-hidden`}>
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-96 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
                       <img 
                         src={anime.image} 
