@@ -183,7 +183,7 @@ const Resenas = () => {
                   />
                 </div>
                 <CardHeader className="pb-2">
-                  <CardTitle className="font-pixel text-retro-purple">{review.title}</CardTitle>
+                  <CardTitle className="font-silkscreen font-bold text-retro-purple">{review.title}</CardTitle>
                   <CardDescription className="font-vt323">{review.year} • {review.studio}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">
@@ -229,7 +229,7 @@ const Resenas = () => {
                 </div>
                 <div className="p-6 md:w-2/3">
                   <div className="flex justify-between items-start mb-4">
-                    <h2 className="font-pixel text-2xl text-retro-purple">{selectedReview.title}</h2>
+                    <h2 className="font-silkscreen font-bold text-2xl text-retro-purple">{selectedReview.title}</h2>
                     <button
                       onClick={() => setSelectedReview(null)}
                       className="text-muted-foreground hover:text-foreground"

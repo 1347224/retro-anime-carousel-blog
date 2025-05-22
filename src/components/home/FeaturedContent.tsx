@@ -121,7 +121,7 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
                       />
                     </div>
                     <CardHeader className="pb-2">
-                      <CardTitle className="font-pixel text-retro-pink">{review.title}</CardTitle>
+                      <CardTitle className="font-silkscreen font-bold text-retro-pink">{review.title}</CardTitle>
                       <CardDescription className="flex">
                         {[...Array(review.rating)].map((_, i) => (
                           <span key={i} className="text-yellow-400">★</span>
@@ -178,7 +178,7 @@ const FeaturedContent = ({ featuredReviews, featuredCuriosities, featuredTopList
                       />
                     </div>
                     <CardHeader className="pb-2">
-                      <CardTitle className="font-pixel text-blue-500">{item.title}</CardTitle>
+                      <CardTitle className="font-silkscreen font-bold text-blue-500">{item.title}</CardTitle>
                       <CardDescription>{item.category}</CardDescription>
                     </CardHeader>
                     <CardContent className="flex-grow">

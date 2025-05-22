@@ -39,7 +39,7 @@ const CuriosidadCard = ({ id, title, category, content, image }: CuriosidadCardP
         </div>
         
         <CardHeader className="pb-2">
-          <CardTitle className="font-silkscreen text-blue-500 text-base md:text-lg lg:text-xl line-clamp-2">
+          <CardTitle className="font-silkscreen font-bold text-blue-500 text-base md:text-lg lg:text-xl line-clamp-2">
             {title}
           </CardTitle>
         </CardHeader>
