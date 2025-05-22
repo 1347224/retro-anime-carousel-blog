@@ -282,7 +282,7 @@ const TopList = () => {
               >
                 <CarouselContent className="-ml-4">
                   {topOpenings.map((opening) => (
-                    <CarouselItem key={opening.rank} className="pl-4 pl-4 md:basis-1/2">
+                    <CarouselItem key={opening.rank} className="pl-4 md:basis-1/4">
                       <TopOpeningCard
                         rank={opening.rank}
                         title={opening.title}
