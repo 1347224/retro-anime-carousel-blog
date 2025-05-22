@@ -116,7 +116,7 @@ const TopList = () => {
       anime: "Rurouni Kenshin",
       year: "1996",
       description: "Un tema de J-rock enérgico que combina perfectamente con la acción de la serie y se volvió emblemático de la época.",
-      videoUrl: "https://www.youtube.com/watch?v=YvvlGma6COM"
+      videoUrl: "https://youtu.be/YvvlGma6COM?si=fXW88KYrtrN66qyx"
     },
     {
       rank: 4,
@@ -124,7 +124,7 @@ const TopList = () => {
       anime: "Sailor Moon",
       year: "1992",
       description: "Un opening que trasciende generaciones y ha sido versionado múltiples veces, manteniendo su encanto nostálgico.",
-      videoUrl: "https://www.youtube.com/watch?v=LGQCPOMcYJQ"
+      videoUrl: "https://youtu.be/LGQCPOMcYJQ?si=rZQI1GXyvED__De7"
     },
     {
       rank: 5,
@@ -132,7 +132,7 @@ const TopList = () => {
       anime: "Dragon Ball Z",
       year: "1989",
       description: "Posiblemente uno de los openings más reconocibles globalmente, que continúa siendo cantado por fans en todo el mundo.",
-      videoUrl: "https://www.youtube.com/watch?v=cie7scVUdQE"
+      videoUrl: "https://youtu.be/cie7scVUdQE?si=jCiRrIUV0P-YeNar"
     }
   ];
 
