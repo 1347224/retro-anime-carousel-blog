@@ -33,7 +33,7 @@ const TopOpeningCard = ({ rank, title, anime, year, description, videoUrl, image
           <div className="h-[180px] overflow-hidden">
             {/* Placeholder image - in a real app, we would have unique images */}
             <motion.img 
-              src={imageUrl} 
+              src={"imageUrl"} 
               alt={title}
               className="w-full h-full object-cover"
               whileHover={{ scale: 1.1 }}
