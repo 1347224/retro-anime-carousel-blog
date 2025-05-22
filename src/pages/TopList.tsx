@@ -259,7 +259,7 @@ const TopList = () => {
         </section>
 
         {/* Top Openings Section - Now with carousel */}
-        <section className="py-12">
+        <section className="py-6">
           <div className="retro-container">
             <motion.div
               initial={{ opacity: 0, x: 50 }}
