@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -82,8 +81,7 @@ const TopList = () => {
       title: "Code Geass",
       year: "2006",
       image: "https://wallpapercave.com/wp/wp5972466.jpg",
-      description: "Combina la política, estrategia y acción mecha en una narrativa compleja con uno de los finales más memorables del anime.",
-      image: "https://wallpapercave.com/wp/wp12710756.jpg",
+      description: "Combina la política, estrategia y acción mecha en una narrativa compleja con uno de los finales más memorables del anime."
     },
     {
       rank: 5,
