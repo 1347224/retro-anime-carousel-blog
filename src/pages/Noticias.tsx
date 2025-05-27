@@ -6,8 +6,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Search, Newspaper } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Calendar, Clock, Newspaper } from "lucide-react";
 
 interface NewsItem {
   id: number;
@@ -105,8 +104,6 @@ const newsItems: NewsItem[] = [
 
 const Noticias = () => {
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   
   const headerRef = useRef<HTMLDivElement>(null);
@@ -119,19 +116,10 @@ const Noticias = () => {
   const headerScale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
   const headerY = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
-  const categories = [...new Set(newsItems.map(item => item.category))];
-  
-  const filteredNews = newsItems.filter(news => {
-    const matchesSearch = news.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         news.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = categoryFilter ? news.category === categoryFilter : true;
-    return matchesSearch && matchesCategory;
-  });
-
   useEffect(() => {
-    if (filteredNews.length > 0) {
+    if (newsItems.length > 0) {
       setActiveIndex(prev => {
-        if (prev === null || prev >= filteredNews.length) {
+        if (prev === null || prev >= newsItems.length) {
           return 0;
         }
         return prev;
@@ -139,7 +127,7 @@ const Noticias = () => {
       
       const interval = setInterval(() => {
         setActiveIndex(prev => {
-          if (prev === null || prev >= filteredNews.length - 1) {
+          if (prev === null || prev >= newsItems.length - 1) {
             return 0;
           } else {
             return prev + 1;
@@ -149,7 +137,7 @@ const Noticias = () => {
       
       return () => clearInterval(interval);
     }
-  }, [filteredNews]);
+  }, [newsItems]);
 
   return (
     <div className="min-h-screen bg-black text-foreground overflow-hidden">
@@ -193,7 +181,7 @@ const Noticias = () => {
           </motion.p>
           
           {/* Featured News Preview */}
-          {activeIndex !== null && filteredNews.length > 0 && (
+          {activeIndex !== null && newsItems.length > 0 && (
             <motion.div
               className="absolute bottom-8 left-4 right-4 md:left-auto md:right-auto md:w-96"
               initial={{ opacity: 0, y: 20 }}
@@ -201,21 +189,21 @@ const Noticias = () => {
               transition={{ duration: 1, delay: 0.8 }}
             >
               <AnimatePresence mode="wait">
-                {filteredNews[activeIndex] && (
+                {newsItems[activeIndex] && (
                   <motion.div
-                    key={filteredNews[activeIndex].id}
+                    key={newsItems[activeIndex].id}
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.5 }}
                     className="bg-black/50 backdrop-blur-md p-4 border border-blue-500/50 rounded-lg"
                   >
-                    <Badge className="mb-2 bg-blue-500">{filteredNews[activeIndex].category}</Badge>
-                    <h3 className="text-white font-bold mb-1 text-lg font-vt323">{filteredNews[activeIndex].title}</h3>
+                    <Badge className="mb-2 bg-blue-500">{newsItems[activeIndex].category}</Badge>
+                    <h3 className="text-white font-bold mb-1 text-lg font-vt323">{newsItems[activeIndex].title}</h3>
                     <Button
                       variant="link"
                       className="text-blue-400 p-0 h-auto font-silkscreen"
-                      onClick={() => setSelectedNews(filteredNews[activeIndex])}
+                      onClick={() => setSelectedNews(newsItems[activeIndex])}
                     >
                       Leer más
                     </Button>
@@ -229,121 +217,64 @@ const Noticias = () => {
       
       <div className="bg-gradient-to-br from-background via-blue-900/5 to-background">
         <div className="retro-container py-12">
-          {/* Search and filter */}
-          <div className="sticky top-16 z-40 py-4 bg-background/80 backdrop-blur-md rounded-lg">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-              <div className="relative w-full md:w-auto md:flex-grow md:mr-4">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-                <Input
-                  placeholder="Buscar noticias..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-card/50 border-blue-500/30 focus:border-blue-500 font-vt323"
-                />
-              </div>
-              <div className="flex gap-2 flex-wrap w-full md:w-auto">
-                <Button 
-                  variant={categoryFilter === null ? "default" : "outline"}
-                  onClick={() => setCategoryFilter(null)}
-                  className="h-10 font-silkscreen"
-                >
-                  Todos
-                </Button>
-                {categories.map(category => (
-                  <Button
-                    key={category}
-                    variant={categoryFilter === category ? "default" : "outline"}
-                    onClick={() => setCategoryFilter(category)}
-                    className="h-10 font-silkscreen"
-                  >
-                    {category}
-                  </Button>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {filteredNews.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredNews.map((news, index) => (
-                <motion.div
-                  key={news.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={index === 0 ? "md:col-span-2" : ""}
-                >
-                  <Card 
-                    className={`h-full border overflow-hidden flex flex-col hover:shadow-[0_0_30px_rgba(155,135,245,0.3)] transition-all duration-300 cursor-pointer ${
-                      index === 0 
-                        ? "border-blue-500/50 bg-gradient-to-br from-blue-900/20 to-background" 
-                        : "border-blue-500/30 bg-card/50"
-                    }`}
-                    onClick={() => setSelectedNews(news)}
-                  >
-                    <div className={`${index === 0 ? "h-64" : "h-56"} relative overflow-hidden`}>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
-                      <img 
-                        src={news.image}
-                        alt={news.title}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                      />
-                      <div className="absolute bottom-4 left-4 z-20">
-                        <Badge className="bg-blue-500 hover:bg-blue-600">
-                          {news.category}
-                        </Badge>
-                      </div>
-                      <div className="absolute top-4 right-4 z-20 flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-                        <Clock className="h-3 w-3 text-blue-300" />
-                        <span className="text-xs text-blue-300">{news.readTime}</span>
-                      </div>
-                    </div>
-                    <CardHeader className={`pb-2 ${index === 0 ? "space-y-2" : ""}`}>
-                      <CardTitle className={`line-clamp-2 ${index === 0 ? "text-2xl" : "text-xl"} font-bold font-silkscreen`}>
-                        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-retro-purple">
-                          {news.title}
-                        </span>
-                      </CardTitle>
-                      <CardDescription className="flex items-center text-xs">
-                        <Calendar className="h-3 w-3 mr-1" />
-                        {news.date}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p className={`${index === 0 ? "line-clamp-4" : "line-clamp-3"} font-vt323 text-lg`}>{news.excerpt}</p>
-                    </CardContent>
-                    <CardFooter className="pt-0">
-                      <Button variant="outline" className="w-full border-blue-500/30 hover:bg-blue-500/10 hover:border-blue-500/50 font-silkscreen">
-                        Leer artículo completo
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-16 bg-card/30 border border-blue-500/20 rounded-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newsItems.map((news, index) => (
               <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                key={news.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={index === 0 ? "md:col-span-2" : ""}
               >
-                <Newspaper className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
-                <h3 className="text-xl font-silkscreen mb-2">No se encontraron noticias</h3>
-                <p className="text-muted-foreground font-vt323">Intenta con otra búsqueda o elimina los filtros</p>
-                <Button 
-                  className="mt-6 bg-blue-600 hover:bg-blue-700 font-silkscreen"
-                  onClick={() => {
-                    setSearchTerm("");
-                    setCategoryFilter(null);
-                  }}
+                <Card 
+                  className={`h-full border overflow-hidden flex flex-col hover:shadow-[0_0_30px_rgba(155,135,245,0.3)] transition-all duration-300 cursor-pointer ${
+                    index === 0 
+                      ? "border-blue-500/50 bg-gradient-to-br from-blue-900/20 to-background" 
+                      : "border-blue-500/30 bg-card/50"
+                  }`}
+                  onClick={() => setSelectedNews(news)}
                 >
-                  Reiniciar búsqueda
-                </Button>
+                  <div className={`${index === 0 ? "h-64" : "h-56"} relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+                    <img 
+                      src={news.image}
+                      alt={news.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                    <div className="absolute bottom-4 left-4 z-20">
+                      <Badge className="bg-blue-500 hover:bg-blue-600">
+                        {news.category}
+                      </Badge>
+                    </div>
+                    <div className="absolute top-4 right-4 z-20 flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
+                      <Clock className="h-3 w-3 text-blue-300" />
+                      <span className="text-xs text-blue-300">{news.readTime}</span>
+                    </div>
+                  </div>
+                  <CardHeader className={`pb-2 ${index === 0 ? "space-y-2" : ""}`}>
+                    <CardTitle className={`line-clamp-2 ${index === 0 ? "text-2xl" : "text-xl"} font-bold font-silkscreen`}>
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-retro-purple">
+                        {news.title}
+                      </span>
+                    </CardTitle>
+                    <CardDescription className="flex items-center text-xs">
+                      <Calendar className="h-3 w-3 mr-1" />
+                      {news.date}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className={`${index === 0 ? "line-clamp-4" : "line-clamp-3"} font-vt323 text-lg`}>{news.excerpt}</p>
+                  </CardContent>
+                  <CardFooter className="pt-0">
+                    <Button variant="outline" className="w-full border-blue-500/30 hover:bg-blue-500/10 hover:border-blue-500/50 font-silkscreen">
+                      Leer artículo completo
+                    </Button>
+                  </CardFooter>
+                </Card>
               </motion.div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
       </div>
       
